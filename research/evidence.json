@@ -1,0 +1,2062 @@
+{
+  "sources": [
+    {
+      "id": "gas-rrc-flare-faq",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/flaring-regulation",
+      "quote": "Rule 32 allows an operator to flare gas while drilling a well and for up to 10 days after a well",
+      "fetched": "2026-11-24",
+      "claim": "Texas SWR 32 allows flaring during drilling and up to 10 days post-completion for potential testing."
+    },
+    {
+      "id": "gas-rrc-flare-180",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/flaring-regulation",
+      "quote": "Commission staff issue flare exceptions administratively for 45 days at a time, for a maximum limit of 180 days",
+      "fetched": "2026-11-24",
+      "claim": "RRC administrative flare exceptions: 45-day increments, 180-day cap; beyond 180 days requires Commission Final Order."
+    },
+    {
+      "id": "gas-rrc-tceq-air",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/flaring-regulation",
+      "quote": "The Texas Commission on Environmental Quality has jurisdiction over air quality issues related to flaring",
+      "fetched": "2026-11-24",
+      "claim": "Split jurisdiction: RRC regulates waste/flaring permission; TCEQ regulates air quality (and engine air permits)."
+    },
+    {
+      "id": "gas-rrc-lease-use",
+      "url": "https://webapps2.rrc.texas.gov/EWA/help/prod_codes.html",
+      "quote": "Lease or field fuel use -- gas you use or give to others for field operations including lease drilling fuel",
+      "fetched": "2026-11-24",
+      "claim": "RRC Form PR casinghead disposition code 1 covers lease/field fuel use; code 4 is vented or flared; sale goes through transmission-line/plant codes."
+    },
+    {
+      "id": "gas-tceq-sour",
+      "url": "https://www.tceq.texas.gov/assistance/industry/oil-and-gas/sour-gas-handling-compliance",
+      "quote": "This quantity is the equivalent of approximately 24 ppm , well below the 100 ppm RRC threshold",
+      "fetched": "2026-11-24",
+      "claim": "TCEQ sour-gas threshold ~24 ppm H2S (1.5 gr/100 scf) vs RRC Rule 36 threshold 100 ppm."
+    },
+    {
+      "id": "gas-epa-wec-cra",
+      "url": "https://www.epa.gov/inflation-reduction-act/waste-emissions-charge",
+      "quote": "President Trump signed the Joint Resolution of Disapproval under the Congressional Review Act on March 14, 2025",
+      "fetched": "2026-11-24",
+      "claim": "Waste Emissions Charge implementing rule disapproved under CRA, signed March 14, 2025."
+    },
+    {
+      "id": "gas-epa-oooob-final-ext",
+      "url": "https://www.epa.gov/newsreleases/epa-issues-final-rule-extend-unrealistic-biden-era-compliance-deadlines-oil-and-gas",
+      "quote": "save an estimated $750 million over 11 years in compliance costs",
+      "fetched": "2026-11-24",
+      "claim": "Nov 25, 2025 EPA finalized July 2025 IFR extending OOOOb/c deadlines (18 months for control devices, leaks, storage vessels, etc.); est. $750M savings over 11 years."
+    },
+    {
+      "id": "gas-cfr-5377b-onsite",
+      "url": "https://www.law.cornell.edu/cfr/text/40/60.5377b",
+      "quote": "Recover the associated gas from the separator and use the recovered gas as an onsite fuel source",
+      "fetched": "2026-11-24",
+      "claim": "OOOOb associated-gas standard (40 CFR 60.5377b) explicitly allows recovering gas from the separator for onsite fuel as a compliant alternative to sales line."
+    },
+    {
+      "id": "gas-cfr-5377b-may2026",
+      "url": "https://www.law.cornell.edu/cfr/text/40/60.5377b",
+      "quote": "After May 7, 2026, you must continually comply with paragraph (a) of this section at all times",
+      "fetched": "2026-11-24",
+      "claim": "Routine flaring of associated gas at new (post-May 7, 2024) oil wells phased out after May 7, 2026."
+    },
+    {
+      "id": "gas-cfr-5377b-72h",
+      "url": "https://www.law.cornell.edu/cfr/text/40/60.5377b",
+      "quote": "you are allowed to route to a flare or control device until the associated gas meets the required specifications or for 72 hours per incident",
+      "fetched": "2026-11-24",
+      "claim": "If gas fails fuel-quality specs for onsite fuel, flaring allowed up to 72 hours per incident."
+    },
+    {
+      "id": "gas-epa-flare-memo-2026",
+      "url": "https://www.epa.gov/newsreleases/epa-clarifies-when-oil-and-natural-gas-producers-can-flare-after-phase-out-deadline",
+      "quote": "continue routine flaring of associated gas at new oil wells in limited circumstances after the May 7, 2026, phase out deadline",
+      "fetched": "2026-11-24",
+      "claim": "EPA April 30, 2026 guidance: limited temporary flaring after May 7, 2026 phase-out deadline (Permian/Bakken operator concerns)."
+    },
+    {
+      "id": "gas-wb-ggfr-2025",
+      "url": "https://www.worldbank.org/en/programs/gasflaringreduction/publication/2026-global-gas-flaring-tracker-report",
+      "quote": "In 2025, the United States achieved the largest absolute reduction in flaring of any country globally, cutting volumes by 0.4 bcm (7 percent)",
+      "fetched": "2026-11-24",
+      "claim": "World Bank GGFT 2026: US flaring down 0.4 bcm (7%) in 2025, partly due to Matterhorn Express; global flaring 167 bcm."
+    },
+    {
+      "id": "gas-mrt-permian-2024",
+      "url": "https://www.mrt.com/business/oil/article/global-gas-flaring-increase-20779167.php",
+      "quote": "limited the flaring volume increase to just 1% over 2023 levels",
+      "fetched": "2026-11-24",
+      "claim": "Permian flaring volume +1% in 2024 vs 2023 while oil grew 7%; intensity -5% (World Bank data via MRT)."
+    },
+    {
+      "id": "gas-tipro-intensity",
+      "url": "https://tipro.org/news/data-shows-u-s-permian-and-texas-hit-record-production-while-cutting-flaring-intensity-by-half-or-more-in-latest-texans-for-natural-gas-flaring-report",
+      "quote": "flaring intensities fell 50 and 62 percent, respectively, from 2019 levels",
+      "fetched": "2026-11-24",
+      "claim": "Texas and Permian flaring intensity down 50% and 62% vs 2019 (industry group TIPRO/Texans for Natural Gas)."
+    },
+    {
+      "id": "gas-eia-waha-2024",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=64445",
+      "quote": "traded below zero for 42% of trading days in 2024",
+      "fetched": "2026-11-24",
+      "claim": "Waha Hub traded negative on 42% of 2024 trading days (EIA)."
+    },
+    {
+      "id": "gas-ngi-waha-2025",
+      "url": "https://naturalgasintel.com/news/permian-natural-gas-price-pain-eased-in-2025-but-volatility-remains-ahead-of-pipeline-adds",
+      "quote": "Waha spot prices averaged negative on 107 flow days in 2025, down from a record 158 days in 2024",
+      "fetched": "2026-11-24",
+      "claim": "NGI: Waha negative on 107 flow days in 2025 vs record 158 in 2024; record low -$8.79 avg on Oct 3, 2025; 4.5 Bcf/d new pipelines by 2H2026."
+    },
+    {
+      "id": "gas-ngi-waha-low",
+      "url": "https://naturalgasintel.com/news/permian-natural-gas-price-pain-eased-in-2025-but-volatility-remains-ahead-of-pipeline-adds",
+      "quote": "saw individual trades as low as negative $11.000",
+      "fetched": "2026-11-24",
+      "claim": "Waha individual trades as low as -$11.00/MMBtu on Oct 3, 2025."
+    },
+    {
+      "id": "gas-crusoe-nydig",
+      "url": "https://www.crusoe.ai/resources/newsroom/nydig-to-acquire-crusoes-bitcoin-mining-operation-crusoe-to-scale-vertically",
+      "quote": "it has deployed more than 425 modular data centers (250+ MWs) in the field across seven states and two countries",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe DFM/mining fleet sold to NYDIG (Mar 2025): 425+ modular data centers, 250+ MW, ~0.6 MW avg per module."
+    },
+    {
+      "id": "gas-cnbc-crusoe-sale",
+      "url": "https://www.cnbc.com/2025/03/25/crusoe-energy-sells-bitcoin-mining-unit-to-nydig-to-focus-on-ai.html",
+      "quote": "Crusoe will become a major equity holder in the combined entity",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe sold bitcoin/DFM unit to NYDIG, retaining a major equity stake (second to Stone Ridge)."
+    },
+    {
+      "id": "gas-coloradosun-300mcf",
+      "url": "https://coloradosun.com/2022/08/29/oil-and-gas-and-cryptocurrency-miners-are-colorados-new-odd-couple-and-theyre-making-quite-a-bit-of-coin",
+      "quote": "Crusoe operations require at least 300 mcf a day of gas to power one cryptocurrency module",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe's minimum per module is 300 mcf/d; typical deployments 1-3 years; demobilize if pipeline arrives."
+    },
+    {
+      "id": "gas-coloradosun-demob",
+      "url": "https://coloradosun.com/2022/08/29/oil-and-gas-and-cryptocurrency-miners-are-colorados-new-odd-couple-and-theyre-making-quite-a-bit-of-coin",
+      "quote": "typical deployments last one to three years",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe deployments typically last 1-3 years."
+    },
+    {
+      "id": "gas-crusoe-gpa",
+      "url": "https://www.crusoe.ai/resources/blog/understanding-the-problem-crusoe-solves",
+      "quote": "Current deals with oil companies span anywhere from 1 to 5 years and are structured as gas purchase agreements",
+      "fetched": "2026-11-24",
+      "claim": "Commercial structure: 1-5 year gas purchase agreements; change of custody, arm's-length price not comparable to pipeline price."
+    },
+    {
+      "id": "gas-crusoe-decline",
+      "url": "https://www.crusoe.ai/resources/blog/understanding-the-problem-crusoe-solves",
+      "quote": "We need the ability to mobilize and move to the next site",
+      "fetched": "2026-11-24",
+      "claim": "Wells decline so modules must be mobile and redeploy to next site; deploy in weeks if not days."
+    },
+    {
+      "id": "gas-mfp-pipes",
+      "url": "https://montanafreepress.org/2021/06/17/bitcoin-fracking-eastern-montana",
+      "quote": "Crusoe buys otherwise stranded gas from Kraken, pipes it into the onsite-generators",
+      "fetched": "2026-11-24",
+      "claim": "Tie-in model: miner buys gas from operator at wellsite and pipes it to onsite generators."
+    },
+    {
+      "id": "gas-ez-350",
+      "url": "https://ezblockchain.net/smartgrid",
+      "quote": "The system is most effective at locations where a minimum of 350 MCF (thousand cubic feet) of gas is flared daily",
+      "fetched": "2026-11-24",
+      "claim": "EZ Blockchain Smartgrid targets sites flaring >= 350 mcf/d; redesigned mobile DC to 2.5 MW (720 S17 miners)."
+    },
+    {
+      "id": "gas-ez-25mw",
+      "url": "https://ezblockchain.net/smartgrid",
+      "quote": "bring its capacity up to 2.5 MWs, installing 720 x Bitmain S17 type miners",
+      "fetched": "2026-11-24",
+      "claim": "EZ Blockchain mobile DC capacity 2.5 MW with 720 miners."
+    },
+    {
+      "id": "gas-upstream-hashgen",
+      "url": "https://upstreamdata.com/bitcoin-mining/hash-generator",
+      "quote": "Continuous Power Rating (kW) 48 80 160 325",
+      "fetched": "2026-11-24",
+      "claim": "Upstream Data Hash Generator models 48-325 kW continuous; fuel 12/24/50/91 mcf/d (325 kW at 91 mcf/d => ~3.6 kW per mcf/d)."
+    },
+    {
+      "id": "gas-upstream-fuel",
+      "url": "https://upstreamdata.com/bitcoin-mining/hash-generator",
+      "quote": "Estimated Fuel Consumption (MCF/d)",
+      "fetched": "2026-11-24",
+      "claim": "Upstream Data publishes est. fuel use 12, 24, 50, 91 mcf/d for its four sizes."
+    },
+    {
+      "id": "gas-tamu-giga",
+      "url": "https://engineering.tamu.edu/news/2022/03/etid-how-two-former-students-started-mining-bitcoin-fueled-by-flared-natural-gas.html",
+      "quote": "data centers up to 40 feet long that are situated in an inoperative shipping container",
+      "fetched": "2026-11-24",
+      "claim": "Giga Energy early product: 40-ft shipping-container data centers at drilling sites."
+    },
+    {
+      "id": "gas-fortuda-giga",
+      "url": "https://fortudaenergy.com/newsroom/stranded-energy-opportunity",
+      "quote": "has deployed more than 150 MW of containerized modular data centers",
+      "fetched": "2026-11-24",
+      "claim": "Giga Energy >150 MW of containerized modular DCs (secondary, promotional source)."
+    },
+    {
+      "id": "gas-fortuda-crusoe-bcf",
+      "url": "https://fortudaenergy.com/newsroom/stranded-energy-opportunity",
+      "quote": "Crusoe had converted more than 10.4 billion cubic feet of flare gas into approximately 1.3 terawatt-hours of electricity",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe by 2024: 10.4 Bcf flare gas -> ~1.3 TWh (~125 kWh/mcf) (secondary)."
+    },
+    {
+      "id": "gas-pioneer-composition",
+      "url": "https://blog.pioneerenergy.com/r/field-gas-fuel-natural-gas-generators",
+      "quote": "A representative Permian Basin associated gas composition (60% C1, 15% C2, 10% C3, 8% C4, 4% C5+)",
+      "fetched": "2026-11-24",
+      "claim": "Representative raw Permian associated gas is very rich (40% C2+); vendor says MN ~38-45 vs MN 70+ needed for lean-burn engines."
+    },
+    {
+      "id": "gas-pioneer-derate",
+      "url": "https://blog.pioneerenergy.com/r/field-gas-fuel-natural-gas-generators",
+      "quote": "On raw field gas, generators may derate by 15",
+      "fetched": "2026-11-24",
+      "claim": "Raw field gas can derate generators 15-30% of nameplate (vendor claim)."
+    },
+    {
+      "id": "gas-pioneer-h2s",
+      "url": "https://blog.pioneerenergy.com/r/field-gas-fuel-natural-gas-generators",
+      "quote": "specifications typically limit it to less than 100",
+      "fetched": "2026-11-24",
+      "claim": "Engine H2S limits typically <100-500 ppm depending on engine (vendor)."
+    },
+    {
+      "id": "gas-tetrasoft-tx-btu",
+      "url": "https://tetrasoftco.com/blog/natural-gas-btu",
+      "quote": "Texas 4,581 1,067 779",
+      "fetched": "2026-11-24",
+      "claim": "USGS-based Texas wellhead gas median 1,067 Btu/scf (5th-95th pct 779-1,273); historical, gas-well dominated sample."
+    },
+    {
+      "id": "gas-croft-jt",
+      "url": "https://www.croftsystems.net/oil-gas-equipment/jt-systems",
+      "quote": "designed to handle gas streams between 1 to 10 MMcfd",
+      "fetched": "2026-11-24",
+      "claim": "Croft JT skids sized 1-10 MMcfd (2/5/10 MMcfd standard) - oversized for a 300 mcf/d site."
+    },
+    {
+      "id": "gas-croft-jt-btu",
+      "url": "https://www.croftsystems.net/oil-gas-equipment/jt-systems",
+      "quote": "lowers the BTU (British Thermal Unit) of the gas stream to sales contract specifications or levels suited for high-speed engines",
+      "fetched": "2026-11-24",
+      "claim": "JT skid reduces dew point, recovers NGLs, lowers Btu for high-speed engines."
+    },
+    {
+      "id": "gas-spitzer-ngl",
+      "url": "https://spitzerind.com/product/engineered-packages/jt-skids",
+      "quote": "This is because the NGLs raise both the dew point and the heating value of the gas",
+      "fetched": "2026-11-24",
+      "claim": "NGLs raise dew point and heating value, motivating fuel-gas conditioning."
+    },
+    {
+      "id": "gas-jpt-decline",
+      "url": "https://jpt.spe.org/life-after-5-how-tight-oil-wells-grow-old",
+      "quote": "tend to see decline rates of more than 50% in their first year, and another 30% in their second",
+      "fetched": "2026-11-24",
+      "claim": "Unconventional wells: >50% first-year decline, ~30% second year; Permian ~16.7%/yr at age 5."
+    },
+    {
+      "id": "gas-jpt-yr5",
+      "url": "https://jpt.spe.org/life-after-5-how-tight-oil-wells-grow-old",
+      "quote": "horizontal wells in the Permian see decline rates fall to an average of 16.7%",
+      "fetched": "2026-11-24",
+      "claim": "Permian horizontal wells at 5 years: ~16.7% annual decline."
+    },
+    {
+      "id": "gas-eia-base-decline",
+      "url": "https://www.eia.gov/todayinEnergy/detail.php?id=66564",
+      "quote": "fell from 115.4 billion cubic feet per day (Bcf/d) to 88.4 Bcf/d, a decline of 27.0 Bcf/d",
+      "fetched": "2026-11-24",
+      "claim": "L48 gas from pre-2024 wells fell 115.4 -> 88.4 Bcf/d in one year (~23% base decline)."
+    },
+    {
+      "id": "gas-forvis-hb591",
+      "url": "https://www.forvismazars.us/forsights/2023/09/severance-taxes-saved-by-diverting-flared-gas-to-bitcoin-mining",
+      "quote": "The gas must be consumed",
+      "fetched": "2026-11-24",
+      "claim": "Texas HB 591 (eff. Sept 1, 2023) severance-tax exemption for gas that would be flared, consumed near (1,000 ft) qualifying well; RRC certification then Comptroller."
+    },
+    {
+      "id": "gas-forvis-1000ft",
+      "url": "https://www.forvismazars.us/forsights/2023/09/severance-taxes-saved-by-diverting-flared-gas-to-bitcoin-mining",
+      "quote": "which has been defined as 1,000 feet",
+      "fetched": "2026-11-24",
+      "claim": "HB 591 'near' defined as 1,000 feet."
+    },
+    {
+      "id": "gas-forvis-30day",
+      "url": "https://www.forvismazars.us/forsights/2023/09/severance-taxes-saved-by-diverting-flared-gas-to-bitcoin-mining",
+      "quote": "authorization for gas from that well to be flared for at least 30 days during the preceding year",
+      "fetched": "2026-11-24",
+      "claim": "HB 591 requires RRC authorization to flare >= 30 days in preceding year."
+    },
+    {
+      "id": "gas-mcfarland-royalty",
+      "url": "https://www.oilandgaslawyerblog.com/mining-bitcoin-a-solution-to-gas-flaring",
+      "quote": "royalty on gas sold to the bitcoin miners, rather than seeing their gas go up in smoke",
+      "fetched": "2026-11-24",
+      "claim": "Gas sold to miners is a sale, so royalty generally attaches (Texas oil & gas lawyer commentary)."
+    },
+    {
+      "id": "gas-wb-alternatives",
+      "url": "https://www.worldbank.org/en/programs/gasflaringreduction/technical-solutions",
+      "quote": "integrated compressed natural gas systems and modular, remotely operated mini-gas-to-liquid plants",
+      "fetched": "2026-11-24",
+      "claim": "World Bank lists alternatives to flaring: small modular power, truck-mounted mini-LNG, CNG, mini-GTL."
+    },
+    {
+      "id": "gas-wb-alt-econ",
+      "url": "https://www.worldbank.org/en/programs/gasflaringreduction/technical-solutions",
+      "quote": "it can still be economically challenging to utilize associated gas",
+      "fetched": "2026-11-24",
+      "claim": "Small-scale capture remains economically challenging; depends on gas purchase cost and product value."
+    },
+    {
+      "id": "pwr-eia-heatrates",
+      "url": "https://www.eia.gov/electricity/annual/html/epa_08_02.html",
+      "quote": "Gas Turbine -- 13,145 10,975 -- Internal Combustion -- 10,484 8,853",
+      "fetched": "2026-11-24",
+      "claim": "EIA 2025 average tested full-load heat rates (HHV, capacity-weighted): natural-gas internal combustion engines 8,853 Btu/kWh; simple-cycle gas turbines 10,975 Btu/kWh."
+    },
+    {
+      "id": "pwr-eia-heat-content",
+      "url": "https://www.eia.gov/tools/faqs/faq.php?id=45&t=8",
+      "quote": "1,000 cubic feet (Mcf) of natural gas equals 1.037 MMBtu",
+      "fetched": "2026-11-24",
+      "claim": "US 2025 average delivered natural gas heat content ~1,037 Btu/cf; 1 Mcf = 1.037 MMBtu."
+    },
+    {
+      "id": "pwr-eia-kwh-formula",
+      "url": "https://www.eia.gov/tools/faqs/faq.php?id=667&t=8",
+      "quote": "Kilowatthour generated per unit of fuel used = Fuel heat content (in Btu per physical unit) divided by Heat rate (in Btu per kWh)",
+      "fetched": "2026-11-24",
+      "claim": "EIA method: kWh per unit of fuel = fuel heat content (Btu/unit) / heat rate (Btu/kWh), used for the 300 mcf/d -> MW calculation."
+    },
+    {
+      "id": "pwr-cat-g3520",
+      "url": "https://www.hawthornecat.com/new-power/gas-generator-sets/g3520-3120-kw-gas-generator-set",
+      "quote": "Maximum Electrical Efficiency : 39.6%",
+      "fetched": "2026-11-24",
+      "claim": "Cat G3520 (Fast Response, 3,120 ekW standby) maximum electrical efficiency 39.6%."
+    },
+    {
+      "id": "pwr-cat-g3520-rating",
+      "url": "https://www.hawthornecat.com/new-power/gas-generator-sets/g3520-3120-kw-gas-generator-set",
+      "quote": "Gas Standby Rating : 3120 ekW @ 1.0pf",
+      "fetched": "2026-11-24",
+      "claim": "Cat G3520 Fast Response gas standby rating 3,120 ekW at 1.0 pf; oversized for a single 300 mcf/d site."
+    },
+    {
+      "id": "pwr-cat-g3406",
+      "url": "https://www.petersonpower.com/products/new/gas-generator-sets/g3406",
+      "quote": "Maximum Continuous Rating 235 ekW Fuel Type Natural Gas, Biogas, Field Gas, Propane",
+      "fetched": "2026-11-24",
+      "claim": "Cat G3406 genset: 235 ekW maximum continuous rating; listed fuels include field gas."
+    },
+    {
+      "id": "pwr-cat-g3406-eff",
+      "url": "https://www.petersonpower.com/products/new/gas-generator-sets/g3406",
+      "quote": "Maximum Electrical Efficiency 37.3%",
+      "fetched": "2026-11-24",
+      "claim": "Cat G3406 maximum electrical efficiency 37.3% (vendor basis, LHV) ~ 9,150 Btu/kWh LHV, ~10,060 HHV."
+    },
+    {
+      "id": "pwr-jenbacher-j420",
+      "url": "https://www.jenbacher.com/en/gas-engines/type-4/jenbacher-j420",
+      "quote": "with power output up to 1,694 kW and electrical efficiency up to 42.6%",
+      "fetched": "2026-11-24",
+      "claim": "Jenbacher J420: up to 1,694 kW electrical output, electrical efficiency up to 42.6%."
+    },
+    {
+      "id": "pwr-jenbacher-apg",
+      "url": "https://www.jenbacher.com/en/gas-engines/type-4/jenbacher-j420",
+      "quote": "Associated Petroleum Gas (Flaregas)",
+      "fetched": "2026-11-24",
+      "claim": "Jenbacher J420 lists associated petroleum gas (flare gas) as an applicable fuel type."
+    },
+    {
+      "id": "pwr-capstone-c1000",
+      "url": "https://www.capstoneenergyplus.com/products/capstone-microturbines/c1000s",
+      "quote": "Net Heat Rate LHV: 10.9 MJ/kWh (10,300 BTU/kWh)",
+      "fetched": "2026-11-24",
+      "claim": "Capstone C1000S microturbine: 1,000 kW, 33% LHV efficiency, net heat rate 10,300 Btu/kWh LHV."
+    },
+    {
+      "id": "pwr-capstone-sour",
+      "url": "https://www.capstoneenergyplus.com/products/capstone-microturbines/c1000s",
+      "quote": "Raw Natural Gas (Sour, Associated Gas)",
+      "fetched": "2026-11-24",
+      "claim": "Capstone C1000S compatible fuels include raw natural gas (sour, associated gas)."
+    },
+    {
+      "id": "pwr-waukesha-vhp",
+      "url": "https://www.waukeshaengine.com/gas-generator-sets/vhp",
+      "quote": "the ability to operate on nearly any gaseous fuel without treatment",
+      "fetched": "2026-11-24",
+      "claim": "Waukesha VHP rich-burn gensets (1,094-2,238 kVA) can operate on nearly any gaseous fuel without treatment."
+    },
+    {
+      "id": "pwr-innio-crusoe",
+      "url": "https://www.innio.com/en/news-media/press-releases/innio-waukesha-brings-electrical-power-to-remote-stranded-gas-locations-powers-innovative-crusoe-digital-flare-mitigation-deployments",
+      "quote": "capable of running on well-head gas directly, without the need for complex treatment",
+      "fetched": "2026-11-24",
+      "claim": "Waukesha VHP9504GSI gensets used by Crusoe for flare mitigation can run on wellhead gas directly without complex treatment."
+    },
+    {
+      "id": "pwr-innio-compressor-reuse",
+      "url": "https://www.innio.com/en/news-media/magazine/article/33-year-old-waukesha-engine-finds-new-life-generating-power",
+      "quote": "packaged to drive a reciprocating compressor for a natural gas production site",
+      "fetched": "2026-11-24",
+      "claim": "Precedent for compressor-engine conversion: a 1990 Waukesha VHP P9390GL compressor drive (120,000+ h) was rebuilt and repurposed for power generation."
+    },
+    {
+      "id": "pwr-woodmac-150wk",
+      "url": "https://www.woodmac.com/news/opinion/4-years-into-a-difficult-transformers-market-in-the-us-is-there-a-potential-end-in-sight",
+      "quote": "reaching an average of ~150 weeks after receipt of order (ARO)",
+      "fetched": "2026-11-24",
+      "claim": "Wood Mackenzie: power and GSU transformer lead times tripled since 2021 to ~150 weeks ARO average."
+    },
+    {
+      "id": "pwr-woodmac-padmount",
+      "url": "https://www.woodmac.com/news/opinion/4-years-into-a-difficult-transformers-market-in-the-us-is-there-a-potential-end-in-sight",
+      "quote": "reaching ~75 weeks ARO on average",
+      "fetched": "2026-11-24",
+      "claim": "Wood Mackenzie: distribution padmount transformer lead times ~75 weeks ARO on average."
+    },
+    {
+      "id": "pwr-woodmac-2024",
+      "url": "https://www.woodmac.com/news/opinion/supply-shortages-and-an-inflexible-market-give-rise-to-high-power-transformer-lead-times",
+      "quote": "from around 50 weeks in 2021, to 120 weeks on average in 2024",
+      "fetched": "2026-11-24",
+      "claim": "Wood Mackenzie: average transformer lead time rose from ~50 weeks (2021) to 120 weeks (2024); large units 80-210 weeks."
+    },
+    {
+      "id": "pwr-powermag-prices",
+      "url": "https://www.powermag.com/the-transformer-crisis-an-industry-on-the-brink",
+      "quote": "transformer prices have risen 60% to 80% on average since January 2020",
+      "fetched": "2026-11-24",
+      "claim": "Transformer prices up 60-80% on average since January 2020."
+    },
+    {
+      "id": "pwr-conversation-breakers",
+      "url": "https://theconversation.com/supply-chain-delays-rising-equipment-prices-threaten-electricity-grid-269448",
+      "quote": "high-voltage circuit-breaker lead times reached about 151 weeks",
+      "fetched": "2026-11-24",
+      "claim": "High-voltage circuit breaker lead times ~151 weeks by late 2023 (Wood Mackenzie via Duke Nicholas Institute)."
+    },
+    {
+      "id": "pwr-utilitydive-smallgt",
+      "url": "https://www.utilitydive.com/news/5-year-waits-and-rising-costs-how-demand-is-redefining-the-gas-turbine-mar/813385/",
+      "quote": "now take 18 to 36 months",
+      "fetched": "2026-11-24",
+      "claim": "Small gas turbines now take 18-36 months order-to-delivery; large turbines 5+ years."
+    },
+    {
+      "id": "pwr-utilitydive-gtprice",
+      "url": "https://www.utilitydive.com/news/5-year-waits-and-rising-costs-how-demand-is-redefining-the-gas-turbine-mar/813385/",
+      "quote": "increased from roughly $2,000/kW to $3,000/kW",
+      "fetched": "2026-11-24",
+      "claim": "EPRI: average gas turbine prices rose from ~$2,000/kW to ~$3,000/kW in six months."
+    },
+    {
+      "id": "pwr-sourcerock-recip",
+      "url": "https://sourcerockep.com/blog/gas-engine-backlog-power-fast",
+      "quote": "offer 12-18 month deployment timelines vs. 5-7 years for large-frame turbines",
+      "fetched": "2026-11-24",
+      "claim": "Recip gas engines (Jenbacher, Wartsila, Caterpillar) quoted at 12-18 month deployment vs 5-7 years for large-frame turbines."
+    },
+    {
+      "id": "pwr-nextler-cummins",
+      "url": "https://nextlerllc.com/blog/used-natural-gas-generator-premium",
+      "quote": "it's going to be the second half of 2028",
+      "fetched": "2026-11-24",
+      "claim": "Cummins CFO (Q2 2026 call): a new large genset ordered now ships in the second half of 2028."
+    },
+    {
+      "id": "pwr-nextler-cat-backlog",
+      "url": "https://nextlerllc.com/blog/used-natural-gas-generator-premium",
+      "quote": "Caterpillar reported a $72 billion order backlog on its Q2 2026 call",
+      "fetched": "2026-11-24",
+      "claim": "Caterpillar reported a $72 billion order backlog in Q2 2026."
+    },
+    {
+      "id": "pwr-nextler-used-premium",
+      "url": "https://nextlerllc.com/blog/used-natural-gas-generator-premium",
+      "quote": "natural gas generator sets carry a 30-60% premium over equivalent-kW diesel units",
+      "fetched": "2026-11-24",
+      "claim": "Dealer view (PGE): used natural gas gensets carry a 30-60% premium over equivalent-kW diesel units in 2026."
+    },
+    {
+      "id": "pwr-depco-g3412",
+      "url": "https://www.depco.com/natural-gas/caterpillar-g3412c-500kw-stand-by-generator-set-item-20815",
+      "quote": "Arrangement/Catalog#: 136-6628 Price: $169,900",
+      "fetched": "2026-11-24",
+      "claim": "Used Cat G3412C 500 kW standby natural gas genset (78.8 h) listed at $169,900 (~$340/kW standby; 120/208 V)."
+    },
+    {
+      "id": "pwr-stowers-g3406",
+      "url": "https://www.stowerscat.com/used-equipment/stationary-natural-gas/2003-cat-g3406/",
+      "quote": "2003 Cat G3406 Price: $67,900",
+      "fetched": "2026-11-24",
+      "claim": "Used 2003 Cat G3406 natural gas genset (966 h) listed at $67,900 (~$290/kW if rated at G3406's 235 ekW; listing gives no kW)."
+    },
+    {
+      "id": "pwr-imp-g3508",
+      "url": "https://www.impcorporation.com/en-us/inventory/details/15202/2007-cat-g3508-generator-set",
+      "quote": "Rated at 360kw/420kva Continuous, 60hz, 480v, 1200rpm",
+      "fetched": "2026-11-24",
+      "claim": "New-surplus Cat G3508 LE gas genset rated 360 kW continuous at 1,200 rpm, 480 V (price on request)."
+    },
+    {
+      "id": "pwr-sage-350",
+      "url": "https://www.sageoilservices.com/generator-rentals",
+      "quote": "24/7 Prime Power: 350 KW Fuel Consumption NG @ 100% load is 120 m3/hour",
+      "fetched": "2026-11-24",
+      "claim": "Permian/Eagle Ford rental 350 kW prime field-gas genset (PSI 21.9L) burns 120 m3/h NG at full load (~12,100 Btu/kWh at 1,000 Btu/scf)."
+    },
+    {
+      "id": "pwr-bigd-400",
+      "url": "https://bigdco.com/services/oilfield-equipment/",
+      "quote": "rated at 400 kW prime, 350 kW continuous, and 450 kW standby power",
+      "fetched": "2026-11-24",
+      "claim": "Permian rental natural gas gensets rated 400 kW prime / 350 kW continuous / 450 kW standby."
+    },
+    {
+      "id": "pwr-bigd-parallel",
+      "url": "https://bigdco.com/services/oilfield-equipment/",
+      "quote": "Our natural gas generators are parallel-ready for multi-unit power requirements",
+      "fetched": "2026-11-24",
+      "claim": "Permian rental gas gensets are parallel-ready, with onboard telemetry and gas conditioning."
+    },
+    {
+      "id": "pwr-frio-rental",
+      "url": "https://frioenergyservices.com/",
+      "quote": "50 to 400 kW units ready to roll for oil & gas operators across Texas",
+      "fetched": "2026-11-24",
+      "claim": "Eagle Ford rental fleet of 50-400 kW natural gas gensets running on wellhead gas."
+    },
+    {
+      "id": "pwr-wgl-lease",
+      "url": "https://wglpower.com/generator-leasing",
+      "quote": "WGL Power leases 400kW industrial generators to oilfield, commercial, and industrial operations across the Permian Basin",
+      "fetched": "2026-11-24",
+      "claim": "WGL Power leases 400 kW generators in the Permian with maintenance included; month-to-month terms (price not published)."
+    },
+    {
+      "id": "pwr-generac-mps",
+      "url": "https://www.generac.com/industrial-products/stationary-generators/500kw-industrial-generator-25-8l-mg500/",
+      "quote": "integrated paralleling for multi-unit synchronization",
+      "fetched": "2026-11-24",
+      "claim": "Generac MG500 (500 kW gaseous) has integrated paralleling controller for multi-unit synchronization."
+    },
+    {
+      "id": "pwr-generac-noloadshare",
+      "url": "https://www.generac.com/industrial/tools-resources/project-planning/fuel-selection/generator-paralleling",
+      "quote": "Our generators are designed to work with no functioning communications or load share lines",
+      "fetched": "2026-11-24",
+      "claim": "Generac MPS gensets parallel and load-share without functioning communication or load-share lines."
+    },
+    {
+      "id": "pwr-turnkey-switchgear",
+      "url": "https://turnkey-industries.com/generator-tips/generator-parallel-operation-load-sharing",
+      "quote": "Basic paralleling switchgear for two generators costs $25,000-$50,000",
+      "fetched": "2026-11-24",
+      "claim": "Basic paralleling switchgear for two gensets $25,000-$50,000; three or more units $40,000-$100,000."
+    },
+    {
+      "id": "pwr-turnkey-controls",
+      "url": "https://turnkey-industries.com/generator-tips/generator-parallel-operation-load-sharing",
+      "quote": "Upgrading generator controls to support paralleling adds $3,000-$8,000 per generator",
+      "fetched": "2026-11-24",
+      "claim": "Upgrading genset controls to support paralleling adds $3,000-$8,000 per generator."
+    },
+    {
+      "id": "pwr-htyel-mv",
+      "url": "https://www.htyel.com/electrical-switchgear-cost-estimate-a-practical-pricing-guide",
+      "quote": "MV (1–15 kV) $15,000 – $85,000/section",
+      "fetched": "2026-11-24",
+      "claim": "MV (1-15 kV) switchgear $15,000-$85,000 per section equipment-only, 1.6-2.2x installed multiplier; LV $800-$8,000/section."
+    },
+    {
+      "id": "pwr-scon-jt",
+      "url": "https://sconinc.com/products/gas-processing/fuel-gas-conditioning",
+      "quote": "designed to handle .5 MMSCFD to 3 MMSCFD and achieve cuts of 100 to 250 Btu",
+      "fetched": "2026-11-24",
+      "claim": "JT fuel gas conditioning skids for gensets handle 0.5-3 MMSCFD and cut 100-250 Btu/ft3 from rich gas."
+    },
+    {
+      "id": "pwr-secondwatt-overhaul",
+      "url": "https://secondwatt.com/resources/reciprocating-gas-engine-generators",
+      "quote": "A top-end overhaul, generally recommended between 8,000 and 30,000 hours",
+      "fetched": "2026-11-24",
+      "claim": "Gas engine top-end overhaul generally every 8,000-30,000 hours."
+    },
+    {
+      "id": "pwr-secondwatt-overhaul-1800",
+      "url": "https://secondwatt.com/resources/reciprocating-gas-engine-generators",
+      "quote": "30,000–36,000 at 1,800 rpm",
+      "fetched": "2026-11-24",
+      "claim": "EPA catalog (Table 2-5): major overhaul intervals 30,000-36,000 h at 1,800 rpm vs >60,000 h at 720 rpm."
+    },
+    {
+      "id": "pwr-secondwatt-mn",
+      "url": "https://secondwatt.com/resources/reciprocating-gas-engine-generators",
+      "quote": "Heavier hydrocarbons such as propane, ethane and butane lower it",
+      "fetched": "2026-11-24",
+      "claim": "Heavier hydrocarbons (propane, ethane, butane) lower methane number, forcing retarded timing/derate in gas engines."
+    },
+    {
+      "id": "pwr-secondwatt-hhv",
+      "url": "https://secondwatt.com/resources/reciprocating-gas-engine-generators",
+      "quote": "EPA puts HHV about 10% above LHV for natural gas",
+      "fetched": "2026-11-24",
+      "claim": "Natural gas HHV is about 10% above LHV (EPA); vendor efficiencies are LHV."
+    },
+    {
+      "id": "pwr-gr1d-bloom-eff",
+      "url": "https://gr1d.us/insights/bloom-energy-fuel-cells-data-centers",
+      "quote": "Bloom rates them at 65% falling to 53% (LHV)",
+      "fetched": "2026-11-24",
+      "claim": "Bloom SOFC rated 65% falling to 53% LHV efficiency over life."
+    },
+    {
+      "id": "pwr-gr1d-bloom-measured",
+      "url": "https://gr1d.us/insights/bloom-energy-fuel-cells-data-centers",
+      "quote": "US plants run by Bloom reported a median of 7,057 Btu/kWh in 2025",
+      "fetched": "2026-11-24",
+      "claim": "US Bloom plants median measured 7,057 Btu/kWh in 2025 (EIA-923)."
+    },
+    {
+      "id": "pwr-gr1d-recip-lead",
+      "url": "https://gr1d.us/insights/bloom-energy-fuel-cells-data-centers",
+      "quote": "Reciprocating engines 12–24 months 8,000–9,000 Btu/kWh",
+      "fetched": "2026-11-24",
+      "claim": "Rabobank (via GR1D): reciprocating engines 12-24 months to first power, 8,000-9,000 Btu/kWh."
+    },
+    {
+      "id": "pwr-aggreko-flare",
+      "url": "https://www.aggreko.com/en-us/sectors/oil-and-gas/flare-gas-to-power",
+      "quote": "We help more than 180 operators use their flare gas more efficiently",
+      "fetched": "2026-11-24",
+      "claim": "Aggreko provides modular flare-gas-to-power generators to more than 180 operators."
+    },
+    {
+      "id": "pwr-crusader-used",
+      "url": "https://crusaderjv.com/used-1mw-1000kw-natural-gas-generators-for-sale-crypto-bitcoin-mining-waukesha-l5794-cummins-qsk60-cat-xq1475",
+      "quote": "all of these units are immediately available for delivery",
+      "fetched": "2026-11-24",
+      "claim": "Used 1-1.5 MW gas gensets (Waukesha L5794GSI, Cummins QSK60, Cat) marketed to bitcoin miners as immediately available vs long new lead times."
+    },
+    {
+      "id": "cmp-hri-hashprice",
+      "url": "https://hashrateindex.com/blog/hashrate-index-roundup-november-16-2026",
+      "quote": "USD hashprice moved -4.7% from $31.95 per PH/s/Day to a current $30.45 per PH/s/Day",
+      "fetched": "2026-11-24",
+      "claim": "Hashprice fell to $30.45/PH/s/day on Nov 16, 2026"
+    },
+    {
+      "id": "cmp-hri-mwh",
+      "url": "https://hashrateindex.com/blog/hashrate-index-roundup-november-16-2026",
+      "quote": "Under 14 J/TH fleets — $105 per MWh",
+      "fetched": "2026-11-24",
+      "claim": "Energy hashprice: sub-14 J/TH fleets earn ~$105 per MWh (Nov 2026)"
+    },
+    {
+      "id": "cmp-hri-breakeven",
+      "url": "https://hashrateindex.com/blog/hashrate-index-roundup-november-16-2026",
+      "quote": "At $30 per PH/s/Day, hashprice is at or below breakeven for many miners",
+      "fetched": "2026-11-24",
+      "claim": "At $30/PH/day hashprice is at/below breakeven for many miners"
+    },
+    {
+      "id": "cmp-dcf-recordlow",
+      "url": "https://www.dcforecasts.com/analysis/bitcoin-hashprice-record-low-november-2026",
+      "quote": "Bitcoin hashprice fell to about $26.20 per petahash a day on Nov. 21, a record low",
+      "fetched": "2026-11-24",
+      "claim": "Record-low hashprice $26.20/PH/day on Nov 21, 2026"
+    },
+    {
+      "id": "cmp-dcf-kwh",
+      "url": "https://www.dcforecasts.com/analysis/bitcoin-hashprice-record-low-november-2026",
+      "quote": "At $26.20, that works out to about 6.2 cents of revenue per kilowatt-hour",
+      "fetched": "2026-11-24",
+      "claim": "$26.20/PH/day = ~6.2 c/kWh revenue for efficient fleet"
+    },
+    {
+      "id": "cmp-s21xp-price",
+      "url": "https://minersdeals.com/asic-miners/bitmain-antminer-s21-xp",
+      "quote": "Price $3,420 Hashrate 270 TH/s",
+      "fetched": "2026-11-24",
+      "claim": "S21 XP listed at $3,420 (~$12.7/TH)"
+    },
+    {
+      "id": "cmp-s23-spec",
+      "url": "https://minersdeals.com/asic-miners/bitmain-antminer-s21-xp",
+      "quote": "Bitmain Antminer S23 318 TH/s SHA-256 3498 W 11 J/TH",
+      "fetched": "2026-11-24",
+      "claim": "Antminer S23: 318 TH/s, 3,498 W, 11 J/TH"
+    },
+    {
+      "id": "cmp-s21xp-spec",
+      "url": "https://hashrateindex.com/blog/hardware-overview-bitmains-antminer-s21-xp/",
+      "quote": "Efficiency: 13.5 J/TH Model Antminer S21 XP Specification Details Hashrate 270 TH/s",
+      "fetched": "2026-11-24",
+      "claim": "Antminer S21 XP: 270 TH/s at 13.5 J/TH (~3,645 W)"
+    },
+    {
+      "id": "cmp-h100-rates",
+      "url": "https://inferencehub.org/blog/h100-rental-prices-2026",
+      "quote": "Most specialist GPU clouds charge $2.50–$4.90 on demand, and the hyperscalers charge",
+      "fetched": "2026-11-24",
+      "claim": "H100 on-demand: specialist GPU clouds $2.50-$4.90/GPU-hr; hyperscalers $6.88-$12.29 (Nov 17, 2026)"
+    },
+    {
+      "id": "cmp-b200-rates",
+      "url": "https://iotdigitaltwinplm.com/gpu-cloud-pricing-november-2026-h100-h200-b200-gb200-and-mi300x-hourly-rates-across-aws-azure-google/",
+      "quote": "from about $4.26 per B200-hour (CoreWeave spot) to $14.24 (AWS on-demand)",
+      "fetched": "2026-11-24",
+      "claim": "B200 $4.26 (spot) to $14.24 (AWS on-demand) per GPU-hour, Nov 2026"
+    },
+    {
+      "id": "cmp-h100-reserved",
+      "url": "https://brandmediaworks.com/insights/h100-price-per-hour",
+      "quote": "Twelve-month and reserved H100 prices we read run from $1.75 to $6.16 per GPU-hour",
+      "fetched": "2026-11-24",
+      "claim": "Reserved H100: $1.75-$6.16/GPU-hr"
+    },
+    {
+      "id": "cmp-crusoe-h100",
+      "url": "https://brandmediaworks.com/insights/h100-price-per-hour",
+      "quote": "Crusoe's H100 rises from $3.90 to $4.50 on 1 December 2026",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe Cloud H100 price rising $3.90->$4.50 Dec 1, 2026"
+    },
+    {
+      "id": "cmp-dgxh100-power",
+      "url": "https://docs.nvidia.com/dgx/dgxh100-user-guide/introduction-to-dgxh100.html",
+      "quote": "200-240 volts AC 10.2 kW max.",
+      "fetched": "2026-11-24",
+      "claim": "DGX H100 (8 GPU) draws up to 10.2 kW"
+    },
+    {
+      "id": "cmp-dgxb200-power",
+      "url": "https://docs.nvidia.com/dgx/dgxb200-user-guide/introduction-to-dgxb200.html",
+      "quote": "200-240 volts AC 14.3 kW max.",
+      "fetched": "2026-11-24",
+      "claim": "DGX B200 (8 GPU) draws up to 14.3 kW"
+    },
+    {
+      "id": "cmp-starlink-price",
+      "url": "https://dishycentral.com/starlink-business-plans",
+      "quote": "In the US, Local Priority starts at $55 a month for 50 GB of priority data and goes up to $530 for 2 TB",
+      "fetched": "2026-11-24",
+      "claim": "Starlink Local Priority $55/mo (50 GB) to $530/mo (2 TB)"
+    },
+    {
+      "id": "cmp-starlink-throttle",
+      "url": "https://dishycentral.com/starlink-business-plans",
+      "quote": "Without it, you keep unlimited data at up to 1 Mbps down and 0.5 Mbps up",
+      "fetched": "2026-11-24",
+      "claim": "After priority data: 1 Mbps down / 0.5 Mbps up"
+    },
+    {
+      "id": "cmp-starlink-sla",
+      "url": "https://dishycentral.com/starlink-business-plans",
+      "quote": "The SLA promises 99.9% uptime each billing period",
+      "fetched": "2026-11-24",
+      "claim": "Starlink Business 99.9% uptime SLA"
+    },
+    {
+      "id": "cmp-starlink-hw",
+      "url": "https://dishycentral.com/starlink-business-plans",
+      "quote": "Starlink lists Business hardware from $349",
+      "fetched": "2026-11-24",
+      "claim": "Business hardware from $349"
+    },
+    {
+      "id": "cmp-starlink-priority-spec",
+      "url": "https://www.starlinkspeeds.com/real-speeds-2026.html",
+      "quote": "Download 120–270 Mbps, upload 12–35 Mbps, latency 25–60 ms",
+      "fetched": "2026-11-24",
+      "claim": "Starlink Priority spec: 120-270 Mbps down, 12-35 Mbps up, 25-60 ms"
+    },
+    {
+      "id": "cmp-ookla-tx",
+      "url": "https://www.ookla.com/articles/starlinks-u-s-speeds-rise-amid-spacex-ipo",
+      "quote": "\"name\": \"Texas\", \"code\": \"TX\", \"value\": 108.1, \"value2\": 18.5, \"value3\": 38",
+      "fetched": "2026-11-24",
+      "claim": "Texas Starlink H1 2026 median: 108.1 Mbps down, 18.5 Mbps up, 38 ms"
+    },
+    {
+      "id": "cmp-ookla-us",
+      "url": "https://www.ookla.com/articles/starlinks-u-s-speeds-rise-amid-spacex-ipo",
+      "quote": "Median download speeds rose 12% nationally to 119.71 Mbps",
+      "fetched": "2026-11-24",
+      "claim": "US Starlink median download 119.71 Mbps H1 2026"
+    },
+    {
+      "id": "cmp-fiber-perfoot",
+      "url": "https://www.cartesian.com/2023-fiber-deployment-cost-annual-report",
+      "quote": "Typical costs ranged from $11 to $24 per foot for underground deployment, and $4 to $9 per foot for aerial deployment",
+      "fetched": "2026-11-24",
+      "claim": "Fiber: $11-24/ft underground, $4-9/ft aerial (=$58k-127k/mi underground; $21k-48k/mi aerial)"
+    },
+    {
+      "id": "cmp-fiber-median",
+      "url": "https://www.cartesian.com/2023-fiber-deployment-cost-annual-report",
+      "quote": "The median cost of deploying fiber underground was over twice the median cost of deploying fiber aerially at $16.25 and $6.49",
+      "fetched": "2026-11-24",
+      "claim": "Median $16.25/ft underground (~$86k/mi), $6.49/ft aerial (~$34k/mi)"
+    },
+    {
+      "id": "cmp-mw-cost",
+      "url": "https://vertical-axis.com/services/microwave-backhaul",
+      "quote": "Fully licensed Part 101 carrier-grade link: mid-to-upper five figures per link",
+      "fetched": "2026-11-24",
+      "claim": "Licensed Part 101 microwave link: mid-to-upper five figures"
+    },
+    {
+      "id": "cmp-mw-licensing",
+      "url": "https://vertical-axis.com/services/microwave-backhaul",
+      "quote": "Licensed Part 101 paths add 6 to 12 weeks upfront for FCC coordination and frequency assignment",
+      "fetched": "2026-11-24",
+      "claim": "Part 101 licensing adds 6-12 weeks"
+    },
+    {
+      "id": "cmp-mw-range",
+      "url": "https://vertical-axis.com/services/microwave-backhaul",
+      "quote": "6 to 11 GHz. Minimal rain impact. Long paths practical (20 to 30+ miles).",
+      "fetched": "2026-11-24",
+      "claim": "6-11 GHz paths of 20-30+ miles practical"
+    },
+    {
+      "id": "cmp-asic-bandwidth",
+      "url": "https://d-central.tech/troubleshooting/addressing-network-bandwidth-and-load-issues-in-mining-operations/",
+      "quote": "A single Antminer or Whatsminer talking to a pool over Stratum moves only a few kilobits per second",
+      "fetched": "2026-11-24",
+      "claim": "ASIC Stratum traffic: a few kbps per miner"
+    },
+    {
+      "id": "cmp-starlink-perfkit",
+      "url": "https://www.starlinkspeeds.com/real-speeds-2026.html",
+      "quote": "Download speeds up to 400+ Mbps. The sheet does not state an upload range",
+      "fetched": "2026-11-24",
+      "claim": "Performance Kit up to 400+ Mbps download (no published upload range)"
+    },
+    {
+      "id": "cmp-crusoe-spark-liquid",
+      "url": "https://www.crusoe.ai/resources/newsroom/crusoe-introduces-crusoe-spark-liquid",
+      "quote": "supporting up to 3.5MW per modular unit",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe Spark Liquid: up to 3.5 MW per modular unit, closed-loop non-evaporative DLC (Oct 21, 2026)"
+    },
+    {
+      "id": "cmp-crusoe-spark-water",
+      "url": "https://www.crusoe.ai/resources/newsroom/crusoe-introduces-crusoe-spark-liquid",
+      "quote": "closed-loop, non-evaporative DLC cooling architecture",
+      "fetched": "2026-11-24",
+      "claim": "Spark Liquid uses closed-loop non-evaporative DLC"
+    },
+    {
+      "id": "cmp-crusoe-spark-3mo",
+      "url": "https://www.crusoe.ai/resources/newsroom/crusoe-introduces-crusoe-spark-modular-ai-data-centers",
+      "quote": "with units delivered as fast as three months",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe Spark units delivered in as fast as 3 months"
+    },
+    {
+      "id": "cmp-antspace-hk3",
+      "url": "https://millionminer.com/product/equipment/bitmain-antspace-hk3-dwt-c-hydro-mining-container",
+      "quote": "Capacity 1MW Units 210 Hydro ASIC Miners",
+      "fetched": "2026-11-24",
+      "claim": "Antspace HK3: 1 MW, 210 hydro miners, 20 ft"
+    },
+    {
+      "id": "cmp-antspace-hk3-price",
+      "url": "https://millionminer.com/product/equipment/bitmain-antspace-hk3-dwt-c-hydro-mining-container",
+      "quote": "Delivery batch In stock $90,000.00",
+      "fetched": "2026-11-24",
+      "claim": "Antspace HK3 (DWT-C) listed $90,000"
+    },
+    {
+      "id": "cmp-antbox-n5",
+      "url": "https://millionminer.com/product/equipment/bitmain-antspace-hk3-dwt-c-hydro-mining-container",
+      "quote": "Bitmain Antbox N5 Mobile Mining Container 20HQ 658KW Outdoor V2 $45,000.00",
+      "fetched": "2026-11-24",
+      "claim": "Antbox N5 V2 20HQ air container 658 kW, $45,000"
+    },
+    {
+      "id": "cmp-hk3-pue",
+      "url": "https://millionminer.com/product/equipment/bitmain-antspace-hk3-dwt-c-hydro-mining-container",
+      "quote": "HK3: 210 hydro miners, 1,030KW, PUE 1.034",
+      "fetched": "2026-11-24",
+      "claim": "HK3 1,030 kW, PUE 1.034"
+    },
+    {
+      "id": "cmp-ez-smartbox",
+      "url": "https://ezblockchain.net/smartbox",
+      "quote": "Maximum ASIC Slots 576",
+      "fetched": "2026-11-24",
+      "claim": "EZ Smartbox 576 ASIC slots"
+    },
+    {
+      "id": "cmp-ez-smartbox-kw",
+      "url": "https://ezblockchain.net/smartbox",
+      "quote": "Max Power Input (kW) 2,160 KW",
+      "fetched": "2026-11-24",
+      "claim": "EZ Smartbox up to 2,160 kW"
+    },
+    {
+      "id": "cmp-ez-350mcf",
+      "url": "https://ezblockchain.net/smartgrid",
+      "quote": "Complete flaring elimination at locations with a minimum of 350 MCF flared a day",
+      "fetched": "2026-11-24",
+      "claim": "EZ Smartgrid targets sites with >=350 MCF/d flared"
+    },
+    {
+      "id": "cmp-upstream-hashgen",
+      "url": "https://upstreamdata.com/bitcoin-mining/hash-generator",
+      "quote": "Continuous Power Rating (kW) 48 80 160 325",
+      "fetched": "2026-11-24",
+      "claim": "Upstream Hash Generator continuous ratings 48/80/160/325 kW"
+    },
+    {
+      "id": "cmp-upstream-fuel",
+      "url": "https://upstreamdata.com/bitcoin-mining/hash-generator",
+      "quote": "Estimated Fuel Consumption (MCF/d)¹ 12 24 50 91",
+      "fetched": "2026-11-24",
+      "claim": "Hash Generator fuel 12/24/50/91 MCF/d for 48/80/160/325 kW (~3.6 kW per mcf/d)"
+    },
+    {
+      "id": "cmp-upstream-blackbox",
+      "url": "https://upstreamdata.com/bitcoin-mining/black-box",
+      "quote": "Small, quiet, weatherproof loadcenters for applications up to 45 kW",
+      "fetched": "2026-11-24",
+      "claim": "Upstream Black Box loadcenters up to 45 kW"
+    },
+    {
+      "id": "cmp-upstream-80kw",
+      "url": "https://www.bitcoinproducts.com/blog/monetize-stranded-gas-upstream-data-bitcoin-mining",
+      "quote": "Consuming about 22 thousand cubic feet (MCF) of fuel gas per day",
+      "fetched": "2026-11-24",
+      "claim": "80 kW Hash Generator: ~22 MCF/d, ~4.8-5 PH/s, ~$240/day (June 2025)"
+    },
+    {
+      "id": "cmp-fog-c6",
+      "url": "https://fogcomputing.ai/products/c-series",
+      "quote": "C6 Miners 4 to 6 Cooling capacity 24kW",
+      "fetched": "2026-11-24",
+      "claim": "Fog C6 immersion tank: 4-6 miners, 24 kW"
+    },
+    {
+      "id": "cmp-fog-c6-price",
+      "url": "https://shop.foghashing.io/products/immersion-cooling-kit-c6",
+      "quote": "C6 Tank+Dry Cooler+PDU+Coolant - $4,450.00",
+      "fetched": "2026-11-24",
+      "claim": "Fog C6 tank+dry cooler+PDU+coolant $4,450"
+    },
+    {
+      "id": "cmp-liquidstack",
+      "url": "https://www.edgeir.com/liquidstack-unveils-new-turnkey-data-center-solutions-bringing-liquid-cooling-to-the-edge-20230927",
+      "quote": "250kW to 1.5MW of compute power within a single prefabricated module",
+      "fetched": "2026-11-24",
+      "claim": "LiquidStack Micro/MegaModular: 250 kW-1.5 MW per module"
+    },
+    {
+      "id": "cmp-gigabox",
+      "url": "https://www.amcompute.com/modular-data-centers",
+      "quote": "Giga Box Air: 600 kW to 1,430 kW",
+      "fetched": "2026-11-24",
+      "claim": "Giga Energy Giga Box Air 600-1,430 kW"
+    },
+    {
+      "id": "cmp-modular-cost",
+      "url": "https://www.amcompute.com/modular-data-centers",
+      "quote": "about US$4.4 million per MW, on a site with existing infrastructure",
+      "fetched": "2026-11-24",
+      "claim": "Turnkey modular AI hall ~US$4.4M/MW (excl. IT)"
+    },
+    {
+      "id": "cmp-b300-it-cost",
+      "url": "https://www.amcompute.com/modular-data-centers",
+      "quote": "A megawatt of B300 servers and networking costs about $39 million",
+      "fetched": "2026-11-24",
+      "claim": "IT for 1 MW of B300 ~$39M"
+    },
+    {
+      "id": "cmp-lead-times",
+      "url": "https://www.amcompute.com/modular-data-centers",
+      "quote": "Pad-mounted transformers take 68 to 113 weeks to arrive, generators 60 to 100 weeks",
+      "fetched": "2026-11-24",
+      "claim": "Lead times: transformers 68-113 wk, generators 60-100 wk"
+    },
+    {
+      "id": "cmp-b200-server",
+      "url": "https://www.chg-meridian.com/us-en/insights/blog/ai-server-cost",
+      "quote": "An AI server with eight NVIDIA Blackwell GPU chips costs about $360,000 to $470,000 to buy",
+      "fetched": "2026-11-24",
+      "claim": "8-GPU Blackwell server $360k-470k (Oct 2026)"
+    },
+    {
+      "id": "cmp-h200-server",
+      "url": "https://www.chg-meridian.com/us-en/insights/blog/ai-server-cost",
+      "quote": "An 8-GPU NVIDIA HGX H200 server costs about $340,000 new",
+      "fetched": "2026-11-24",
+      "claim": "8-GPU H200 server ~$340k"
+    },
+    {
+      "id": "cmp-genset-400",
+      "url": "https://www.haifengmachinery.com/products/hf-400ngd6-400-kw-natural-gas-generator-240v-3-phase-60hz",
+      "quote": "Standard configuration price: US$66,270 FOB Shanghai or Ningbo",
+      "fetched": "2026-11-24",
+      "claim": "400 kW NG genset (Cummins engine) $66,270 FOB China, excl freight/install"
+    },
+    {
+      "id": "cmp-tier3",
+      "url": "http://coresite.com/blog/breaking-down-data-center-tiers-classifications",
+      "quote": "99.982% uptime for no more than 1.6 hours of downtime per year",
+      "fetched": "2026-11-24",
+      "claim": "Tier III 99.982% (<=1.6 h/yr)"
+    },
+    {
+      "id": "cmp-tier2",
+      "url": "http://coresite.com/blog/breaking-down-data-center-tiers-classifications",
+      "quote": "99.741% uptime yearly",
+      "fetched": "2026-11-24",
+      "claim": "Tier II 99.741% (~22 h/yr)"
+    },
+    {
+      "id": "cmp-tier-caveat",
+      "url": "https://digitechspire.com/data-center-tiers-behind-the-numbers",
+      "quote": "legacy estimates that Uptime Institute removed from its Tier Standard in 2009",
+      "fetched": "2026-11-24",
+      "claim": "Tier % figures are legacy estimates removed in 2009"
+    },
+    {
+      "id": "cmp-training-failures",
+      "url": "https://aidatacenterguide.com/part-14-day-2-operations-upgrades-and-lifecycle/14-4-reliability-engineering-for-training-operational",
+      "quote": "RSC-1 measured 6.5 failures per thousand node-days",
+      "fetched": "2026-11-24",
+      "claim": "Training cluster node failure rate 6.5 per 1,000 node-days (RSC-1)"
+    },
+    {
+      "id": "cmp-giga-cnbc",
+      "url": "https://www.cnbc.com/2022/02/12/23-year-old-texans-made-4-million-mining-bitcoin-off-flared-natural-gas.html",
+      "quote": "Giga places a shipping container full of thousands of bitcoin miners on an oil well",
+      "fetched": "2026-11-24",
+      "claim": "Giga Energy model: container of miners on oil well"
+    },
+    {
+      "id": "cmp-pb-transfer",
+      "url": "https://oneuptime.com/blog/post/2026-02-17-how-to-migrate-petabytes-of-on-premises-data-to-google-cloud-storage-using-transfer-appliance/view",
+      "quote": "Even with a dedicated 10 Gbps connection, transferring 1 PB takes roughly 10 days",
+      "fetched": "2026-11-24",
+      "claim": "1 PB over 10 Gbps ~10 days"
+    },
+    {
+      "id": "cmp-inference-geo",
+      "url": "https://cerebrium.ai/resources/network-latency-ai-inference-pipeline",
+      "quote": "a London user calling us-east-1 pays 150 to 250ms before any computation",
+      "fetched": "2026-11-24",
+      "claim": "Geography adds 150-250 ms; inference already tolerates this"
+    },
+    {
+      "id": "cmp-rack-density",
+      "url": "https://blog.se.com/datacenter/2026/10/13/modular-prefabricated-data-centers-enter-the-ai-era-and-boldly-go-where-no-data-centers-have-gone-before/",
+      "quote": "NVIDIA Vera Rubin running at 227 kW per rack",
+      "fetched": "2026-11-24",
+      "claim": "Vera Rubin racks 227 kW each"
+    },
+    {
+      "id": "wtr-uptime-1mw-tower",
+      "url": "https://journal.uptimeinstitute.com/dont-ignore-water-consumption",
+      "quote": "a 1-MW data center using traditional cooling methods would use about 6.75 million gallons of water per year",
+      "fetched": "2026-11-24",
+      "claim": "Chiller + evaporative cooling tower: ~6.75M gal/yr per MW (~18,500 gal/day, ~440 bbl/day)"
+    },
+    {
+      "id": "wtr-uptime-evap-rate",
+      "url": "https://journal.uptimeinstitute.com/dont-ignore-water-consumption",
+      "quote": "Cooling towers “consume” or lose water through evaporation, blow down, and drift",
+      "fetched": "2026-11-24",
+      "claim": "Tower water losses = evaporation + blowdown + drift"
+    },
+    {
+      "id": "wtr-gasilov-wue",
+      "url": "https://www.gasilov.com/insights/data-center-cooling-water",
+      "quote": "consumes about 2.2 liters of water on site for every kilowatt-hour of server electricity",
+      "fetched": "2026-11-24",
+      "claim": "LBNL 2024 sim: evaporative tower WUE ~2.2 L/kWh"
+    },
+    {
+      "id": "wtr-gasilov-adiabatic",
+      "url": "https://www.gasilov.com/insights/data-center-cooling-water",
+      "quote": "with water sprayed on the intake air on the hottest days) consumes about 0.2 liters",
+      "fetched": "2026-11-24",
+      "claim": "Dry cooler with adiabatic assist WUE ~0.2 L/kWh"
+    },
+    {
+      "id": "wtr-gasilov-liquid-dry",
+      "url": "https://www.gasilov.com/insights/data-center-cooling-water",
+      "quote": "Liquid-cooled servers, dry cooler, air-cooled chiller backup 1.09 0.00",
+      "fetched": "2026-11-24",
+      "claim": "Liquid-cooled + dry cooler: PUE 1.09, site WUE 0.00 L/kWh (tower 1.12/2.18; adiabatic dry 1.20/0.22)"
+    },
+    {
+      "id": "wtr-gasilov-tower-pue",
+      "url": "https://www.gasilov.com/insights/data-center-cooling-water",
+      "quote": "Evaporative tower (water-cooled chiller with waterside economizer) 1.12 2.18",
+      "fetched": "2026-11-24",
+      "claim": "Evaporative tower archetype PUE 1.12, WUE 2.18 L/kWh"
+    },
+    {
+      "id": "wtr-millionminer-hd5",
+      "url": "https://millionminer.com/product/equipment/bitmain-antspace-hd5-hydro-mining-container-15mw",
+      "quote": "drawing under 80 kW for its own operation and using just 2.1 m³ of coolant",
+      "fetched": "2026-11-24",
+      "claim": "Antspace HD5 EC2-DT dry tower: 1,500 kW heat rejection, <80 kW fans, 2.1 m3 coolant fill (~555 gal)"
+    },
+    {
+      "id": "wtr-millionminer-hd5-rating",
+      "url": "https://millionminer.com/product/equipment/bitmain-antspace-hd5-hydro-mining-container-15mw",
+      "quote": "At 30°C ambient it holds outlet water temperature at 35°C±1°C",
+      "fetched": "2026-11-24",
+      "claim": "Dry cooler rated at 30C ambient, 35C outlet; West Texas peaks far exceed this"
+    },
+    {
+      "id": "wtr-cmb-hd5-price",
+      "url": "https://www.cryptominerbros.com/product/bitmain-antminer-antspace-hd5-1500kw-hydro-cooling-mining-container",
+      "quote": "US$ 75,999.00",
+      "fetched": "2026-11-24",
+      "claim": "Antspace HD5 1.5 MW hydro container listed at US$75,999 (whether dry tower is included is unclear)"
+    },
+    {
+      "id": "wtr-ez-pue",
+      "url": "https://ezblockchain.net/immersion-cooling",
+      "quote": "achieve a certified PUE <1.02",
+      "fetched": "2026-11-24",
+      "claim": "EZ Blockchain immersion container vendor claim PUE <1.02"
+    },
+    {
+      "id": "wtr-ez-temp",
+      "url": "https://ezblockchain.net/immersion-cooling",
+      "quote": "288 SLOTS HR 4.9 KWS 1.5 MWS POWER",
+      "fetched": "2026-11-24",
+      "claim": "EZ Smartbox immersion: 288 slots, 1.5 MW"
+    },
+    {
+      "id": "wtr-bullminers-capex",
+      "url": "https://bullminers.eu/asic-immersion-cooling-2026-guide/",
+      "quote": "Outdoor dry cooler (120 kW) $12,000 – $20,000",
+      "fetched": "2026-11-24",
+      "claim": "Dry cooler capex ~$100-167/kW (120 kW unit $12-20k)"
+    },
+    {
+      "id": "wtr-bullminers-fluid",
+      "url": "https://bullminers.eu/asic-immersion-cooling-2026-guide/",
+      "quote": "Dielectric fluid (~800 L BitCool BC-888) $2,400 – $4,000",
+      "fetched": "2026-11-24",
+      "claim": "~800 L dielectric per 100 kW tank (~8,000 L/MW), not water"
+    },
+    {
+      "id": "wtr-amg-dcx120",
+      "url": "https://asicminergroup.com/en/producto/dcx-120-kw-en",
+      "quote": "The technical table lists 120 kW at 35 °C ambient and 140 kW at 25 °C",
+      "fetched": "2026-11-24",
+      "claim": "DCX 120 kW dry cooler derates with ambient; listed at EUR 9,000 ex VAT"
+    },
+    {
+      "id": "wtr-cryptocooling-1mw",
+      "url": "https://cryptocooling.eu/products/dry-coolers/1mw",
+      "quote": "Max power consumption 32.4 kW",
+      "fetched": "2026-11-24",
+      "claim": "1 MW dry cooler (35C ambient rating) fan power 32.4 kW (~3.2%)"
+    },
+    {
+      "id": "wtr-gd-cooling-capex",
+      "url": "https://gdchillers.com/resources/data-centers/data-center-cooling-cost-what-to-expect-2026-engineering-guide",
+      "quote": "Air cooling $200-$500 / kW",
+      "fetched": "2026-11-24",
+      "claim": "Conventional DC cooling capex: air $200-500/kW; liquid CDU $500-1,200+/kW"
+    },
+    {
+      "id": "wtr-crusoe-abilene",
+      "url": "https://www.crusoe.ai/resources/blog/an-inside-look-at-the-abilene-ai-data-center",
+      "quote": "The initial fill for the closed-loop system in each of the eight buildings requires one million gallons of water",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe Abilene closed-loop non-evaporative: one-time fill ~1M gal per building (hyperscale)"
+    },
+    {
+      "id": "wtr-crusoe-closedloop",
+      "url": "https://www.crusoe.ai/resources/blog/an-inside-look-at-the-abilene-ai-data-center",
+      "quote": "a closed-loop system never needs to be entirely drained or refilled",
+      "fetched": "2026-11-24",
+      "claim": "Closed loop not drained/refilled; near-zero makeup"
+    },
+    {
+      "id": "wtr-midland-climate",
+      "url": "https://en.wikipedia.org/wiki/Midland,_Texas",
+      "quote": "Highs exceed 90 °F or 32.2 °C on 115 afternoons per year and 100 °F or 37.8 °C on 24 afternoons",
+      "fetched": "2026-11-24",
+      "claim": "Midland: >100F on 24 days/yr; record high 116F"
+    },
+    {
+      "id": "wtr-midland-freeze",
+      "url": "https://en.wikipedia.org/wiki/Midland,_Texas",
+      "quote": "lows fall to 32 °F or 0 °C or below on 58 mornings",
+      "fetched": "2026-11-24",
+      "claim": "Freezing on 58 mornings/yr -> glycol needed in dry-cooler loop"
+    },
+    {
+      "id": "wtr-pg-freeze",
+      "url": "https://www.engineeringtoolbox.com/propylene-glycol-d_363.html",
+      "quote": "Freezing Points o F 32 26 18 7 -8 -29 -55",
+      "fetched": "2026-11-24",
+      "claim": "Propylene glycol 30% ~7F, 40% ~-8F freeze point"
+    },
+    {
+      "id": "wtr-absorption-cop",
+      "url": "https://coolingbestpractices.com/technology/chillers/busting-four-myths-about-absorption-cooling",
+      "quote": "for an absorption chiller, it can range from 0.7 to 1.4",
+      "fetched": "2026-11-24",
+      "claim": "Absorption chiller COP 0.7-1.4 vs electric 6-6.5"
+    },
+    {
+      "id": "wtr-trigeneration",
+      "url": "https://en.wikipedia.org/wiki/Trigeneration",
+      "quote": "By-product heat at moderate temperatures ( 100–180 °C (212–356 °F) can also be used in absorption refrigerators for cooling",
+      "fetched": "2026-11-24",
+      "claim": "CCHP uses 100-180C by-product heat for absorption cooling"
+    },
+    {
+      "id": "wtr-daf-wiki",
+      "url": "https://en.wikipedia.org/wiki/Dissolved_air_flotation",
+      "quote": "clarifies wastewaters (or other waters) by the removal of suspended matter such as oil or solids",
+      "fetched": "2026-11-24",
+      "claim": "DAF removes suspended oil/solids, not dissolved salts"
+    },
+    {
+      "id": "wtr-pw-wiki",
+      "url": "https://en.wikipedia.org/wiki/Produced_water",
+      "quote": "most formations result in total dissolved solids that are too high for beneficial reuse",
+      "fetched": "2026-11-24",
+      "claim": "Produced water TDS usually too high for reuse"
+    },
+    {
+      "id": "wtr-beg-tds",
+      "url": "https://wrp.beg.utexas.edu/episode/assessing-potential-for-beneficial-use-of-produced-water-in-the-texas-permian-basin",
+      "quote": "~110,000–170,000 mg/L in the rest of the Permian Basin",
+      "fetched": "2026-11-24",
+      "claim": "Permian PW salinity ~110,000-170,000 mg/L (Delaware south 50-90k)"
+    },
+    {
+      "id": "wtr-beg-disposal-cost",
+      "url": "https://wrp.beg.utexas.edu/episode/assessing-potential-for-beneficial-use-of-produced-water-in-the-texas-permian-basin",
+      "quote": "Disposal costs average ~$0.7 per bbl that could exceed $1/bbl with increased transportation distances",
+      "fetched": "2026-11-24",
+      "claim": "SWD ~$0.7/bbl, >$1/bbl with distance; treatment could be <$2/bbl"
+    },
+    {
+      "id": "wtr-beg-desal",
+      "url": "https://wrp.beg.utexas.edu/episode/assessing-potential-for-beneficial-use-of-produced-water-in-the-texas-permian-basin",
+      "quote": "yield an average desalinated PW of 317 mg/L TDS",
+      "fetched": "2026-11-24",
+      "claim": "Desal pilots: ~120,000 -> 317 mg/L TDS"
+    },
+    {
+      "id": "wtr-beg-tceq-transfer",
+      "url": "https://wrp.beg.utexas.edu/episode/assessing-potential-for-beneficial-use-of-produced-water-in-the-texas-permian-basin",
+      "quote": "Permitting authority transferred from the Railroad Commission to TCEQ for surface water discharge and land application",
+      "fetched": "2026-11-24",
+      "claim": "RRC->TCEQ for PW surface discharge & land application (HB 2771 2019; SB 1145 2025)"
+    },
+    {
+      "id": "wtr-seawater",
+      "url": "https://en.wikipedia.org/wiki/Seawater",
+      "quote": "has a salinity of about 3.5% (35 g/L",
+      "fetched": "2026-11-24",
+      "claim": "Seawater ~35,000 mg/L; Permian PW is 3-5x seawater"
+    },
+    {
+      "id": "wtr-tower-coc",
+      "url": "https://en.wikipedia.org/wiki/Cooling_tower",
+      "quote": "The evaporated water leaves its dissolved salts behind",
+      "fetched": "2026-11-24",
+      "claim": "Evaporation concentrates dissolved salts -> blowdown; high-TDS makeup is unusable"
+    },
+    {
+      "id": "wtr-pph-hauling",
+      "url": "https://permianfieldpro.com/blog/vacuum-truck-services-west-texas.html",
+      "quote": "Per-barrel water hauling: $1.50-$4.00/barrel depending on distance to SWD",
+      "fetched": "2026-11-24",
+      "claim": "Permian hauling $1.50-4.00/bbl; vac truck $165-250/hr"
+    },
+    {
+      "id": "wtr-oileng-b3",
+      "url": "https://www.oil.engineering/articles/produced-water-hauling-economics.html",
+      "quote": "B3 Insight puts trucking costs as high as $2.50 a barrel",
+      "fetched": "2026-11-24",
+      "claim": "Trucking up to $2.50/bbl where no pipelines"
+    },
+    {
+      "id": "wtr-ev-130bbl",
+      "url": "https://evoilfieldservices.com/vacuum-trucks",
+      "quote": "Our 130 BBL Vacuum Trucks",
+      "fetched": "2026-11-24",
+      "claim": "Standard Permian vac truck 130 bbl (5,460 gal)"
+    },
+    {
+      "id": "wtr-waterrunner",
+      "url": "https://waterrunner.com/",
+      "quote": "Potable, RO and deionized water by the tanker load for data centers",
+      "fetched": "2026-11-24",
+      "claim": "Midland bulk potable/RO/DI tanker vendor exists; pricing quote-only"
+    },
+    {
+      "id": "wtr-rrc-recycling-rule8",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/applications-and-permits/environmental-permit-types/recycling",
+      "quote": "may be treated and reused without a permit as authorized by Rule 8 (d)(7)(B) and §4.202(d)",
+      "fetched": "2026-11-24",
+      "claim": "RRC: some PW recycling authorized by rule, no permit"
+    },
+    {
+      "id": "wtr-rrc-minor-permit",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/applications-and-permits/environmental-permit-types/recycling",
+      "quote": "These permits will last for 60 days and may be extended",
+      "fetched": "2026-11-24",
+      "claim": "RRC on-lease minor recycling permit lasts 60 days"
+    },
+    {
+      "id": "wtr-rrc-swd-rule9",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/applications-and-permits/injection-storage-permits/oil-and-gas-waste-disposal",
+      "quote": "Statewide Rule 9 governs the disposal of salt water",
+      "fetched": "2026-11-24",
+      "claim": "RRC Rule 9 governs SWD"
+    },
+    {
+      "id": "wtr-rrc-permian-swd",
+      "url": "https://www.rrc.texas.gov/announcements/051525-nto-permian-swd-guidelines/",
+      "quote": "Beginning June 1, 2025, applications for new and amended saltwater disposal well permits in the Permian Basin",
+      "fetched": "2026-11-24",
+      "claim": "Stricter Permian SWD permitting from June 1, 2025"
+    },
+    {
+      "id": "wtr-rrc-pilot",
+      "url": "https://www.rrc.texas.gov/news/011024-rrc-rolls-out-regulatory-framework-for-produced-water-recycling-pilot-studies",
+      "quote": "Treated fluid will not be allowed to be discharged to surface water during the pilot studies",
+      "fetched": "2026-11-24",
+      "claim": "RRC PW pilot framework: no surface discharge"
+    },
+    {
+      "id": "wtr-rrc-hauler",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/applications-and-permits/environmental-permit-types/waste-haulers",
+      "quote": "WHP initial and renewal application fee is $250",
+      "fetched": "2026-11-24",
+      "claim": "RRC waste hauler permit $250/yr, needed to haul O&G waste for hire"
+    },
+    {
+      "id": "wtr-hb49",
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00049F.htm",
+      "quote": "This Act takes effect September 1, 2025",
+      "fetched": "2026-11-24",
+      "claim": "HB 49 liability limit effective 9/1/2025"
+    },
+    {
+      "id": "wtr-hb49-liab",
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00049F.htm",
+      "quote": "is not liable in tort for a consequence of the subsequent use of that treated waste",
+      "fetched": "2026-11-24",
+      "claim": "HB 49: treater/supplier not liable in tort for subsequent use of treated PW"
+    },
+    {
+      "id": "wtr-tceq-closedloop",
+      "url": "https://www.tceq.texas.gov/permitting/wastewater/industrial",
+      "quote": "is not required for the following activities: Internal recycling systems Closed-loop systems",
+      "fetched": "2026-11-24",
+      "claim": "TCEQ: no wastewater authorization needed for closed-loop systems"
+    },
+    {
+      "id": "wtr-tceq-pws",
+      "url": "https://www.tceq.texas.gov/drinkingwater/pws.html",
+      "quote": "serves at least 15 service connections or serves at least 25 individuals for at least 60 days out of the year",
+      "fetched": "2026-11-24",
+      "claim": "TCEQ public water system threshold"
+    },
+    {
+      "id": "wtr-tceq-tempwr",
+      "url": "https://www.tceq.texas.gov/assistance/industry/oil-and-gas/oilgas_water.html",
+      "quote": "These permits can grant up to 3 years of use",
+      "fetched": "2026-11-24",
+      "claim": "TCEQ temporary surface water rights up to 3 yrs; <=10 ac-ft/1 yr via form 20425"
+    },
+    {
+      "id": "wtr-tceq-gw",
+      "url": "https://www.tceq.texas.gov/response/drought/groundwater_regulation.html",
+      "quote": "State law does not provide any state agency with the authority to regulate the use or production of groundwater",
+      "fetched": "2026-11-24",
+      "claim": "Groundwater regulated by local GCDs, not TCEQ/RRC"
+    },
+    {
+      "id": "wtr-txpwc",
+      "url": "https://www.depts.ttu.edu/research/tx-water-consortium",
+      "quote": "established on June 18, 2021 by Senate Bill 601",
+      "fetched": "2026-11-24",
+      "claim": "TxPWC created by SB 601 (2021)"
+    },
+    {
+      "id": "wtr-tribune-hb49",
+      "url": "https://www.texastribune.org/2025/05/28/texas-fracking-water-reuse-legislative-protections",
+      "quote": "There are five barrels of produced water for every barrel of oil",
+      "fetched": "2026-11-24",
+      "claim": "~5 bbl PW per bbl oil in Texas"
+    },
+    {
+      "id": "wtr-midland-record",
+      "url": "https://en.wikipedia.org/wiki/Midland,_Texas",
+      "quote": "Record high °F (°C) 84 (29) 92 (33) 99 (37) 104 (40) 108 (42) 116 (47)",
+      "fetched": "2026-11-24",
+      "claim": "Midland record high 116F (47C) in June"
+    },
+    {
+      "id": "wtr-ez-air-range",
+      "url": "https://ezblockchain.net/immersion-cooling",
+      "quote": "84 DB AVG STANDARD HIGHER OPERATIONAL COSTS -40 TO +100 °F",
+      "fetched": "2026-11-24",
+      "claim": "EZ air-cooled container operating range -40 to +100F (immersion -40 to +120F)"
+    },
+    {
+      "id": "wtr-ez-imm-range",
+      "url": "https://ezblockchain.net/immersion-cooling",
+      "quote": "25% - 35% ENERGY SAVINGS ON COOLING -40 TO +120 °F",
+      "fetched": "2026-11-24",
+      "claim": "EZ immersion container range to +120F, 25-35% cooling energy savings claim"
+    },
+    {
+      "id": "rsk-tceq-512-240hp",
+      "url": "https://www.law.cornell.edu/regulations/texas/30-Tex-Admin-Code-SS-106-512",
+      "quote": "Engines and turbines rated less than 240 horsepower (hp) need not be registered",
+      "fetched": "2026-11-24",
+      "claim": "TCEQ PBR 106.512: engines <240 hp need no registration; >240 hp must register (PI-7) within 10 days after construction begins."
+    },
+    {
+      "id": "rsk-tceq-512-10day",
+      "url": "https://www.law.cornell.edu/regulations/texas/30-Tex-Admin-Code-SS-106-512",
+      "quote": "within ten days after construction begins",
+      "fetched": "2026-11-24",
+      "claim": "106.512 registration filed within 10 days after construction begins."
+    },
+    {
+      "id": "rsk-tceq-512-nox",
+      "url": "https://www.law.cornell.edu/regulations/texas/30-Tex-Admin-Code-SS-106-512",
+      "quote": "2.0 grams per horsepower-hour (g/hp-hr) under all operating conditions for any gas-fired rich-burn engine",
+      "fetched": "2026-11-24",
+      "claim": "106.512 NOx limit for engines >=500 hp: 2.0 g/hp-hr rich-burn (all conditions); lean-burn 2.0 at full load (5.0 reduced speed)."
+    },
+    {
+      "id": "rsk-tceq-512-richdef",
+      "url": "https://www.law.cornell.edu/regulations/texas/30-Tex-Admin-Code-SS-106-512",
+      "quote": "A rich-burn engine is a gas-fired spark-ignited engine that is operated with an exhaust oxygen content less than 4.0% by volume",
+      "fetched": "2026-11-24",
+      "claim": "Rich-burn defined as exhaust O2 <4.0%; lean-burn >=4.0%."
+    },
+    {
+      "id": "rsk-tceq-352-450hp",
+      "url": "https://www.law.cornell.edu/regulations/texas/30-Tex-Admin-Code-SS-106-352",
+      "quote": "A site-wide combination of engines which meet the following: (i) up to 450 hp if fueled by sweet gas",
+      "fetched": "2026-11-24",
+      "claim": "106.352 wellhead-type sites: simplified authorization covers site-wide engines only up to 450 hp sweet gas (100 hp sour) - a ~1 MW genset (~1,500+ hp) exceeds this."
+    },
+    {
+      "id": "rsk-tceq-511-noreg",
+      "url": "https://www.tceq.texas.gov/permitting/air/permitbyrule/subchapter-w/portable_power.html",
+      "quote": "No registration or fee is required. Recordkeeping requirements are discussed.",
+      "fetched": "2026-11-24",
+      "claim": "TCEQ PBR 106.511 portable/emergency engines and gensets: no registration or fee, recordkeeping only."
+    },
+    {
+      "id": "rsk-cfr-nonroad-12mo",
+      "url": "https://www.ecfr.gov/current/title-40/section-1068.30",
+      "quote": "remains or will remain at a location for more than 12 consecutive months",
+      "fetched": "2026-11-24",
+      "claim": "40 CFR 1068.30: a transportable engine stops being 'nonroad' (becomes stationary) if it stays at one location >12 consecutive months."
+    },
+    {
+      "id": "rsk-cfr-nonroad-trailer",
+      "url": "https://www.ecfr.gov/current/title-40/section-1068.30",
+      "quote": "Indicia of transportability include, but are not limited to, wheels, skids, carrying handles, dolly, trailer, or platform",
+      "fetched": "2026-11-24",
+      "claim": "Skid/trailer-mounted engines are 'transportable' indicia under nonroad definition."
+    },
+    {
+      "id": "rsk-jjjj-table1",
+      "url": "https://www.ecfr.gov/current/title-40/part-60/appendix-Table%201%20to%20Subpart%20JJJJ%20of%20Part%2060",
+      "quote": "1/1/2011 1.0 2.0 0.7 82 270 60 Non-Emergency SI Lean Burn Natural Gas and LPG",
+      "fetched": "2026-11-24",
+      "claim": "NSPS JJJJ Table 1: non-emergency SI natural gas engines 100-500 hp built after 1/1/2011: NOx 1.0, CO 2.0, VOC 0.7 g/hp-hr."
+    },
+    {
+      "id": "rsk-tribune-theft",
+      "url": "https://www.texastribune.org/2025/06/20/west-texas-oil-field-task-force",
+      "quote": "Copper wires were yanked. Other field equipment at an oil and gas facility was pilfered.",
+      "fetched": "2026-11-24",
+      "claim": "Permian oilfield theft is routine: Winkler County sheriff gets calls at least three times a week."
+    },
+    {
+      "id": "rsk-tribune-taskforce",
+      "url": "https://www.texastribune.org/2025/06/20/west-texas-oil-field-task-force",
+      "quote": "The effort will cost taxpayers nearly $5 million.",
+      "fetched": "2026-11-24",
+      "claim": "2025 Texas laws (HB 48 etc.) created DPS/RRC oilfield theft task forces, ~$5M."
+    },
+    {
+      "id": "rsk-tribune-1m",
+      "url": "https://www.texastribune.org/2025/06/20/west-texas-oil-field-task-force",
+      "quote": "lost $1.1 million in crude oil and equipment theft and damages between 2023 and 2024",
+      "fetched": "2026-11-24",
+      "claim": "One TIPRO member lost $1.1M to theft/damage 2023-2024."
+    },
+    {
+      "id": "rsk-stolen911-s21",
+      "url": "https://stolen911.com/urgent-cargo-theft-alert-730-bitmain-antminer-s21-xp-bitcoin-servers-stolen-in-fort-worth-substantial-reward-offered/",
+      "quote": "Stolen shipment of 730 Bitmain Antminer S21 XP Bitcoin mining servers taken with maroon Freightliner Cascadia in Fort Worth, TX.",
+      "fetched": "2026-11-24",
+      "claim": "Nov 2026: 730 S21 XP miners stolen with truck in Fort Worth (cargo theft; ASICs are a theft target)."
+    },
+    {
+      "id": "rsk-hotaling-premium",
+      "url": "https://hotalinginsurance.com/houston/texas-bitcoin-mining-insurance-what-most-operators-get-wrong-about-ercot-fire-risk-and-sb-6",
+      "quote": "A $10M TIV operation should budget $150,000",
+      "fetched": "2026-11-24",
+      "claim": "Broker estimate: mining property premiums 5-10x data centers; $10M TIV -> $150k-$400k/yr (1.5-4% of TIV); specialty markets only."
+    },
+    {
+      "id": "rsk-founder-fire",
+      "url": "https://foundershield.com/blog/property-insurance-crypto-mining-facilities/",
+      "quote": "The remote location frequently makes it challenging for emergency responders to arrive promptly",
+      "fetched": "2026-11-24",
+      "claim": "Underwriters view remote mining sites as high fire risk with slow emergency response."
+    },
+    {
+      "id": "rsk-relm-suppress",
+      "url": "https://relminsurance.com/what-every-miner-needs-to-know-insurance-insights/",
+      "quote": "Detail both physical measures (like fire suppression systems) and process-driven strategies",
+      "fetched": "2026-11-24",
+      "claim": "Specialty insurer Relm advises submissions detail fire suppression and security to get terms."
+    },
+    {
+      "id": "rsk-bpp-125k",
+      "url": "https://businesspropertydesk.com/guides/texas-business-personal-property-tax-exemption-125000",
+      "quote": "Texas business personal property exemption: $125,000 per location since 2026",
+      "fetched": "2026-11-24",
+      "claim": "Texas HB 9: first $125,000 of BPP exempt (per location) from 2026."
+    },
+    {
+      "id": "rsk-comptroller-rendition",
+      "url": "https://comptroller.texas.gov/about/media-center/news/20260408-texas-businesses-april-15-is-deadline-for-filing-property-tax-renditions-1775577720312",
+      "quote": "April 15 is the deadline to file property tax renditions with their county appraisal districts",
+      "fetched": "2026-11-24",
+      "claim": "Texas BPP renditions due April 15 to county appraisal district."
+    },
+    {
+      "id": "rsk-halving-2028",
+      "url": "https://bitcoin.org/en/halving?%2F",
+      "quote": "Fifth halving 2028 (estimated) 1,050,000 1.5625 BTC",
+      "fetched": "2026-11-24",
+      "claim": "Next halving ~2028 at block 1,050,000; subsidy 3.125 -> 1.5625 BTC."
+    },
+    {
+      "id": "rsk-hashprice-low",
+      "url": "https://hashrateindex.com/blog/hashprice-at-all-time-lows/",
+      "quote": "hashprice settled at $35.06 per PH/s/Day",
+      "fetched": "2026-11-24",
+      "claim": "Hashprice hit all-time low $35.06/PH/day on Nov 22, 2025; difficulty doubled since prior bottom."
+    },
+    {
+      "id": "rsk-hashprice-difficulty",
+      "url": "https://hashrateindex.com/blog/hashprice-at-all-time-lows/",
+      "quote": "a doubling in mining difficulty since the last hashprice bottom",
+      "fetched": "2026-11-24",
+      "claim": "Difficulty doubled between hashprice bottoms."
+    },
+    {
+      "id": "rsk-ing-used-s19",
+      "url": "https://ingmining.com/mining-hardware-depreciation-profitability",
+      "quote": "Used S19 95T 2020 34.2 $159.99 $1.68",
+      "fetched": "2026-11-24",
+      "claim": "Aug 2026 dealer: used S19 95T $159.99 ($1.68/TH), hashprice $31.32/PH/day."
+    },
+    {
+      "id": "rsk-ing-new-s21",
+      "url": "https://ingmining.com/mining-hardware-depreciation-profitability",
+      "quote": "New S21 Pro 245T 2024 15.0 $4,200 $17.14",
+      "fetched": "2026-11-24",
+      "claim": "New S21 Pro 245T $4,200 ($17.14/TH) vs used ~$1.7-5/TH: ~90% value loss over a generation."
+    },
+    {
+      "id": "rsk-ing-efficiency",
+      "url": "https://ingmining.com/mining-hardware-depreciation-profitability",
+      "quote": "Price per terahash tracks efficiency almost perfectly and tracks age not at all",
+      "fetched": "2026-11-24",
+      "claim": "Resale value set by J/TH efficiency, not age."
+    },
+    {
+      "id": "rsk-sb6-75mw",
+      "url": "https://www.utilitydive.com/news/texas-law-gives-grid-operator-power-to-disconnect-data-centers-during-crisi/751587",
+      "quote": "The mandatory demand management program applies to loads of 75 MW or greater that interconnect to ERCOT",
+      "fetched": "2026-11-24",
+      "claim": "SB 6 (2025) curtailment applies to >=75 MW loads interconnecting to ERCOT."
+    },
+    {
+      "id": "rsk-sb6-btm",
+      "url": "https://capitol.texas.gov/tlodocs/89R/analysis/html/SB00006F.htm",
+      "quote": "establishes a minimum transmission rate to be paid by loads served behind-the-meter that have on-site generation",
+      "fetched": "2026-11-24",
+      "claim": "SB 6 targets grid-connected and behind-the-meter loads; threshold 75 MW."
+    },
+    {
+      "id": "rsk-sb6-threshold",
+      "url": "https://capitol.texas.gov/tlodocs/89R/analysis/html/SB00006F.htm",
+      "quote": "Requires the PUC to establish a demand threshold of 75 megawatts unless the PUC determines that a lower threshold is necessary",
+      "fetched": "2026-11-24",
+      "claim": "PUC threshold 75 MW unless lowered."
+    },
+    {
+      "id": "com-crusoe-costfree",
+      "url": "https://www.crusoe.ai/resources/blog/minimizing-harm-of-methane-emissions-through-flare-reduction",
+      "quote": "By providing a scaled, reliable, safe and cost-free solution to flaring",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe sold Digital Flare Mitigation to producers as cost-free: the operator pays nothing. No evidence the operator paid Crusoe a fee."
+    },
+    {
+      "id": "com-crusoe-deminimis",
+      "url": "https://www.ctvc.co/methanes-combustible-moment/",
+      "quote": "We pay a de minimis price for the stranded gas and we monetize it with computation",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe, the provider, pays the producer a de minimis price for gas. Money flows from provider to operator, not the reverse."
+    },
+    {
+      "id": "com-crusoe-noupfront",
+      "url": "https://www.prnewswire.com/news-releases/crusoe-energy-systems-announces-70-million-in-funding-for-expansion-of-digital-flare-mitigation-services-300970514.html",
+      "quote": "Crusoe offers solutions to solve the gas flaring challenge for oil producers without upfront cost or operational complexity",
+      "fetched": "2026-11-24",
+      "claim": "Crusoe's 2020 funding release says producers bear no upfront cost."
+    },
+    {
+      "id": "com-ez-zeroupfront",
+      "url": "https://ezblockchain.net/smartgrid/",
+      "quote": "There’s no upfront cost to producers, and the solution enables monetization of previously wasted gas",
+      "fetched": "2026-11-24",
+      "claim": "EZ Blockchain SmartGrid has no upfront cost to producers, who earn money from previously wasted gas. The provider does not charge the operator."
+    },
+    {
+      "id": "com-ngi-ez-flatfee",
+      "url": "https://www.naturalgasintel.com/news/bitcoin-mining-digging-for-eps-natural-gas-gold-in-lower-48/",
+      "quote": "pay the entire upfront cost of the data center, supply it with gas and power, and pay the company a flat fee to operate it",
+      "fetched": "2026-11-24",
+      "claim": "Counter-model: under an EZ Blockchain proposal, the E&P buys the data center and pays EZ a flat fee to operate it, keeping the BTC. An operator-pays model exists, but as mining-as-a-service, not as a flare-mitigation fee."
+    },
+    {
+      "id": "com-braiins-paidtotake",
+      "url": "https://braiins.com/blog/from-flare-to-fortune-mining-bitcoin-off-grid-with-stranded-gas",
+      "quote": "in some cases, miners even got paid to take the gas! Nowadays, miners typically pay an average of $1mcf/d",
+      "fetched": "2026-11-24",
+      "claim": "Off-grid gas miner (Braiins guest post, 2023): early on, gas was often free and miners were sometimes paid to take it. Now miners typically pay about $1/Mcf, which the post equates to about 1 c/kWh."
+    },
+    {
+      "id": "com-pbog-sell",
+      "url": "https://pboilandgasmagazine.com/bit-by-bitcoin",
+      "quote": "That means miners get a better price for their power, and oil producers sell natural gas that would otherwise just be flared",
+      "fetched": "2026-11-24",
+      "claim": "Permian Basin trade press (Aug 2024): the standard structure is that producers sell flare gas to miners."
+    },
+    {
+      "id": "com-cnbc-cop-thirdparty",
+      "url": "https://www.cnbc.com/2022/02/15/conocophillips-is-selling-extra-gas-to-bitcoin-miners-in-north-dakota.html",
+      "quote": "routed to a bitcoin processor that is owned and managed by a third party",
+      "fetched": "2026-11-24",
+      "claim": "ConocoPhillips sells excess Bakken gas to a miner owned by a third party, so the miner pays the operator."
+    },
+    {
+      "id": "com-ngi-waha-pay",
+      "url": "https://naturalgasintel.com/news/record-permian-production-intersects-with-supply-stalling-maintenance-to-pummel-waha-prices/",
+      "quote": "This forced Permian producers to pay customers to haul away excess gas",
+      "fetched": "2026-11-24",
+      "claim": "Negative Waha prices forced Permian producers to pay buyers to take gas, so the operator's fallback value for gas can be negative."
+    },
+    {
+      "id": "com-eastdaley-shutin",
+      "url": "https://eastdaley.com/daley-note/permian-producers-shutter-wells-to-manage-negative-waha-prices",
+      "quote": "forcing some producers to curtail or shut-in wells to limit their exposure to negative Waha hub prices",
+      "fetched": "2026-11-24",
+      "claim": "Permian producers curtailed or shut in wells when Waha prices went negative. The operator's alternative cost is deferred oil."
+    },
+    {
+      "id": "com-eastdaley-200mbd",
+      "url": "https://eastdaley.com/the-burner-tip/to-flare-or-not-to-flare-hard-decisions-ahead-for-permian-producers",
+      "quote": "producers would need to take the equivalent of 200 Mb/d of oil production offline to avoid flaring",
+      "fetched": "2026-11-24",
+      "claim": "East Daley: at the mid-2024 peak, avoiding flaring without new takeaway would have required about 200 Mb/d of Permian oil to go offline."
+    },
+    {
+      "id": "com-tribune-rrc-nodenial",
+      "url": "https://www.texastribune.org/2019/12/03/railroad-commission-sued-lax-oversight-natural-gas-flaring",
+      "quote": "the commission hadn’t denied a single flaring application in years",
+      "fetched": "2026-11-24",
+      "claim": "The Texas RRC had not denied a flaring exception in years (as of 2019), so Texas operators rarely face forced shut-ins over flaring."
+    },
+    {
+      "id": "com-nm-98pct",
+      "url": "https://www.climateaction.nm.gov/emnrd/methane-waste-rule/",
+      "quote": "requires oil and gas operators to capture 98% of their natural gas by December 31, 2026",
+      "fetched": "2026-11-24",
+      "claim": "New Mexico requires 98% gas capture by 31 Dec 2026 and bans routine flaring, a stronger motive for operators than Texas rules."
+    },
+    {
+      "id": "com-aggreko-oman",
+      "url": "https://www.aggreko.com/en-us/case-studies/oil-and-gas/flare-to-power-first-for-oman",
+      "quote": "substantial operational cost savings of $50k per month as they no longer need to use expensive diesel fuel",
+      "fetched": "2026-11-24",
+      "claim": "Aggreko flare-to-power in Oman (4 MW gas replacing 5 MW diesel): the operator saves $50k/month on diesel. Here the operator pays the provider because the power serves the operator's own loads."
+    },
+    {
+      "id": "com-lm-hosting-median",
+      "url": "https://www.lightningmines.com/hosting-costs",
+      "quote": "the median published US bitcoin mining hosting rate tracked by Lightning Mines is $0.0725/kWh",
+      "fetched": "2026-11-24",
+      "claim": "Aug 2026 hosting index of 24 providers: median published US hosting rate is $0.0725/kWh, with published rates from $0.045 to $0.08/kWh."
+    },
+    {
+      "id": "com-lm-hosting-range",
+      "url": "https://www.lightningmines.com/hosting-costs",
+      "quote": "US facilities typically land between $0.055 and $0.095/kWh all-in",
+      "fetched": "2026-11-24",
+      "claim": "US hosting typically costs 5.5-9.5 c/kWh all-in (2026)."
+    },
+    {
+      "id": "com-fathom-tx",
+      "url": "https://fathomlabsllc.com/hosting/",
+      "quote": "Bring your own fleets are hosted at $0.08 per kWh with a minimum of 10 units per order",
+      "fetched": "2026-11-24",
+      "claim": "A Southeast Texas grid host charges $0.08/kWh for customer-owned miners (the same page lists $0.07/kWh for miners bought from the host)."
+    },
+    {
+      "id": "com-ez-hosting-packages",
+      "url": "https://ezblockchain.net/smartgrid/",
+      "quote": "Bring your own ASIC miners and get professional colocation hosting from $0.085/kWh all-in",
+      "fetched": "2026-11-24",
+      "claim": "EZ Blockchain's flare-gas SmartGrid page lists hosting packages: $0.055/kWh profit-share, $0.075 purchase-and-host, $0.085/kWh bring-your-own-miner all-in. The page does not say whether these sites run on flare gas."
+    },
+    {
+      "id": "com-musk-flarehost",
+      "url": "https://www.muskminers.com/hosting/",
+      "quote": "both with energy supplied using natural gas from flare",
+      "fetched": "2026-11-24",
+      "claim": "Musk Miners hosts third-party ASICs at West Texas and Louisiana sites powered by flare gas (no rate published)."
+    },
+    {
+      "id": "com-warrencat-ng1475",
+      "url": "https://www.warrencat.com/rental/power-generator/",
+      "quote": "Cat Natural Gas Genset Prime 1475 KW Daily $7,200 Weekly $18,000 Monthly $45,000",
+      "fetched": "2026-11-24",
+      "claim": "Warren CAT (Oklahoma and West Texas) list rental: 1,475 kW natural-gas genset at $45,000/month (about $30.5/kW-month). The page also lists a 1,900 kW gas unit at $54,000/month (about $28.4/kW-month)."
+    },
+    {
+      "id": "com-warrencat-455",
+      "url": "https://www.warrencat.com/rental/power-generator/",
+      "quote": "Cat Genset Prime 455 KW / Standby 500 KW Daily $1,680 Weekly $4,200 Monthly $10,500",
+      "fetched": "2026-11-24",
+      "claim": "Warren CAT list rental: 455 kW prime genset at $10,500/month (about $23/kW-month); the 365 kW unit lists at $8,000/month. Fuel type is not stated, so these are probably diesel. No gas unit in the 300-500 kW range is listed."
+    },
+    {
+      "id": "com-haifeng-rental-range",
+      "url": "https://www.haifengmachinery.com/news/generator-rental-vs-buying-cost-comparison-decision-guide/",
+      "quote": "Large Standby (150–500 kW) $500–$1,200 $1,500–$4,000 $4,000–$10,000",
+      "fetched": "2026-11-24",
+      "claim": "Generic US rental table (from a genset vendor): 150-500 kW units rent for $4,000-$10,000/month."
+    },
+    {
+      "id": "com-hri-2024-halving",
+      "url": "https://hashrateindex.com/blog/hashrate-index-q1-24-and-halving-report/",
+      "quote": "USD hashprice is $45/PH/Day after printing an all-time low of $44.43/PH/Day on May 1, 2024",
+      "fetched": "2026-11-24",
+      "claim": "After the 20 Apr 2024 halving, hashprice hit an all-time low of $44.43/PH/day on 1 May 2024."
+    },
+    {
+      "id": "com-hri-2024-q1",
+      "url": "https://hashrateindex.com/blog/hashrate-index-q1-24-and-halving-report/",
+      "quote": "Bitcoin’s USD hashprice rose 11% over Q1-2024 to $109.57/PH/Day",
+      "fetched": "2026-11-24",
+      "claim": "Pre-halving baseline: hashprice was $109.57/PH/day at the end of Q1 2024, implying a ~59% drop to $44.43."
+    },
+    {
+      "id": "com-hri-2024-runes",
+      "url": "https://hashrateindex.com/blog/hashrate-index-q1-24-and-halving-report/",
+      "quote": "hashprice fell to $71.40/PH/Day on the hour of Halving, but it quickly recovered to above $100/PH/Day and topped off at $183/PH/Day",
+      "fetched": "2026-11-24",
+      "claim": "A Runes fee spike briefly lifted hashprice to $183/PH/day the day after the 2024 halving, before it collapsed."
+    },
+    {
+      "id": "com-ez-2020-halving",
+      "url": "https://ezblockchain.net/article/how-we-prepare-for-halving-miners-survival-guide/",
+      "quote": "dropping from $160/PH/Day to $73/PH/Day, representing a decrease of 54%",
+      "fetched": "2026-11-24",
+      "claim": "2020 halving: hashprice fell from $160 to $73/PH/day (-54%) and stayed low for about six months."
+    },
+    {
+      "id": "com-decrypt-2020",
+      "url": "https://decrypt.co/28763/bitcoin-hashrate-is-tanking-nobody-panic",
+      "quote": "8.1 cents [per terahash], dropping from 13.5 cents pre halving, representing a 40% drop in miner revenue",
+      "fetched": "2026-11-24",
+      "claim": "A contemporaneous 2020 measure, days after the halving: $135 to $81/PH/day (-40%)."
+    },
+    {
+      "id": "com-bitmain-ec2dt",
+      "url": "https://bt-miners.com/products/bitmain-antrack-v2-ec2-dt-bt-miners/",
+      "quote": "Ambient temperature, °C -20~40",
+      "fetched": "2026-11-24",
+      "claim": "The Bitmain ANTRACK V2-EC2-DT dry-cooler rack (4 hydro miners, 24 kW max) is rated for ambient temperatures from -20 to 40 °C."
+    },
+    {
+      "id": "com-s21xphyd-inlet",
+      "url": "https://miningstore.com/mining-services/hydro-cooled-bitcoin-mining-guide/antminer-s21-xp-hydro-manual/",
+      "quote": "inlet temperature between 20°C and 50°C",
+      "fetched": "2026-11-24",
+      "claim": "S21 XP Hyd requires coolant inlet temperature between 20 and 50 °C."
+    },
+    {
+      "id": "com-hk3-0to40",
+      "url": "https://xonmining.com/product/antspace-hk3/",
+      "quote": "Operating temperature: 0°C to 40°C",
+      "fetched": "2026-11-24",
+      "claim": "Reseller listing gives the Antspace HK3 hydro container an operating ambient temperature of 0-40 °C."
+    },
+    {
+      "id": "com-s21xpimm-45",
+      "url": "https://asicmarketplace.com/product/bitmain-antminer-s21-xp-immersion-bitcoin-miner/",
+      "quote": "The operating temperature of the S21 XP immersion cooling miner is between 0 and 45 °C",
+      "fetched": "2026-11-24",
+      "claim": "Reseller listing gives the S21 XP Immersion an operating temperature of 0-45 °C."
+    },
+    {
+      "id": "com-fog-50c",
+      "url": "https://fogcomputing.ai/products/b-series",
+      "quote": "Proven in the field, from -30°C to 50°C",
+      "fetched": "2026-11-24",
+      "claim": "Fog B-series immersion containers claim field operation from -30 to 50 °C ambient (vendor claim, no derate curve published)."
+    },
+    {
+      "id": "com-dcentral-throttle",
+      "url": "https://d-central.tech/asic-troubleshooting/immersion-cooling-fluid-temp-high/",
+      "quote": "alarm at `55 °C`, shutdown at `60 °C` on hydrocarbon fluids",
+      "fetched": "2026-11-24",
+      "claim": "Immersion practice: dry-cooler fans run full speed at 48 °C bulk fluid, alarm at 55 °C, shutdown at 60 °C. The same page says miners throttle hashrate when fluid exceeds 55 °C."
+    },
+    {
+      "id": "com-hri-uae-50c",
+      "url": "https://hashrateindex.com/blog/bitcoin-mining-around-the-world-united-arab-emirates/",
+      "quote": "the immersion fluid must also be cooled, a challenging feat when the outside temperature surpasses 50°C",
+      "fetched": "2026-11-24",
+      "claim": "Hashrate Index: above 50 °C ambient, immersion sites will likely need heat pumps, which adds cooling power on top of the miners' load."
+    },
+    {
+      "id": "eng-iso-prp",
+      "url": "https://homegeneratorindex.ca/blog/standby-prime-continuous-generator-ratings/",
+      "quote": "Prime rated power (PRP): a variable load for an unlimited number of hours a year, averaging no more than 70% of the prime rating in any 24 hours",
+      "fetched": "2026-11-24",
+      "claim": "ISO 8528-1 prime rating (PRP): unlimited hours, but average load may not exceed 70% of the prime rating over any 24 hours."
+    },
+    {
+      "id": "eng-iso-esp",
+      "url": "https://homegeneratorindex.ca/blog/standby-prime-continuous-generator-ratings/",
+      "quote": "emergency power for the duration of a utility power failure, up to 200 hours a year, with an average load of no more than 70% of the rating over 24 hours",
+      "fetched": "2026-11-24",
+      "claim": "ISO 8528-1 emergency standby rating (ESP): utility outages only, up to 200 h/yr, at no more than 70% average load. A standby-rated set is not rated for 24/7 operation."
+    },
+    {
+      "id": "eng-cummins-ratio",
+      "url": "https://homegeneratorindex.ca/blog/standby-prime-continuous-generator-ratings/",
+      "quote": "One Cummins model is rated 2,750 kW emergency standby, 2,500 kW prime and 2,100 kW continuous",
+      "fetched": "2026-11-24",
+      "claim": "Example rating ladder: prime is 91% and continuous is 76% of the standby rating."
+    },
+    {
+      "id": "eng-mtu-doosan",
+      "url": "https://csdieselgenerators.com/used-mtu-400rdc6n-natural-gas-generator--171-hrs--epa-certified-4876.html",
+      "quote": "MTU 400 kW standby (365 kW prime) natural gas generator set",
+      "fetched": "2026-11-24",
+      "claim": "A 21.9L gas genset (MTU 400RDC6N on a Doosan GV222T1 engine) is rated 400 kW standby and 365 kW prime, so prime is 91% of standby. Price is on request."
+    },
+    {
+      "id": "eng-g3412-cont",
+      "url": "https://www.westernstatescat.com/power-systems/electric-power/gas-generator-sets/g3412-350kw-500kw-gas-generator/",
+      "quote": "Continuous Rating 423 ekW @0.8pf Fuel Type Natural Gas, Biogas, Field Gas, Propane",
+      "fetched": "2026-11-24",
+      "claim": "Cat G3412 non-emergency gas genset: 423 ekW continuous, which is 85% of its 500 ekW standby rating. Cat lists field gas as an approved fuel."
+    },
+    {
+      "id": "eng-g3412-nox",
+      "url": "https://www.westernstatescat.com/power-systems/electric-power/gas-generator-sets/g3412-350kw-500kw-gas-generator/",
+      "quote": "Meets most worldwide emissions requirements down to 0.5 g/bhp-hr NOx level without aftertreatment",
+      "fetched": "2026-11-24",
+      "claim": "The Cat G3412 genset can reach 0.5 g/bhp-hr NOx without aftertreatment, below the JJJJ limit of 1.0."
+    },
+    {
+      "id": "eng-g3412-ambient",
+      "url": "https://www.westernstatescat.com/power-systems/electric-power/gas-generator-sets/g3412-350kw-500kw-gas-generator/",
+      "quote": "Designed to operate in standard ambient temperatures up to 43°C (110°F)",
+      "fetched": "2026-11-24",
+      "claim": "The Cat G3412 genset cooling package is rated for standard ambient up to 43 °C. Hotter sites need a dealer review or a derate."
+    },
+    {
+      "id": "eng-khl-g3412-mn",
+      "url": "https://www.khl.com/news/Cat-G3412-Natural-Gas-Gen-Set/5034479.article",
+      "quote": "Fuel specs include pipeline natural gas: 800-1000 BTU/scf and 70-100 Methane Number",
+      "fetched": "2026-11-24",
+      "claim": "The emergency-certified 500 kW G3412 (the standby variant) is specified for pipeline gas at 800-1,000 Btu/scf and methane number 70-100, well above raw Permian gas."
+    },
+    {
+      "id": "eng-pioneer-mn",
+      "url": "https://blog.pioneerenergy.com/r/field-gas-conditioning-power-generation-data-centers",
+      "quote": "require fuel with a Methane Number (MN) of 55–80 or higher depending on the engine model and compression ratio",
+      "fetched": "2026-11-24",
+      "claim": "Most industrial gas gensets need fuel with a methane number of 55-80 or higher, depending on the engine."
+    },
+    {
+      "id": "eng-pioneer-raw",
+      "url": "https://blog.pioneerenergy.com/r/field-gas-conditioning-power-generation-data-centers",
+      "quote": "Raw associated gas from oil-rich formations often has a Methane Number of 30–50 before conditioning",
+      "fetched": "2026-11-24",
+      "claim": "Raw associated gas often has a methane number of 30-50 before conditioning, which is unsuitable for these engines without treatment."
+    },
+    {
+      "id": "eng-heavyparts-derate",
+      "url": "https://www.heavyparts.ai/models/caterpillar/g3508",
+      "quote": "Reported derate curves fall off noticeably as methane number and BTU content drop",
+      "fetched": "2026-11-24",
+      "claim": "G3508 on field or associated gas: output must be derated to avoid detonation as methane number and Btu fall. Secondary source; no numeric curve."
+    },
+    {
+      "id": "eng-taylor-wellhead",
+      "url": "https://www.taylorpowergenerators.com/generators/wellhead-gas-generators",
+      "quote": "Prime Power Generators Range: 80kW-540kW Fuel: NG",
+      "fetched": "2026-11-24",
+      "claim": "Taylor sells purpose-built, prime-rated wellhead-gas gensets from 80 to 540 kW. Price is on quote."
+    },
+    {
+      "id": "eng-psi-wellhead",
+      "url": "https://psiengines.com/power-systems",
+      "quote": "wellhead gas-powered solutions can provide up to 5 MW and include switchgear, controls, gas conditioning",
+      "fetched": "2026-11-24",
+      "claim": "PSI, maker of the 21.9L/22L engine used in Generac, MTU and other sets, offers wellhead-gas packages that include gas conditioning."
+    },
+    {
+      "id": "eng-kts-vgf",
+      "url": "https://www.kts-eng.com/en/product/waukesha-vgf/",
+      "quote": "VGF engines operate efficiently on fuels with a wide thermodynamic range (BTU) from 400 BTU of organic waste gas to 2,300 BTU of HD-5 propane",
+      "fetched": "2026-11-24",
+      "claim": "Waukesha VGF engines run on fuels from 400 to 2,300 Btu, a much wider window than PSI/Generac-type sets."
+    },
+    {
+      "id": "eng-wpi-vhp",
+      "url": "https://www.wpi.com/new-engines/",
+      "quote": "The Series Four engines can reliably produce more power on hot field gases at high altitudes and in remote locations, all while delivering low emissions when paired with a 3-way catalyst (NSCR)",
+      "fetched": "2026-11-24",
+      "claim": "Waukesha VHP Series Four rich-burn engines are built for hot field gas and meet NOx limits with a 3-way catalyst (NSCR)."
+    },
+    {
+      "id": "eng-generac-price",
+      "url": "https://generatorsource.com/brands/generac/generac-industrial-generators-models-2026-prices/",
+      "quote": "SG400, MG400 $141,000 to $217,000",
+      "fetched": "2026-11-24",
+      "claim": "Generac SG400/MG400 (21.9L gaseous): new price about $141k-$217k, or about $350-540/kW. The same page lists SG350 at $125k-195k and SG500 at $172k-259k."
+    },
+    {
+      "id": "eng-gensetplus-cn",
+      "url": "https://www.gensetplus.com/collections/gas-genset",
+      "quote": "GensetPlus 250KW 350kw 400kw Gas Generator for Remote Camp Power LNG CNG Fuel Solution Regular price $50,000.00",
+      "fetched": "2026-11-24",
+      "claim": "Chinese 250-400 kW gas gensets list at about $50k (sale) to $75k (list), or about $125-190/kW at 400 kW. The listing does not show their power rating (standby, prime or continuous) or whether they can run on field gas."
+    },
+    {
+      "id": "eng-tnt-waukesha",
+      "url": "https://tntind.com/listings/400-kw-waukesha-f2895gsiu-natural-gas-generator-set-as-is-778399/",
+      "quote": "Manufacturer Waukesha Model F2895GSIU Price $12,500",
+      "fetched": "2026-11-24",
+      "claim": "A used Waukesha F2895GSIU 400 kW gas genset sells as-is for $12,500 (about $31/kW). Condition and rating class are unknown."
+    },
+    {
+      "id": "eng-petrogas-r100",
+      "url": "https://petrogassystems.com/technology/natural-gas-processing-and-dew-point-controlrefrigeration-systems/",
+      "quote": "Nominal Capacity (mcfd) 100 300 400 500 1000 1500 Operating Temp Min. -40°F",
+      "fetched": "2026-11-24",
+      "claim": "PETROGAS sells small refrigeration dew-point skids (R-100 to R-500) at 100-500 Mcfd that chill gas to -40 °F. Price is not published."
+    },
+    {
+      "id": "eng-progas-500",
+      "url": "https://www.progasllc.com/services/fuel-gas-conditioning-jt-skids/",
+      "quote": "Pro-Gas LLC skids are available in 500, 1,500, 3,000 MCFD capacities",
+      "fetched": "2026-11-24",
+      "claim": "Pro-Gas's smallest standard JT fuel-gas skid is 500 Mcfd, oversized for a single 400 kW genset."
+    },
+    {
+      "id": "eng-croft-jt-lease",
+      "url": "https://www.croftsystems.net/oil-gas-blog/joule-thomson-case-study/",
+      "quote": "In leasing the JT from CROFT for less than $2000 a month, the compressor company saved a little less than $2 million in derated equipment",
+      "fetched": "2026-11-24",
+      "claim": "A JT fuel-gas skid (1,500 Mcfd case) was leased for under $2,000/month to stop engine derating."
+    },
+    {
+      "id": "eng-jjjj-100-500",
+      "url": "https://www.ecfr.gov/current/title-40/part-60/appendix-Table%201%20to%20Subpart%20JJJJ%20of%20Part%2060",
+      "quote": "100≤HP<500 7/1/2008 2.0 4.0 1.0 160 540 86 1/1/2011 1.0 2.0 0.7 82 270 60",
+      "fetched": "2026-11-24",
+      "claim": "JJJJ Table 1: non-emergency natural-gas spark-ignition engines of 100-500 hp built after 1/1/2011 must meet 1.0 g/hp-hr NOx, 2.0 CO and 0.7 VOC. The limits are the same for rich burn and lean burn."
+    },
+    {
+      "id": "eng-colo-nscr-cost",
+      "url": "https://www.colorado.gov/airquality/documents/eac/reportoct31.doc",
+      "quote": "A NSCR&AFR can be retrofitted on a 500 hp RICE for approximately $25,000",
+      "fetched": "2026-11-24",
+      "claim": "Colorado air-quality report: a 3-way catalyst (NSCR) plus air/fuel ratio controller costs about $25k on a 500 hp rich-burn engine, about $35k at 1,100 hp. Older figure; current prices are likely higher."
+    },
+    {
+      "id": "eng-colo-nscr-om",
+      "url": "https://www.colorado.gov/airquality/documents/eac/reportoct31.doc",
+      "quote": "The annual operating costs of a NSCR&AFR are about $6,000 per year",
+      "fetched": "2026-11-24",
+      "claim": "Running NSCR plus an air/fuel ratio controller costs about $6k/yr (catalyst washing, replacement reserve, O2 sensors, labor)."
+    },
+    {
+      "id": "eng-colo-oxcat",
+      "url": "https://www.colorado.gov/airquality/documents/eac/reportoct31.doc",
+      "quote": "Oxidation catalysts can be installed on lean burn RICE to reduce only CO and VOCs emissions by about 95%",
+      "fetched": "2026-11-24",
+      "claim": "On lean-burn engines an oxidation catalyst cuts only CO and VOC, by about 95%. NOx must be met inside the engine or with SCR."
+    },
+    {
+      "id": "eng-dieselnet-cat",
+      "url": "https://dieselnet.com/tech/catalyst_methane.php",
+      "quote": "Emissions from stoichiometric engines can be controlled by three-way catalysts, and those from lean-burn engines by oxidation and SCR catalysts",
+      "fetched": "2026-11-24",
+      "claim": "Rich-burn (stoichiometric) engines use three-way catalysts; lean-burn engines use oxidation and SCR catalysts."
+    }
+  ]
+}
