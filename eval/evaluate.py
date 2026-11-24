@@ -12,9 +12,9 @@ STATE = Path(os.environ.get("MDC_STATE_DIR", ROOT / ".scratch" / "state"))
 LOCKED = ["brief.md", "eval", "autoresearch.sh", "lock.sh", "SETUP.md"]
 MODEL_KEYS = ["gas_mcfd", "gas_btu_per_scf", "heat_rate_btu_per_kwh", "parasitic_fraction",
               "claimed_it_mw", "uptime_fraction", "gas_cost_usd_per_mcf", "capex_usd",
-              "opex_ex_fuel_usd_per_year", "revenue_usd_per_year"]
+              "opex_ex_fuel_usd_per_year", "revenue_usd_per_year", "module_count", "module_capex_usd"]
 SECTIONS = {1: "modular", 2: "gas", 3: "swot", 4: "first-principles", 5: "requirements",
-            6: "connectivity", 7: "cooling", 8: "water"}
+            6: "connectivity", 7: "cooling", 8: "water", 9: "hypothesis"}
 AXES = {"technical_rigor": 0.30, "economic_realism": 0.25, "regulatory_accuracy": 0.20,
         "actionability": 0.25}
 CITE = re.compile(r"\[E:([A-Za-z0-9_\-]+)\]")
@@ -200,6 +200,13 @@ def check_model(m, items, verified, c):
     pb = round(vals["capex_usd"] / cash, 2) if cash > 0 else None
     spb = round(vals["capex_usd"] / stress_cash, 2) if stress_cash > 0 else None
     it_mwh = net_mw * 8760 * vals["uptime_fraction"]
+    n_mod = vals["module_count"]
+    if n_mod < 1 or n_mod != int(n_mod):
+        fail("site_model.json: module_count must be a whole number >= 1")
+    if n_mod * vals["module_capex_usd"] > vals["capex_usd"] * 1.001:
+        fail(f"module_count x module_capex_usd ({n_mod * vals['module_capex_usd']:.0f}) exceeds "
+             f"site capex_usd ({vals['capex_usd']:.0f}); site capex must include the modules")
+    mod_cash = cash / n_mod
     return {"gross_mw": round(gross_mw, 3), "net_it_mw": round(net_mw, 3),
             "it_mwh_per_year": round(it_mwh), "fuel_usd_per_year": round(fuel),
             "annual_cash_flow_usd": round(cash), "payback_years": pb,
@@ -207,6 +214,10 @@ def check_model(m, items, verified, c):
             "stress_annual_cash_flow_usd": round(stress_cash), "stress_payback_years": spb,
             "revenue_per_it_mwh": round(vals["revenue_usd_per_year"] / it_mwh, 1) if it_mwh else None,
             "capex_per_it_mw": round(vals["capex_usd"] / net_mw) if net_mw else None,
+            "module_capex_usd": round(vals["module_capex_usd"]),
+            "module_under_500k": vals["module_capex_usd"] < 500000,
+            "module_it_kw": round(net_mw * 1000 / n_mod),
+            "module_payback_years_ex_site_costs": round(vals["module_capex_usd"] / mod_cash, 2) if mod_cash > 0 else None,
             "assumptions": assumptions, "unverified_citations": unverified}
 
 
@@ -307,7 +318,8 @@ def selftest():
         c = json.loads((Path(__file__).parent / "constraints.json").read_text())
         (t / "eval/constraints.json").write_text(json.dumps(c))
         heads = {1: "Modular design", 2: "Gas supply", 3: "SWOT", 4: "First-principles retrofit",
-                 5: "Requirements", 6: "Connectivity", 7: "Cooling", 8: "Water"}
+                 5: "Requirements", 6: "Connectivity", 7: "Cooling", 8: "Water",
+                 9: "Hypothesis test"}
         body = "\n".join(f"## {n}. {h}\n{words} [E:s0] [E:s1]\n" for n, h in heads.items())
         body += "strengths weaknesses opportunities threats\n"
         body = body.replace("## 4.", "strengths weaknesses opportunities threats\n## 4.")
@@ -331,8 +343,8 @@ def selftest():
         env = dict(os.environ, MDC_ROOT=str(t), MDC_STATE_DIR=str(t / "state"),
                    MDC_SELFTEST="1", MDC_SKIP_VERIFY="1", JUDGE_CMD=stub, HOLDOUT_CMD="")
         r = subprocess.run([sys.executable, __file__], env=env, capture_output=True, text=True)
-        # 60*.3 + 40*.25 + 50*.2 + 70*.25 = 55.5; 4 of 10 fields are assumptions -> 6.0 -> 49.5 -> 50 (banker's)
-        ok = r.returncode == 0 and re.search(r"METRIC composite_score=(49|50)\b", r.stdout)
+        # 60*.3 + 40*.25 + 50*.2 + 70*.25 = 55.5; 6 of 12 fields are assumptions -> 7.5 -> 48
+        ok = r.returncode == 0 and re.search(r"METRIC composite_score=48\b", r.stdout)
         bad = dict(model, claimed_it_mw={"value": 3.0, "evidence_id": "s4"})
         (t / "deliverables/site_model.json").write_text(json.dumps(bad))
         r2 = subprocess.run([sys.executable, __file__], env=env, capture_output=True, text=True)

@@ -20,6 +20,15 @@ The owner's asks, each must be answered in deliverables/study.md:
    water trucks bring water instead of going to SWD plants; is a conversion kit
    available; is TCEQ (or other agency) approval a nightmare; is temporary use simpler;
    other industrial engineering or business practices that reduce opex.
+9. Owner hypothesis to test, not assume: a mobile modular unit (power + compute + cooling)
+   can be built for under $500k, deployed in multiples and combined like Lego blocks,
+   not tied to a main gathering line, giving a quicker ROI on stranded gas that lacks
+   infrastructure. The owner believes the only remaining challenges are latency and
+   water. Check that belief, and do not get blindsided: identify every other critical
+   constraint (gas rights and royalties, gas quality, decline, permits, theft and
+   security, insurance, uptime, logistics, resale value, etc.) and, for each, the most
+   practical way around it. Give the smallest viable module, its cost breakdown, and
+   its payback, and say plainly where the hypothesis holds and where it breaks.
 
 Defaults (owner did not specify; the study may argue against them with evidence):
 - Geography: Texas first (Permian and Eagle Ford), other basins as comparison only.

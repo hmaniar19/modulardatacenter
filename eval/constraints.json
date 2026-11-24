@@ -4,7 +4,7 @@
   "heat_rate_btu_per_kwh_range": [7000, 14000],
   "power_tolerance": 0.10,
   "min_words_study": 3000,
-  "max_words_study": 9000,
+  "max_words_study": 10000,
   "min_sources": 20,
   "min_verified_sources": 12,
   "min_citations_per_section": 2,

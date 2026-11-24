@@ -8,7 +8,7 @@ Rules for the whole job:
 1. `python3 eval/evaluate.py --selftest` must print `SELFTEST OK`.
 2. `./lock.sh` must print `LOCKED`.
 3. Start `/autoresearch` (or loop by hand) with:
-- Intent: Deep, phased, evidence-backed study answering all 8 owner asks in brief.md for a
+- Intent: Deep, phased, evidence-backed study answering all 9 owner asks in brief.md for a
   drop-and-go modular data center on stranded or flared gas, ending in a GO/KILL decision.
 - Benchmark command: `bash autoresearch.sh`
 - Primary metric: `composite_score`, points, higher is better
