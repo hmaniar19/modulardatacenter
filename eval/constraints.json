@@ -1,0 +1,15 @@
+{
+  "min_gas_mcfd": 300,
+  "gas_btu_per_scf_range": [950, 1400],
+  "heat_rate_btu_per_kwh_range": [7000, 14000],
+  "power_tolerance": 0.10,
+  "min_words_study": 3000,
+  "max_words_study": 9000,
+  "min_sources": 20,
+  "min_verified_sources": 12,
+  "min_citations_per_section": 2,
+  "max_runs": 30,
+  "judge_runs": 3,
+  "holdout_every": 5,
+  "assumption_penalty_max": 15
+}
