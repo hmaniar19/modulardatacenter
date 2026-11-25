@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineering think tank · Candid Intelligence teardown and lean plan (Nov 2026)</title>
+<style>
+:root {
+  --hue: 240;
+  --bg: oklch(0.975 0.006 var(--hue));
+  --bg-subtle: oklch(0.94 0.012 var(--hue));
+  --fg: oklch(0.23 0.03 var(--hue));
+  --fg-muted: oklch(0.45 0.025 var(--hue));
+  --fg-faint: oklch(0.6 0.02 var(--hue));
+  --border: oklch(0.87 0.012 var(--hue));
+  --accent: oklch(0.72 0.16 60);
+  --accent-ink: oklch(0.5 0.14 50);
+  --accent-wash: oklch(0.94 0.045 70);
+  --leaf: oklch(0.45 0.09 160);
+  --leaf-wash: oklch(0.93 0.035 160);
+  --bad: oklch(0.52 0.15 28);
+  --bad-wash: oklch(0.94 0.035 28);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: ui-sans-serif, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+section {
+  min-height: 100vh; scroll-snap-align: start;
+  padding: clamp(28px, 6vh, 64px) clamp(20px, 7vw, 112px);
+  display: flex; flex-direction: column; justify-content: center; gap: 22px;
+  border-bottom: 1px solid var(--border);
+  container-type: inline-size;
+}
+.kicker { font: 600 13px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); }
+h1, h2 { font-family: var(--serif); font-weight: 600; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+h1 { font-size: clamp(40px, 6vw, 76px); line-height: 1.02; }
+h2 { font-size: clamp(28px, 3.6vw, 44px); line-height: 1.1; max-width: 28ch; }
+p { margin: 0; max-width: 68ch; }
+.lede { font-size: clamp(18px, 1.6vw, 22px); color: var(--fg-muted); max-width: 60ch; }
+.small { font-size: 14px; color: var(--fg-muted); }
+.grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+.card { background: var(--bg-subtle); border-radius: 14px; padding: 18px 20px; }
+.card h3 { margin: 0 0 6px; font: 600 15px/1.3 var(--sans); }
+.card p, .card li { font-size: 15px; color: var(--fg-muted); }
+.stat { font: 600 clamp(28px, 3vw, 40px)/1 var(--serif); font-variant-numeric: tabular-nums; }
+.stat-label { font-size: 14px; color: var(--fg-muted); margin-top: 6px; }
+table { border-collapse: collapse; width: 100%; max-width: 980px; font-size: 15px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { font-weight: 600; color: var(--fg-muted); font-size: 13px; text-transform: uppercase; letter-spacing: .06em; }
+td.n, th.n { text-align: right; }
+tr.total td { font-weight: 700; border-bottom: 2px solid var(--fg); }
+.base { background: var(--accent-wash); }
+ul.tight, ol.tight { margin: 0; padding-left: 1.1em; }
+ul.tight li, ol.tight li { margin: 4px 0; }
+.pill { display: inline-block; font: 600 12px/1 var(--sans); padding: 5px 9px; border-radius: 999px; background: var(--leaf-wash); color: var(--leaf); }
+.pill.warn { background: var(--bad-wash); color: var(--bad); }
+.pill.go { background: var(--accent-wash); color: var(--accent-ink); }
+.flag { border-left: 3px solid var(--bad); padding: 4px 0 4px 14px; }
+.flag strong { display: block; }
+.hero > *, .grid > * { min-width: 0; }
+.hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+@container (max-width: 760px) { .hero { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { html { scroll-snap-type: y proximity; } }
+.standout { background: var(--fg); color: var(--bg); }
+.standout .kicker { color: var(--accent); }
+.standout .lede, .standout .small { color: oklch(0.82 0.015 var(--hue)); }
+.standout .card { background: oklch(0.3 0.03 var(--hue)); }
+.standout .card h3 { color: var(--bg); }
+.standout .card p, .standout .card li { color: oklch(0.82 0.015 var(--hue)); }
+.big { font: 600 clamp(80px, 14vw, 180px)/0.9 var(--serif); color: var(--accent); font-variant-numeric: tabular-nums; }
+.steps { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); counter-reset: s; }
+.steps .card::before { counter-increment: s; content: counter(s); display: block; font: 600 30px/1 var(--serif); color: var(--accent-ink); margin-bottom: 8px; }
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; max-width: 980px; }
+.timeline li { display: grid; grid-template-columns: 170px 1fr; gap: 18px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 15px; }
+.timeline li.key { background: var(--accent-wash); padding-left: 10px; border-radius: 8px; border: 0; }
+@container (max-width: 600px) { .timeline li { grid-template-columns: 1fr; gap: 2px; } }
+svg { display: block; width: 100%; max-width: 760px; height: auto; max-height: 52vh; }
+svg text { font-family: var(--sans); font-size: 12px; fill: var(--fg-muted); }
+.legend { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; color: var(--fg-muted); }
+.legend i { display: inline-block; width: 18px; height: 3px; vertical-align: middle; margin-right: 6px; border-radius: 2px; }
+nav.hud { position: fixed; right: 18px; bottom: 16px; font: 600 13px/1 var(--sans); color: var(--fg-faint); font-variant-numeric: tabular-nums; background: var(--bg); padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border); }
+a { color: var(--accent-ink); }
+code { font-size: .92em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media print {
+  html { scroll-snap-type: none; }
+  section { min-height: auto; height: 100vh; page-break-after: always; border: 0; }
+  nav.hud { display: none; }
+  .standout { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<section id="s1" aria-label="Title">
+  <div class="hero">
+    <div style="display:grid;gap:22px">
+      <div class="kicker">Think tank plan · November 2026</div>
+      <h1>Months of engineering, done in weeks, without the VC burn.</h1>
+      <p class="lede">An open-source teardown of Candid Intelligence, the AI-leveraged engineering firm for gas-fired
+        power. Then the same formula rebuilt as our own engineering think tank: a separate department with
+        its own procedures, books and client-data wall.</p>
+      <p class="small">Every fact is from a public source read on 2026-11-24. Every cost is labeled
+        <span class="pill">cited</span> or <span class="pill go">estimate</span>.</p>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr">
+      <div class="card"><div class="stat">$20k</div><div class="stat-label">one-time setup</div></div>
+      <div class="card"><div class="stat">$17k</div><div class="stat-label">monthly fixed cost</div></div>
+      <div class="card"><div class="stat">$43–83k</div><div class="stat-label">peak cash need, base to downside</div></div>
+      <div class="card"><div class="stat">M3–M6</div><div class="stat-label">first cash-positive month</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="s2" aria-label="Who Candid is">
+  <div class="kicker">Who they are</div>
+  <h2>A 2025 startup of about 7 people, $6M seed, Schneider-backed.</h2>
+  <div class="grid">
+    <div class="card"><div class="stat">2025</div><div class="stat-label">founded; Houston and San Francisco</div></div>
+    <div class="card"><div class="stat">~$6M</div><div class="stat-label">seed; Quiet Capital lead, Liquid 2, SE Ventures, Presight-Shorooq, E14, Yann LeCun</div></div>
+    <div class="card"><div class="stat">7</div><div class="stat-label">employees (PitchBook), 7 open roles</div></div>
+    <div class="card"><div class="stat">±15%</div><div class="stat-label">claimed cost accuracy, backtested on built plants</div></div>
+  </div>
+  <div class="grid two">
+    <div class="card"><h3>Founders</h3>
+      <p><b>Talha Faiz.</b> Designed large process plants at Chiyoda, then AI at Meta.<br>
+         <b>Hassan Azmat</b> (CEO). Repeat founder; built CMU's autonomous racing team.</p></div>
+    <div class="card"><h3>Signals</h3>
+      <p>Greentown Labs Houston member. SOC 2 Type I. SE Ventures pitches an AVEVA tie-in.
+         Dealroom shows a $22–33M enterprise value <span class="pill warn">unverified, page blocked</span>.</p></div>
+  </div>
+  <p class="small">Sources: candid.engineering; SE Ventures post (Jan 12, 2026); Zawya / Presight-Shorooq release (Feb 24, 2026); PitchBook; Indexed.vc; Greentown Labs.</p>
+</section>
+
+<section id="s3" aria-label="The pivot">
+  <div class="kicker">The pivot</div>
+  <h2>They started selling AI software and ended up selling stamped engineering.</h2>
+  <ol class="timeline">
+    <li><b>Sep 2025</b><span>$5.5M seed recorded (Indexed). Product: AI agents for EPC bidding. They read every spec, P&amp;ID and vendor sheet, then draft RFIs, material takeoffs and bid evaluations.</span></li>
+    <li><b>Jan 2026</b><span>SE Ventures invests. Pitch: an "intelligence layer" for EPCs. Bidding costs $1M and 12 weeks; Candid claims 10x faster, error from ±25% down to ±10%.</span></li>
+    <li><b>Feb 2026</b><span>$6M seed closes (PitchBook). Presight-Shorooq (G42) joins.</span></li>
+    <li><b>Apr–Jun 2026</b><span>All 7 job posts are delivery engineers and sales: process, piping, mechanical, electrical, VP Projects. Posted at $100K–$250K. No AI researchers.</span></li>
+    <li class="key"><b>Nov 2026</b><span>"We are an owner's engineering firm for gas-fired power. You work with engineers, not a software tool."</span></li>
+  </ol>
+  <p class="lede">The lesson: selling AI tools to big contractors is slow. Selling a familiar product (stamped design packages) that AI makes cheap to produce is faster.</p>
+</section>
+
+<section id="s4" aria-label="How they consult">
+  <div class="kicker">How they consult</div>
+  <h2>Four steps from "we have a site" to "ready to commit capital".</h2>
+  <div class="steps">
+    <div class="card"><h3>Intake</h3><p>One basis of design, three candidate sites. Gaps are filled from satellite imagery, public records and nearby plants. Assumptions are marked.</p></div>
+    <div class="card"><h3>Scenario sweep</h3><p>Software runs 12 scenarios across sites and seasons in industry-standard tools. It draws on 350+ GW of plant engineering.</p></div>
+    <div class="card"><h3>Live pricing</h3><p>Rolling vendor quotes and channel partners keep cost and schedule current. Client quotes are used under NDA.</p></div>
+    <div class="card"><h3>PE stamp</h3><p>A licensed engineer in the project's state reviews and signs every sheet. Delivered in the client's own templates.</p></div>
+  </div>
+  <div class="grid two">
+    <div class="card"><h3>Deliverables</h3><p>Plot plan, heat and material balance, single-line, PFD to P&amp;ID, cost estimate, schedule, scope gaps, long-lead risk.</p></div>
+    <div class="card"><h3>Scope and speed</h3><p>Site and configuration studies, interconnection and permitting support, pre-FEED in 4 weeks, FEED in 12, then handoff to the EPC. "We don't build."</p></div>
+  </div>
+</section>
+
+<section id="s5" aria-label="How they win trust">
+  <div class="kicker">How they sell</div>
+  <h2>A new firm beats Tier 1 firms by taking the risk away from the buyer.</h2>
+  <div class="grid">
+    <div class="card"><h3>Free blind backtest</h3><p>"Hand us a plant you already built." They estimate it blind, and the client compares the result to actual cost.</p></div>
+    <div class="card"><h3>Late means free</h3><p>A package delivered late is not paid for.</p></div>
+    <div class="card"><h3>Warranted rework</h3><p>When the project or prices change, the package is updated at no charge.</p></div>
+    <div class="card"><h3>Founder-led demo</h3><p>A 30-minute live session. Replies come from a founder's inbox within a business day.</p></div>
+    <div class="card"><h3>Outbound engine</h3><p>RB2B identifies website visitors for follow-up (per their privacy policy). EPC Show panel. Greentown Houston.</p></div>
+    <div class="card"><h3>Enterprise trust</h3><p>SOC 2 Type I, ISO 27001 aligned, an NDA on every engagement, encryption.</p></div>
+  </div>
+  <p class="small">Pricing: not published anywhere we found. Revenue and customers: not disclosed.</p>
+</section>
+
+<section id="s6" aria-label="The formula">
+  <div class="kicker">The formula</div>
+  <h2>Nine levers. We copy eight and skip the expensive one.</h2>
+  <table>
+    <thead><tr><th>Lever</th><th>Candid</th><th>Our think tank</th></tr></thead>
+    <tbody>
+      <tr><td>Narrow vertical</td><td>Gas-fired power, pre-FID</td><td><span class="pill">copy</span> narrower: 1–100 MW behind-the-meter (BTM) for data centers</td></tr>
+      <tr><td>Sell outcomes</td><td>Stamped gate packs</td><td><span class="pill">copy</span></td></tr>
+      <tr><td>AI does the toil</td><td>Drafting, calcs, cross-checks, repricing</td><td><span class="pill">copy</span> with off-the-shelf models</td></tr>
+      <tr><td>Licensed bench</td><td>Standby PE bench</td><td><span class="pill">copy</span> part-time W-2 Texas PE first</td></tr>
+      <tr><td>Calibration data</td><td>Backtest on 350+ GW</td><td><span class="pill">copy</span> start with 5–10 public small plants</td></tr>
+      <tr><td>Live vendor pricing</td><td>Rolling quotes, channel partners</td><td><span class="pill">copy</span> our edge in small gensets</td></tr>
+      <tr><td>Risk reversal</td><td>Late free, rework warranted</td><td><span class="pill">copy</span> with a capped warranty in the MSA</td></tr>
+      <tr><td>Enterprise trust</td><td>SOC 2 Type I</td><td><span class="pill go">defer</span> NDA now, SOC 2 when a buyer asks</td></tr>
+      <tr><td>VC-scale team</td><td>~14 heads incl. ML</td><td><span class="pill warn">skip</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="s7" aria-label="Charter" class="standout">
+  <div class="kicker">Our think tank</div>
+  <h2>A separate department with its own engineering, permitting and cost procedures.</h2>
+  <p class="lede">It is not part of the data center business's operating procedures. It has its own name, QA and stamping procedure, books and data room.</p>
+  <div class="grid">
+    <div class="card"><h3>Separate LLC</h3><p>Engineering liability stays outside the data center operation. About $300 to form, and reversible.</p></div>
+    <div class="card"><h3>Information barrier</h3><p>Outside clients' sites, gas positions and costs never reach the parent. Internal work uses the same intake, contract and pricing as outside work.</p></div>
+    <div class="card"><h3>Wedge</h3><p>1–100 MW BTM gas power for data centers and modular compute: recip engines, aeroderivatives, small turbines, stranded and flare-gas sites. Candid's showcase is a $108M combined-cycle plant. We go smaller and faster.</p></div>
+  </div>
+</section>
+
+<section id="s8" aria-label="Scope">
+  <div class="kicker">Full scope</div>
+  <h2>Every gate Candid covers, from site screen to EPC handoff.</h2>
+  <div class="grid">
+    <div class="card"><h3>1 · Site screen (FEL1)</h3><p>Gas supply, grid or islanded, land, water, air-permit class, fiber. Go or no-go.</p></div>
+    <div class="card"><h3>2 · Configuration (FEL2)</h3><p>Prime mover, N+x redundancy, heat balance, cooling, scenario sweep.</p></div>
+    <div class="card"><h3>3 · Engineering</h3><p>Plot plan, PFD, P&amp;ID, single-line, heat and material balance, equipment list, MTO.</p></div>
+    <div class="card"><h3>4 · Cost and schedule</h3><p>Class 4/3 estimate, long-lead tracker, vendor quote book.</p></div>
+    <div class="card"><h3>5 · Permitting and interconnection</h3><p>TCEQ air (standard permit or PBR), water, land use, ERCOT large-load or islanded study inputs.</p></div>
+    <div class="card"><h3>6 · Owner's engineer</h3><p>Lender independent-engineer responses, bid evaluation of EPC offers, through FID.</p></div>
+    <div class="card"><h3>7 · EPC handoff</h3><p>Native file formats, so nothing is redrawn.</p></div>
+    <div class="card"><h3>8 · AI layer</h3><p>Document ingestion, requirement extraction, cross-discipline checks, change propagation, backtest library.</p></div>
+  </div>
+</section>
+
+<section id="s9" aria-label="Offer ladder">
+  <div class="kicker">What we sell</div>
+  <h2>A free test to earn trust, then three paid steps.</h2>
+  <table>
+    <thead><tr><th>Offer</th><th>Duration</th><th class="n">Price</th><th class="n">Direct cost</th><th class="n">Gross margin*</th></tr></thead>
+    <tbody>
+      <tr><td>Blind backtest</td><td>1 week</td><td class="n">$0</td><td class="n">founder time</td><td class="n">lead magnet</td></tr>
+      <tr><td>Site screen (FEL1)</td><td>1 week</td><td class="n">$12,000</td><td class="n">$1,050</td><td class="n">91%</td></tr>
+      <tr class="base"><td>Pre-FEED pack (FEL2)</td><td>4 weeks</td><td class="n">$55,000</td><td class="n">$5,250</td><td class="n">90%</td></tr>
+      <tr><td>Owner's-engineer retainer</td><td>monthly</td><td class="n">$15,000</td><td class="n">$2,000</td><td class="n">87%</td></tr>
+    </tbody>
+  </table>
+  <p class="small">*Excludes founder time. All prices are <span class="pill go">estimates</span>, untested with any buyer. Candid publishes none. Sanity check: SE Ventures puts FEED at about $30M on a $1B project (~3%). A $55k pre-FEED on a $30–60M BTM plant is about 0.1–0.2% of capex.</p>
+</section>
+
+<section id="s10" aria-label="Startup costs">
+  <div class="kicker">Startup costs</div>
+  <h2>$20k to open the doors, $17k a month to keep them open.</h2>
+  <div class="grid two">
+    <table>
+      <thead><tr><th>One-time setup</th><th class="n">USD</th></tr></thead>
+      <tbody>
+        <tr><td>Separate LLC <span class="pill go">est.</span></td><td class="n">300</td></tr>
+        <tr><td>TBPELS firm registration <span class="pill">cited</span></td><td class="n">150</td></tr>
+        <tr><td>Legal: MSA, NDA, PE terms, info barrier <span class="pill go">est.</span></td><td class="n">6,000</td></tr>
+        <tr><td>Brand, site, sample pack <span class="pill go">est.</span></td><td class="n">3,000</td></tr>
+        <tr><td>Workstations ×2 <span class="pill go">est.</span></td><td class="n">6,000</td></tr>
+        <tr><td>Backtest dataset <span class="pill go">est.</span></td><td class="n">5,000</td></tr>
+        <tr class="total"><td>Total</td><td class="n">20,450</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th>Monthly fixed</th><th class="n">USD</th></tr></thead>
+      <tbody>
+        <tr><td>Part-time W-2 Texas PE, 40 h @ $125 <span class="pill go">est.</span></td><td class="n">5,000</td></tr>
+        <tr><td>Professional liability $1M/$1M <span class="pill">cited range</span></td><td class="n">833</td></tr>
+        <tr><td>General liability + cyber <span class="pill go">est.</span></td><td class="n">250</td></tr>
+        <tr><td>LLM APIs, cloud, CAD/PDF tools <span class="pill go">est.</span></td><td class="n">1,200</td></tr>
+        <tr><td>Conferences and travel <span class="pill go">est.</span></td><td class="n">1,500</td></tr>
+        <tr><td>Accounting, payroll <span class="pill go">est.</span></td><td class="n">500</td></tr>
+        <tr><td>Founder draw, 2 × $4,000</td><td class="n">8,000</td></tr>
+        <tr class="total"><td>Total</td><td class="n">17,283</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">Deferred until a buyer requires them: SOC 2 Type I, about $20k all-in in year one <span class="pill">cited</span>. Thermoflow licence, price unpublished, $30k placeholder until quoted. Texas requires the firm to list its licensed PE <i>employees</i>, and a PE may hold a second, part-time employment (TBPELS FAQ). So the model uses a W-2 PE, not a 1099 stamp-for-hire. Engineer hires at $175k × 1.3 load, triggered by delivery capacity.</p>
+</section>
+
+<section id="s11" aria-label="Cash scenarios">
+  <div class="kicker">Twelve-month cash</div>
+  <h2>Cash-positive in month 3 on plan, month 6 if sales come half as fast.</h2>
+  <svg viewBox="0 0 640 300" role="img" aria-label="Cumulative cash by month for three scenarios">
+    <g stroke="var(--border)" stroke-width="1">
+      <line x1="60" x2="620" y1="238" y2="238"/><line x1="60" x2="620" y1="151" y2="151"/>
+      <line x1="60" x2="620" y1="107" y2="107"/><line x1="60" x2="620" y1="64" y2="64"/><line x1="60" x2="620" y1="20" y2="20"/>
+    </g>
+    <line x1="60" x2="620" y1="195" y2="195" stroke="var(--fg-faint)" stroke-width="1.5"/>
+    <text x="52" y="242" text-anchor="end">−$200k</text><text x="52" y="199" text-anchor="end">$0</text>
+    <text x="52" y="155" text-anchor="end">$200k</text><text x="52" y="111" text-anchor="end">$400k</text>
+    <text x="52" y="68" text-anchor="end">$600k</text><text x="52" y="24" text-anchor="end">$800k</text>
+    <text x="60" y="280" text-anchor="middle">M1</text><text x="162" y="280" text-anchor="middle">M3</text>
+    <text x="315" y="280" text-anchor="middle">M6</text><text x="467" y="280" text-anchor="middle">M9</text><text x="620" y="280" text-anchor="middle">M12</text>
+    <polyline fill="none" stroke="var(--bad)" stroke-width="2.5" stroke-dasharray="5 4" points="60,203 111,207 162,210 213,214 264,218 315,222 365,225 416,229 467,233 518,237 569,240 620,244"/>
+    <polyline fill="none" stroke="var(--leaf)" stroke-width="3" points="60,203 111,207 162,210 213,212 264,213 315,202 365,204 416,193 467,180 518,167 569,151 620,135"/>
+    <polyline fill="none" stroke="var(--accent)" stroke-width="3.5" points="60,203 111,204 162,203 213,192 264,179 315,163 365,148 416,125 467,103 518,77 569,54 620,30"/>
+    <text x="614" y="44" text-anchor="end" style="fill:var(--fg)">$754k</text>
+    <text x="614" y="128" text-anchor="end" style="fill:var(--fg)">$272k</text>
+    <text x="614" y="262" text-anchor="end" style="fill:var(--fg)">−$228k</text>
+  </svg>
+  <div class="legend"><span><i style="background:var(--accent)"></i>Base</span><span><i style="background:var(--leaf)"></i>Downside: sales start M4, about half</span><span><i style="background:var(--bad)"></i>No sales at all</span></div>
+  <table>
+    <thead><tr><th>Scenario</th><th class="n">Cash-positive</th><th class="n">Peak cash need</th><th class="n">+ deferred items</th><th class="n">Year-1 revenue</th><th class="n">Hires</th></tr></thead>
+    <tbody>
+      <tr class="base"><td>Base</td><td class="n">M3</td><td class="n">$43,317</td><td class="n">$93,317</td><td class="n">$1,184,000</td><td class="n">2</td></tr>
+      <tr><td>Downside</td><td class="n">M6</td><td class="n">$83,467</td><td class="n">$133,467</td><td class="n">$519,000</td><td class="n">0</td></tr>
+      <tr><td>No sales</td><td class="n">never</td><td class="n">$227,850</td><td class="n">$277,850</td><td class="n">$0</td><td class="n">0</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="s12" aria-label="Lean versus Candid" class="standout">
+  <div class="kicker">Why lean</div>
+  <div class="hero">
+    <div><div class="big">15×</div></div>
+    <div style="display:grid;gap:18px">
+      <h2>cheaper to run until demand is proven.</h2>
+      <p class="lede">A Candid-sized team of 14 at their posted $100k–$250k band costs about $3.2M a year in payroll
+        <span class="pill go">inferred</span>. Our lean department costs about $207k a year in fixed costs, and adds
+        engineers only when the delivery load requires them.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s13" aria-label="First 90 days">
+  <div class="kicker">First 90 days</div>
+  <h2>License, prove accuracy, then sell.</h2>
+  <ol class="timeline">
+    <li><b>Weeks 0–2</b><span>Form the LLC. Sign the part-time Texas PE. File TBPELS registration (issuance takes 5–6 weeks). Bind professional liability. Write the MSA with capped warranty and late-delivery terms.</span></li>
+    <li><b>Weeks 2–6</b><span>Build the backtest library. Rebuild 5–10 public small gas or BTM plants from permits, EIA filings and vendor sheets. Publish one sample pack.</span></li>
+    <li class="key"><b>Weeks 4–12</b><span>Offer 3 free blind backtests to developers and convert them to paid site screens. Founder-led demos. One Houston power or data center event.</span></li>
+    <li><b>On signed demand</b><span>Buy SOC 2 and Thermoflow only when a signed client requires them. Hire the first engineer when load exceeds about 2 pre-FEED packs a month.</span></li>
+  </ol>
+</section>
+
+<section id="s14" aria-label="Risks and next steps">
+  <div class="kicker">Risks and next steps</div>
+  <h2>What could break it, and what to check first.</h2>
+  <div class="grid two">
+    <div class="card"><h3>Not yet proven</h3>
+      <ul class="tight">
+        <li><b>Demand and price.</b> No buyer has been asked. The sales ramp and prices are estimates, and every result above depends on them.</li>
+        <li><b>Delivery capacity.</b> How many packs two founders can deliver with AI tooling is untested. It sets the first-hire date.</li>
+        <li><b>Insurance.</b> A real quote may exceed the $10k midpoint once power-plant design exposure is disclosed.</li>
+        <li><b>Candid unknowns.</b> Prices, revenue and customers are undisclosed. The valuation and the Enverus figure (data centers are 88% of forecast BTM demand) are search snippets only.</li>
+      </ul></div>
+    <div class="card"><h3>Next actions</h3>
+      <ol class="tight">
+        <li>10 discovery calls with BTM and data center developers. Test the $12k and $55k price points.</li>
+        <li>Run 3 free blind backtests and measure paid conversion.</li>
+        <li>Shortlist a part-time Texas PE and get a professional-liability quote.</li>
+        <li>Put the real numbers into <code>docs/research/candid_lean_model.py</code> and rerun it.</li>
+      </ol></div>
+  </div>
+  <p class="small">Sources in the repo: <code>docs/research/candid-intelligence-lean-replica.md</code> (cited report), <code>docs/research/candid_lean_model.py</code> (cost model).</p>
+</section>
+
+<nav class="hud" aria-live="polite"><span id="pos">1</span> / 14 · ↑ ↓ to move</nav>
+<script>
+const slides = [...document.querySelectorAll('section')];
+const pos = document.getElementById('pos');
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) pos.textContent = slides.indexOf(e.target) + 1; }), { threshold: 0.55 });
+slides.forEach(s => io.observe(s));
+addEventListener('keydown', e => {
+  const i = +pos.textContent - 1;
+  const step = { ArrowDown: 1, ArrowRight: 1, PageDown: 1, ' ': 1, ArrowUp: -1, ArrowLeft: -1, PageUp: -1 }[e.key];
+  if (!step) return;
+  e.preventDefault();
+  slides[Math.max(0, Math.min(slides.length - 1, i + step))].scrollIntoView();
+});
+</script>
+</body>
+</html>
