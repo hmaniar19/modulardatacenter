@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Block · Modular AI data center on firm gas · pre-FEED rev A (Nov 2026)</title>
+<style>
+:root {
+  --hue: 240;
+  --bg: oklch(0.975 0.006 var(--hue));
+  --bg-subtle: oklch(0.94 0.012 var(--hue));
+  --fg: oklch(0.23 0.03 var(--hue));
+  --fg-muted: oklch(0.45 0.025 var(--hue));
+  --fg-faint: oklch(0.6 0.02 var(--hue));
+  --border: oklch(0.87 0.012 var(--hue));
+  --accent: oklch(0.72 0.16 60);
+  --accent-ink: oklch(0.5 0.14 50);
+  --accent-wash: oklch(0.94 0.045 70);
+  --leaf: oklch(0.45 0.09 160);
+  --leaf-wash: oklch(0.93 0.035 160);
+  --bad: oklch(0.55 0.17 28);
+  --bad-wash: oklch(0.94 0.035 28);
+  --c1: oklch(0.68 0.15 60);
+  --c2: oklch(0.55 0.13 250);
+  --c3: oklch(0.5 0.14 300);
+  --c4: oklch(0.55 0.11 140);
+  --c5: oklch(0.6 0.1 200);
+  --c6: oklch(0.58 0.15 340);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: ui-sans-serif, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+section {
+  min-height: 100vh; scroll-snap-align: start;
+  padding: clamp(28px, 5vh, 56px) clamp(20px, 7vw, 112px);
+  display: flex; flex-direction: column; justify-content: center; gap: 20px;
+  border-bottom: 1px solid var(--border);
+  container-type: inline-size;
+}
+.kicker { font: 600 13px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); }
+h1, h2 { font-family: var(--serif); font-weight: 600; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+h1 { font-size: clamp(40px, 6vw, 76px); line-height: 1.02; }
+h2 { font-size: clamp(26px, 3.3vw, 42px); line-height: 1.1; max-width: 30ch; }
+p { margin: 0; max-width: 70ch; }
+.lede { font-size: clamp(18px, 1.6vw, 21px); color: var(--fg-muted); max-width: 62ch; }
+.small { font-size: 14px; color: var(--fg-muted); }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+.card { background: var(--bg-subtle); border-radius: 14px; padding: 16px 20px; }
+.card h3 { margin: 0 0 6px; font: 600 15px/1.3 var(--sans); }
+.card p, .card li { font-size: 15px; color: var(--fg-muted); }
+.stat { font: 600 clamp(28px, 3vw, 40px)/1 var(--serif); font-variant-numeric: tabular-nums; }
+.stat-label { font-size: 14px; color: var(--fg-muted); margin-top: 6px; }
+table { border-collapse: collapse; width: 100%; max-width: 1080px; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { font-weight: 600; color: var(--fg-muted); font-size: 12.5px; text-transform: uppercase; letter-spacing: .06em; }
+td.n, th.n { text-align: right; }
+tr.total td { font-weight: 700; border-bottom: 2px solid var(--fg); }
+.base { background: var(--accent-wash); font-weight: 600; }
+.dim td { color: var(--fg-faint); }
+ul.tight, ol.tight { margin: 0; padding-left: 1.1em; }
+ul.tight li, ol.tight li { margin: 4px 0; }
+.pill { display: inline-block; font: 600 12px/1 var(--sans); padding: 5px 9px; border-radius: 999px; background: var(--leaf-wash); color: var(--leaf); }
+.pill.warn { background: var(--bad-wash); color: var(--bad); }
+.pill.go { background: var(--accent-wash); color: var(--accent-ink); }
+.hero > *, .grid > * { min-width: 0; }
+.hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+@container (max-width: 760px) { .hero { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { html { scroll-snap-type: y proximity; } }
+.standout { background: var(--fg); color: var(--bg); }
+.standout .kicker { color: var(--accent); }
+.standout .lede, .standout .small { color: oklch(0.82 0.015 var(--hue)); }
+.standout .card { background: oklch(0.3 0.03 var(--hue)); }
+.standout .card h3 { color: var(--bg); }
+.standout .card p, .standout .card li { color: oklch(0.82 0.015 var(--hue)); }
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; max-width: 1080px; }
+.timeline li { display: grid; grid-template-columns: 200px 140px 1fr; gap: 18px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 15px; }
+.timeline li.key { background: var(--accent-wash); padding-left: 10px; border-radius: 8px; border: 0; }
+@container (max-width: 700px) { .timeline li { grid-template-columns: 1fr; gap: 2px; } }
+svg.drawing { display: block; width: 100%; max-width: 1000px; height: auto; max-height: 64vh; }
+svg text { font-family: var(--sans); font-size: 12px; fill: var(--fg-muted); }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--fg-muted); }
+.legend i { display: inline-block; width: 12px; height: 12px; vertical-align: -1px; margin-right: 6px; border-radius: 3px; opacity: .7; }
+nav.hud { position: fixed; right: 18px; bottom: 16px; font: 600 13px/1 var(--sans); color: var(--fg-faint); font-variant-numeric: tabular-nums; background: var(--bg); padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border); }
+code { font-size: .92em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media print {
+  html { scroll-snap-type: none; }
+  section { min-height: auto; height: 100vh; page-break-after: always; border: 0; }
+  nav.hud { display: none; }
+  .standout { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<section id="s1" aria-label="Title">
+  <div class="hero">
+    <div style="display:grid;gap:20px">
+      <div class="kicker">Think tank package 001 · pre-FEED rev A · November 2026</div>
+      <h1>The AI Block: a 4.8 MW modular AI data center on firm gas.</h1>
+      <p class="lede">A basis of design, a 12-scenario sweep, a plot plan, a single-line, cost, schedule and a research
+        backlog for a containerized, liquid-cooled GPU hosting module in the Permian. It has its own power island and no
+        grid connection.</p>
+      <p class="small">123 sources fetched 2026-11-25, each quote verified against its page. Our own inputs are labeled
+        <span class="pill go">assumption</span>.</p>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr">
+      <div class="card"><div class="stat">4.8 MW</div><div class="stat-label">IT load: 4 NVIDIA NVL72 scalable units, 32 racks</div></div>
+      <div class="card"><div class="stat">$41.1M</div><div class="stat-label">capex excl. GPUs ($8,567/kW IT)</div></div>
+      <div class="card"><div class="stat">7.6 yr</div><div class="stat-label">payback at $142/kW-month rent</div></div>
+      <div class="card"><div class="stat">1.1 MMcf/d</div><div class="stat-label">firm gas, not flare wells</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="s2" aria-label="The two findings" class="standout">
+  <div class="kicker">What the sweep decided</div>
+  <h2>Small Blocks do not pay, and AI does not run on flare wells.</h2>
+  <div class="grid two">
+    <div class="card"><h3>Size: 4.8 MW, not 1 MW</h3>
+      <p>24/7 staff, protected fiber and the N+1 spare genset cost the same at any Block size. Payback is 50 years at 0.6 MW,
+        18 years at 1.2 MW and 7.6 years at 4.8 MW. Cost per kW of IT halves from 1.2 to 4.8 MW.</p></div>
+    <div class="card"><h3>Fuel: firm gas, not flare gas</h3>
+      <p>A 300 mcf/d well powers only a 1.2 MW Block, and it loses more than half its gas in year one. AI tenants expect
+        Tier III. The Block buys 1.1 MMcf/d under a firm contract at a processing plant or gathering header. That is under
+        0.5% of one 275 MMcf/d plant.</p></div>
+  </div>
+  <p class="small">The flare-gas mining Block in <code>deliverables/study.md</code> stays a separate product. Its "phase 3 hybrid" is replaced by this one.</p>
+</section>
+
+<section id="s3" aria-label="Basis of design">
+  <div class="kicker">Basis of design</div>
+  <h2>The numbers the design must meet.</h2>
+  <table>
+    <thead><tr><th>Criterion</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>IT per scalable unit</td><td>1.2 MW, 8 NVL72 racks; GB300 rack 135 kW design power, 155 kW peak</td><td>NVIDIA, Lenovo</td></tr>
+      <tr><td>Rack power</td><td>415 V AC from 480 V; 800 V DC from 2027</td><td>Schneider RD109, NVIDIA</td></tr>
+      <tr><td>Heat split</td><td>90% liquid, 10% air; coolant up to 45 °C at 177 LPM per rack</td><td>NVIDIA GB300 guide</td></tr>
+      <tr><td>Climate</td><td>Midland: &gt;90 °F on 115 afternoons, &gt;100 °F on 24, record 116 °F</td><td>Climate record</td></tr>
+      <tr><td>Load swings</td><td>30→100% in ms; energy at 0.2–3 Hz; checkpoint dips of minutes</td><td>NVIDIA, Microsoft/OpenAI, NERC</td></tr>
+      <tr><td>Availability</td><td>Tier III, 99.982%</td><td>NVIDIA SuperPOD, Uptime</td></tr>
+      <tr><td>Field gas</td><td>Methane number 25–95; derate 20% (cited 15–30%)</td><td>MWM, vendor</td></tr>
+      <tr><td>Air permit</td><td>TCEQ EGU Standard Permit; West Texas NOx 3.11 lb/MWh (PBR 106.512 closed to power gen)</td><td>TCEQ</td></tr>
+      <tr><td>Bus</td><td>480 V; one bus tops out about 8 MW of generation, so two buses with a tie</td><td>Engineering reference</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="s4" aria-label="Scenario sweep">
+  <div class="kicker">Twelve scenarios</div>
+  <h2>3 sizes × 2 prime movers × 2 cooling modes.</h2>
+  <table>
+    <thead><tr><th>#</th><th>Size</th><th>Prime mover</th><th>Cooling</th><th>Gensets</th><th class="n">Gas mcf/d</th><th class="n">Capex $M</th><th class="n">$/kW IT</th><th class="n">Payback</th></tr></thead>
+    <tbody>
+      <tr class="dim"><td>1</td><td>0.6 MW</td><td>Recip FR</td><td>Dry-only</td><td>2 × 1,500</td><td class="n">150</td><td class="n">10.43</td><td class="n">17,384</td><td class="n">50.4 y</td></tr>
+      <tr class="dim"><td>2</td><td>0.6 MW</td><td>Recip FR</td><td>Dry + trim</td><td>2 × 1,500</td><td class="n">153</td><td class="n">10.50</td><td class="n">17,504</td><td class="n">51.1 y</td></tr>
+      <tr class="dim"><td>3</td><td>0.6 MW</td><td>Turbine</td><td>Dry-only</td><td>2 × 1,000</td><td class="n">156</td><td class="n">13.72</td><td class="n">22,873</td><td class="n">109.1 y</td></tr>
+      <tr class="dim"><td>4</td><td>0.6 MW</td><td>Turbine</td><td>Dry + trim</td><td>2 × 1,000</td><td class="n">159</td><td class="n">13.80</td><td class="n">22,993</td><td class="n">111.3 y</td></tr>
+      <tr class="dim"><td>5</td><td>1.2 MW</td><td>Recip FR</td><td>Dry-only</td><td>3 × 1,500</td><td class="n">300</td><td class="n">15.31</td><td class="n">12,755</td><td class="n">18.2 y</td></tr>
+      <tr class="dim"><td>6</td><td>1.2 MW</td><td>Recip FR</td><td>Dry + trim</td><td>3 × 1,500</td><td class="n">305</td><td class="n">15.45</td><td class="n">12,875</td><td class="n">18.4 y</td></tr>
+      <tr class="dim"><td>7</td><td>1.2 MW</td><td>Turbine</td><td>Dry-only</td><td>3 × 1,000</td><td class="n">313</td><td class="n">19.99</td><td class="n">16,657</td><td class="n">27.5 y</td></tr>
+      <tr class="dim"><td>8</td><td>1.2 MW</td><td>Turbine</td><td>Dry + trim</td><td>3 × 1,000</td><td class="n">317</td><td class="n">20.13</td><td class="n">16,777</td><td class="n">27.9 y</td></tr>
+      <tr class="base"><td>9</td><td>4.8 MW</td><td>Recip FR</td><td>Dry-only</td><td>6 × 1,500</td><td class="n">1,113</td><td class="n">41.12</td><td class="n">8,567</td><td class="n">7.6 y</td></tr>
+      <tr><td>10</td><td>4.8 MW</td><td>Recip FR</td><td>Dry + trim</td><td>7 × 1,500</td><td class="n">1,170</td><td class="n">44.72</td><td class="n">9,317</td><td class="n">8.4 y</td></tr>
+      <tr><td>11</td><td>4.8 MW</td><td>Turbine</td><td>Dry-only</td><td>8 × 1,000</td><td class="n">1,215</td><td class="n">45.93</td><td class="n">9,570</td><td class="n">8.6 y</td></tr>
+      <tr><td>12</td><td>4.8 MW</td><td>Turbine</td><td>Dry + trim</td><td>9 × 1,000</td><td class="n">1,268</td><td class="n">47.77</td><td class="n">9,953</td><td class="n">9.1 y</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Recips beat turbines: $2,550/kW vs $5,200/kW at 2 MW (DOE), and turbines lose about 20% at 100 °F. Fast-response recips take 100% block load in one step; a typical lean-burn set takes 30%. Dry-only saves one genset and $3.6M but throttles GPUs on about 24 afternoons above 100 °F. Scenario 10 is the fallback.</p>
+</section>
+
+<section id="s5" aria-label="Chosen configuration">
+  <div class="kicker">Chosen configuration · scenario 9</div>
+  <h2>What sits inside the fence.</h2>
+  <div class="grid">
+    <div class="card"><h3>Power island</h3><p>6 × Cat G3516 Fast Response class, 1,500 ekW continuous, derated to 1,200 kW on field gas. 5 run, 1 spare. NOx 0.5 g/bhp-hr without aftertreatment, half the federal limit.</p></div>
+    <div class="card"><h3>Electrical</h3><p>Two 480 V buses (G1–G3, G4–G6) with a closed tie, each under the ~8 MW low-voltage limit. No medium-voltage gear and no transformer queue on the generation side.</p></div>
+    <div class="card"><h3>Battery</h3><p>2 × 600 kW / 600 kWh, one per bus. It covers a genset trip, fast GPU swings and checkpoint dips. GB300 shelves hold only 65 J per GPU.</p></div>
+    <div class="card"><h3>Cooling</h3><p>3 × 2.3 MW CDUs (2+1), 3 × 3 MW dry coolers rated to 55 °C ambient (2+1), packaged DX for 480 kW of air heat. PUE 1.11 annual, 1.15 peak. Zero operating water.</p></div>
+    <div class="card"><h3>IT</h3><p>4 halls, one scalable unit each (8 racks, 1.2 MW). Benchmark: Vertiv's 1.3 MW MegaMod in 801 sq ft. Racks up to 3,300 lb.</p></div>
+    <div class="card"><h3>Network</h3><p>A/B fiber laterals to the I-20 carrier route and a protected 100G wave. Latency is about 1.6 ms round trip per 100 route-miles, against a 2 s first-token budget.</p></div>
+  </div>
+</section>
+
+<section id="s6" aria-label="Plot plan">
+  <div class="kicker">Plot plan · to scale</div>
+  <h2>92 × 56 m, about 1.3 acres.</h2>
+  <svg class="drawing" viewBox="0 0 776 512" role="img" aria-label="Plot plan of the AI Block site">
+<rect x="20" y="20" width="736" height="448" fill="none" stroke="var(--fg-muted)" stroke-dasharray="6 4"/>
+<text x="24" y="14">Fence 92 x 56 m (about 1.3 acres)</text>
+<rect x="44" y="68" width="56" height="24" rx="2" fill="var(--c4)" fill-opacity=".28" stroke="var(--c4)"/>
+<text x="48" y="84" style="font-size:11px;fill:var(--fg)">Meter</text>
+<rect x="44" y="116" width="88" height="32" rx="2" fill="var(--c4)" fill-opacity=".28" stroke="var(--c4)"/>
+<text x="48" y="136" style="font-size:11px;fill:var(--fg)">Conditioning</text>
+<rect x="156" y="52" width="98" height="24" rx="2" fill="var(--c1)" fill-opacity=".28" stroke="var(--c1)"/>
+<text x="160" y="68" style="font-size:11px;fill:var(--fg)">G1  1,500 ekW</text>
+<rect x="156" y="88" width="98" height="24" rx="2" fill="var(--c1)" fill-opacity=".28" stroke="var(--c1)"/>
+<text x="160" y="104" style="font-size:11px;fill:var(--fg)">G2  1,500 ekW</text>
+<rect x="156" y="124" width="98" height="24" rx="2" fill="var(--c1)" fill-opacity=".28" stroke="var(--c1)"/>
+<text x="160" y="140" style="font-size:11px;fill:var(--fg)">G3  1,500 ekW</text>
+<rect x="156" y="212" width="98" height="24" rx="2" fill="var(--c1)" fill-opacity=".28" stroke="var(--c1)"/>
+<text x="160" y="228" style="font-size:11px;fill:var(--fg)">G4  1,500 ekW</text>
+<rect x="156" y="248" width="98" height="24" rx="2" fill="var(--c1)" fill-opacity=".28" stroke="var(--c1)"/>
+<text x="160" y="264" style="font-size:11px;fill:var(--fg)">G5  1,500 ekW</text>
+<rect x="156" y="284" width="98" height="24" rx="2" fill="var(--c1)" fill-opacity=".28" stroke="var(--c1)"/>
+<text x="160" y="300" style="font-size:11px;fill:var(--fg)">G6  1,500 ekW</text>
+<rect x="284" y="84" width="84" height="28" rx="2" fill="var(--c3)" fill-opacity=".28" stroke="var(--c3)"/>
+<text x="288" y="102" style="font-size:11px;fill:var(--fg)">SWGR-A 480 V</text>
+<rect x="284" y="244" width="84" height="28" rx="2" fill="var(--c3)" fill-opacity=".28" stroke="var(--c3)"/>
+<text x="288" y="262" style="font-size:11px;fill:var(--fg)">SWGR-B 480 V</text>
+<rect x="156" y="380" width="96" height="20" rx="2" fill="var(--bad)" fill-opacity=".28" stroke="var(--bad)"/>
+<text x="160" y="394" style="font-size:11px;fill:var(--fg)">BESS 2x600 kW</text>
+<rect x="404" y="52" width="128" height="40" rx="2" fill="var(--c2)" fill-opacity=".28" stroke="var(--c2)"/>
+<text x="408" y="76" style="font-size:11px;fill:var(--fg)">IT hall 1  ·  1 SU, 1.2 MW</text>
+<rect x="404" y="116" width="128" height="40" rx="2" fill="var(--c2)" fill-opacity=".28" stroke="var(--c2)"/>
+<text x="408" y="140" style="font-size:11px;fill:var(--fg)">IT hall 2  ·  1 SU, 1.2 MW</text>
+<rect x="404" y="180" width="128" height="40" rx="2" fill="var(--c2)" fill-opacity=".28" stroke="var(--c2)"/>
+<text x="408" y="204" style="font-size:11px;fill:var(--fg)">IT hall 3  ·  1 SU, 1.2 MW</text>
+<rect x="404" y="244" width="128" height="40" rx="2" fill="var(--c2)" fill-opacity=".28" stroke="var(--c2)"/>
+<text x="408" y="268" style="font-size:11px;fill:var(--fg)">IT hall 4  ·  1 SU, 1.2 MW</text>
+<rect x="556" y="60" width="42" height="20" rx="2" fill="var(--c5)" fill-opacity=".28" stroke="var(--c5)"/>
+<text x="560" y="74" style="font-size:11px;fill:var(--fg)">CDU 1</text>
+<rect x="556" y="140" width="42" height="20" rx="2" fill="var(--c5)" fill-opacity=".28" stroke="var(--c5)"/>
+<text x="560" y="154" style="font-size:11px;fill:var(--fg)">CDU 2</text>
+<rect x="556" y="220" width="42" height="20" rx="2" fill="var(--c5)" fill-opacity=".28" stroke="var(--c5)"/>
+<text x="560" y="234" style="font-size:11px;fill:var(--fg)">CDU 3</text>
+<rect x="628" y="52" width="112" height="24" rx="2" fill="var(--c5)" fill-opacity=".28" stroke="var(--c5)"/>
+<text x="632" y="68" style="font-size:11px;fill:var(--fg)">Dry cooler A 3 MW</text>
+<rect x="628" y="108" width="112" height="24" rx="2" fill="var(--c5)" fill-opacity=".28" stroke="var(--c5)"/>
+<text x="632" y="124" style="font-size:11px;fill:var(--fg)">Dry cooler B 3 MW</text>
+<rect x="628" y="164" width="112" height="24" rx="2" fill="var(--c5)" fill-opacity=".28" stroke="var(--c5)"/>
+<text x="632" y="180" style="font-size:11px;fill:var(--fg)">Dry cooler C spare</text>
+<rect x="628" y="228" width="112" height="24" rx="2" fill="var(--c5)" fill-opacity=".28" stroke="var(--c5)"/>
+<text x="632" y="244" style="font-size:11px;fill:var(--fg)">Air-side DX</text>
+<rect x="404" y="316" width="64" height="24" rx="2" fill="var(--c6)" fill-opacity=".28" stroke="var(--c6)"/>
+<text x="408" y="332" style="font-size:11px;fill:var(--fg)">Network</text>
+<rect x="548" y="412" width="104" height="32" rx="2" fill="var(--fg-faint)" fill-opacity=".28" stroke="var(--fg-faint)"/>
+<text x="552" y="432" style="font-size:11px;fill:var(--fg)">Ops / security</text>
+<rect x="132" y="356" width="144" height="68.0" fill="none" stroke="var(--bad)" stroke-dasharray="3 3"/>
+<text x="132" y="438.0" style="fill:var(--bad)">10 ft (3 m) BESS clearance</text>
+<text x="500" y="484">Gate</text>
+<line x1="756" y1="328.0" x2="444" y2="328.0" stroke="var(--c6)" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="616" y="322.0">Fiber entry (A/B)</text>
+<line x1="6" y1="80.0" x2="44" y2="80.0" stroke="var(--c4)" stroke-width="3"/>
+<text x="44" y="48.8">Firm gas in, ~1.1 MMcf/d</text>
+<line x1="20" y1="498" x2="100" y2="498" stroke="var(--fg)" stroke-width="2"/><text x="106" y="502">10 m</text>
+  </svg>
+  <div class="legend"><span><i style="background:var(--c4)"></i>Gas</span><span><i style="background:var(--c1)"></i>Gensets (12.2 × 3.0 m)</span><span><i style="background:var(--c3)"></i>Switchgear</span><span><i style="background:var(--bad)"></i>Battery</span><span><i style="background:var(--c2)"></i>IT halls</span><span><i style="background:var(--c5)"></i>Cooling</span><span><i style="background:var(--c6)"></i>Network</span></div>
+  <p class="small">Spacing: engines at least 5 ft from openings (NFPA 37); battery at least 10 ft from everything (IFC 2024 / NFPA 855). Noise about 50 dB(A) at 90 m, against the Texas 85 dB nuisance yardstick. One 1.77 MW Armada unit alone takes 0.12 acre.</p>
+</section>
+
+<section id="s7" aria-label="Single-line diagram">
+  <div class="kicker">Single-line · simplified</div>
+  <h2>Two 480 V buses, a closed tie and a battery on each side.</h2>
+  <svg class="drawing" viewBox="0 0 780 340" role="img" aria-label="Single-line diagram of the AI Block power island">
+<circle cx="70" cy="50" r="22" fill="none" stroke="var(--c1)" stroke-width="2"/>
+<text x="70" y="55" text-anchor="middle">G1</text>
+<line x1="70" y1="72" x2="70" y2="130" stroke="var(--fg)"/>
+<rect x="64" y="96" width="12" height="12" fill="var(--bg)" stroke="var(--fg)"/>
+<circle cx="170" cy="50" r="22" fill="none" stroke="var(--c1)" stroke-width="2"/>
+<text x="170" y="55" text-anchor="middle">G2</text>
+<line x1="170" y1="72" x2="170" y2="130" stroke="var(--fg)"/>
+<rect x="164" y="96" width="12" height="12" fill="var(--bg)" stroke="var(--fg)"/>
+<circle cx="270" cy="50" r="22" fill="none" stroke="var(--c1)" stroke-width="2"/>
+<text x="270" y="55" text-anchor="middle">G3</text>
+<line x1="270" y1="72" x2="270" y2="130" stroke="var(--fg)"/>
+<rect x="264" y="96" width="12" height="12" fill="var(--bg)" stroke="var(--fg)"/>
+<circle cx="510" cy="50" r="22" fill="none" stroke="var(--c1)" stroke-width="2"/>
+<text x="510" y="55" text-anchor="middle">G4</text>
+<line x1="510" y1="72" x2="510" y2="130" stroke="var(--fg)"/>
+<rect x="504" y="96" width="12" height="12" fill="var(--bg)" stroke="var(--fg)"/>
+<circle cx="610" cy="50" r="22" fill="none" stroke="var(--c1)" stroke-width="2"/>
+<text x="610" y="55" text-anchor="middle">G5</text>
+<line x1="610" y1="72" x2="610" y2="130" stroke="var(--fg)"/>
+<rect x="604" y="96" width="12" height="12" fill="var(--bg)" stroke="var(--fg)"/>
+<circle cx="710" cy="50" r="22" fill="none" stroke="var(--c1)" stroke-width="2"/>
+<text x="710" y="55" text-anchor="middle">G6</text>
+<line x1="710" y1="72" x2="710" y2="130" stroke="var(--fg)"/>
+<rect x="704" y="96" width="12" height="12" fill="var(--bg)" stroke="var(--fg)"/>
+<text x="170" y="20" text-anchor="middle" style="fill:var(--fg)">3 x 1,500 ekW fast-response recips</text>
+<text x="610" y="20" text-anchor="middle" style="fill:var(--fg)">3 x 1,500 ekW fast-response recips</text>
+<line x1="30" y1="130" x2="370" y2="130" stroke="var(--c3)" stroke-width="5"/>
+<line x1="410" y1="130" x2="750" y2="130" stroke="var(--c3)" stroke-width="5"/>
+<rect x="378" y="122" width="24" height="16" fill="var(--bg)" stroke="var(--fg)"/>
+<text x="390" y="158" text-anchor="middle">Tie (N.C.)</text>
+<text x="30" y="150" text-anchor="start" style="fill:var(--fg);font-weight:600">BUS A</text>
+<text x="750" y="150" text-anchor="end" style="fill:var(--fg);font-weight:600">BUS B</text>
+<line x1="330" y1="130" x2="330" y2="90" stroke="var(--fg)"/>
+<rect x="296" y="66" width="68" height="24" rx="3" fill="var(--bad)" fill-opacity=".2" stroke="var(--bad)"/>
+<text x="330" y="82" text-anchor="middle">BESS-A</text>
+<text x="330" y="60" text-anchor="middle">600 kW</text>
+<line x1="450" y1="130" x2="450" y2="90" stroke="var(--fg)"/>
+<rect x="416" y="66" width="68" height="24" rx="3" fill="var(--bad)" fill-opacity=".2" stroke="var(--bad)"/>
+<text x="450" y="82" text-anchor="middle">BESS-B</text>
+<text x="450" y="60" text-anchor="middle">600 kW</text>
+<line x1="90" y1="130" x2="90" y2="250" stroke="var(--c3)" stroke-opacity=".7"/>
+<line x1="130" y1="130" x2="130" y2="250" stroke="var(--c3)" stroke-opacity=".7"/>
+<circle cx="90" cy="205" r="9" fill="none" stroke="var(--fg)"/><circle cx="90" cy="217" r="9" fill="none" stroke="var(--fg)"/>
+<circle cx="130" cy="205" r="9" fill="none" stroke="var(--fg)"/><circle cx="130" cy="217" r="9" fill="none" stroke="var(--fg)"/>
+<rect x="50" y="250" width="120" height="44" rx="4" fill="var(--c2)" fill-opacity=".25" stroke="var(--c2)"/>
+<text x="110" y="268" text-anchor="middle" style="fill:var(--fg);font-weight:600">IT hall 1</text>
+<text x="110" y="285" text-anchor="middle">8 racks, 1.2 MW</text>
+<line x1="250" y1="130" x2="250" y2="250" stroke="var(--c3)" stroke-opacity=".7"/>
+<line x1="290" y1="130" x2="290" y2="250" stroke="var(--c3)" stroke-opacity=".7"/>
+<circle cx="250" cy="205" r="9" fill="none" stroke="var(--fg)"/><circle cx="250" cy="217" r="9" fill="none" stroke="var(--fg)"/>
+<circle cx="290" cy="205" r="9" fill="none" stroke="var(--fg)"/><circle cx="290" cy="217" r="9" fill="none" stroke="var(--fg)"/>
+<rect x="210" y="250" width="120" height="44" rx="4" fill="var(--c2)" fill-opacity=".25" stroke="var(--c2)"/>
+<text x="270" y="268" text-anchor="middle" style="fill:var(--fg);font-weight:600">IT hall 2</text>
+<text x="270" y="285" text-anchor="middle">8 racks, 1.2 MW</text>
+<line x1="490" y1="130" x2="490" y2="250" stroke="var(--c3)" stroke-opacity=".7"/>
+<line x1="530" y1="130" x2="530" y2="250" stroke="var(--c3)" stroke-opacity=".7"/>
+<circle cx="490" cy="205" r="9" fill="none" stroke="var(--fg)"/><circle cx="490" cy="217" r="9" fill="none" stroke="var(--fg)"/>
+<circle cx="530" cy="205" r="9" fill="none" stroke="var(--fg)"/><circle cx="530" cy="217" r="9" fill="none" stroke="var(--fg)"/>
+<rect x="450" y="250" width="120" height="44" rx="4" fill="var(--c2)" fill-opacity=".25" stroke="var(--c2)"/>
+<text x="510" y="268" text-anchor="middle" style="fill:var(--fg);font-weight:600">IT hall 3</text>
+<text x="510" y="285" text-anchor="middle">8 racks, 1.2 MW</text>
+<line x1="650" y1="130" x2="650" y2="250" stroke="var(--c3)" stroke-opacity=".7"/>
+<line x1="690" y1="130" x2="690" y2="250" stroke="var(--c3)" stroke-opacity=".7"/>
+<circle cx="650" cy="205" r="9" fill="none" stroke="var(--fg)"/><circle cx="650" cy="217" r="9" fill="none" stroke="var(--fg)"/>
+<circle cx="690" cy="205" r="9" fill="none" stroke="var(--fg)"/><circle cx="690" cy="217" r="9" fill="none" stroke="var(--fg)"/>
+<rect x="610" y="250" width="120" height="44" rx="4" fill="var(--c2)" fill-opacity=".25" stroke="var(--c2)"/>
+<text x="670" y="268" text-anchor="middle" style="fill:var(--fg);font-weight:600">IT hall 4</text>
+<text x="670" y="285" text-anchor="middle">8 racks, 1.2 MW</text>
+<text x="390" y="322" text-anchor="middle" style="fill:var(--fg-muted)">Halls 1-2 on Bus A, 3-4 on Bus B, via 480/415 V transformers. Closed tie shares the spare genset.</text>
+<line x1="190" y1="130" x2="190" y2="170" stroke="var(--fg)"/>
+<rect x="152" y="170" width="76" height="20" rx="3" fill="var(--c5)" fill-opacity=".2" stroke="var(--c5)"/>
+<text x="190" y="184" text-anchor="middle">MCC-A</text>
+<line x1="590" y1="130" x2="590" y2="170" stroke="var(--fg)"/>
+<rect x="552" y="170" width="76" height="20" rx="3" fill="var(--c5)" fill-opacity=".2" stroke="var(--c5)"/>
+<text x="590" y="184" text-anchor="middle">MCC-B</text>
+  </svg>
+  <p class="small">MCC = motor control centre for CDUs, dry coolers and DX. Full A and B dual feed to every hall, which Tier III's "no single point of failure" implies, is a FEED-stage option to price. Plan halls for an 800 V DC retrofit from 2027.</p>
+</section>
+
+<section id="s8" aria-label="Capex and opex">
+  <div class="kicker">Cost · screening level</div>
+  <h2>$41.1M for the Block, about half the greenfield benchmark per MW.</h2>
+  <div class="grid two">
+    <table>
+      <thead><tr><th>Capex line</th><th class="n">$M</th></tr></thead>
+      <tbody>
+        <tr><td>Power: 9 MW nameplate at $2,000/kW + paralleling</td><td class="n">18.15</td></tr>
+        <tr><td>Battery 1.2 MWh at $254/kWh + 15% install</td><td class="n">0.35</td></tr>
+        <tr><td>IT halls, CDUs, dry coolers, distribution ($4.4M/MW)</td><td class="n">21.12</td></tr>
+        <tr><td>Site: pad, gas tap, fence, permits <span class="pill go">assumption</span></td><td class="n">1.50</td></tr>
+        <tr class="total"><td>Total excl. GPUs ($8,567/kW IT)</td><td class="n">41.12</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th>Per year</th><th class="n">$M</th></tr></thead>
+      <tbody>
+        <tr><td>Rent: $178/kW-month less 20% remote discount, 90% leased</td><td class="n">7.38</td></tr>
+        <tr><td>Fixed opex: 24/7 staff, protected fiber, insurance, battery O&amp;M</td><td class="n">−1.95</td></tr>
+        <tr class="total"><td>Cash to the Block</td><td class="n">5.43</td></tr>
+        <tr><td>Energy billed at cost: gas $1.60/mcf + $19/MWh O&amp;M</td><td class="n">$34.5/MWh</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">Benchmarks: Cushman &amp; Wakefield 2026 greenfield average $17.6M/MW excluding GPUs. Tenant GPUs run about $39M per MW for B300, roughly $187M for 4.8 MW, and are not in our capex.</p>
+</section>
+
+<section id="s9" aria-label="Sensitivity">
+  <div class="kicker">What moves the answer</div>
+  <h2>Hall cost and rent swing payback between 5.6 and 11 years.</h2>
+  <table>
+    <thead><tr><th>Scenario 9 input</th><th class="n">Capex</th><th class="n">Payback</th></tr></thead>
+    <tbody>
+      <tr class="base"><td>Base</td><td class="n">$41.1M</td><td class="n">7.6 y</td></tr>
+      <tr><td>Hall $2,500/kW IT</td><td class="n">$32.0M</td><td class="n">5.7 y</td></tr>
+      <tr><td>Hall $6,000/kW IT</td><td class="n">$48.8M</td><td class="n">9.3 y</td></tr>
+      <tr><td>Utilization 70%</td><td class="n">$41.1M</td><td class="n">10.8 y</td></tr>
+      <tr><td>Rent $178/kW-month, no remote discount</td><td class="n">$41.1M</td><td class="n">5.6 y</td></tr>
+      <tr><td>Rent $110/kW-month</td><td class="n">$41.1M</td><td class="n">11.0 y</td></tr>
+    </tbody>
+  </table>
+  <p class="lede">The hall cost rests on one source. The rent is a JLL average less a 20% discount we assumed for a remote islanded site. Both are the first things to check.</p>
+</section>
+
+<section id="s10" aria-label="Schedule and permits">
+  <div class="kicker">Schedule and long leads</div>
+  <h2>Gensets set the critical path, at 15–18 months from order.</h2>
+  <ol class="timeline">
+    <li class="key"><b>1–3 MW gas gensets</b><span>54–78 weeks</span><span>Order at FID. Cummins says large sets ship 2H 2028.</span></li>
+    <li><b>Switchgear</b><span>44 weeks</span><span>MV gear runs 52–80 weeks, so staying at 480 V avoids it.</span></li>
+    <li><b>Battery</b><span>1–2 quarters</span><span>Megapack quoted Q1 2027 delivery in late Sept 2026.</span></li>
+    <li><b>Modular IT halls</b><span>12 weeks–3 months</span><span>Armada and Crusoe Spark vendor claims.</span></li>
+    <li><b>EGU Standard Permit</b><span>9 days avg (2024)</span><span>West of I-35/I-37 only. East Texas needs SCR at 0.14 lb/MWh.</span></li>
+  </ol>
+  <div class="card" style="border-left:3px solid var(--bad)"><h3>Permit pause risk</h3>
+    <p>On Sept 21, 2026 the governor directed TCEQ to halt all permits sought by data centers. TCEQ applied it to every air and water
+      authorization for infrastructure directly supporting data centers, with no size threshold. It was lifted Nov 13 and review resumed
+      Nov 17. The pause was never codified, so it can come back. File early, and have counsel review holding the permit in the gas or power company's name.</p></div>
+</section>
+
+<section id="s11a" aria-label="Stranded gas sources">
+  <div class="kicker">Stranded gas, not just flare gas</div>
+  <h2>Cheap gas is seasonal and shrinking. Firm deals price at the local index plus a fee.</h2>
+  <table>
+    <thead><tr><th>Source</th><th>Cost</th><th>Firmness</th><th>Volume / decline</th><th>Contract form</th></tr></thead>
+    <tbody>
+      <tr><td>Price-stranded Permian (Waha)</td><td>Negative 90 days in a row in 2026; back near $1.9–2.0 by Nov</td><td>Low: cheap only while pipes are full; congestion returns 2028</td><td>Associated gas, &gt;50% year-1 decline</td><td>Waha 2-mo avg + $0.55, 5 y + 2×1 y (Sterling Digital)</td></tr>
+      <tr><td>Price-stranded Appalachia (M-2)</td><td>$1.12 vs Henry Hub $3.05 (Oct 2026); producers shut in at ≤$1.25</td><td>Seasonal: spring and autumn, until mid-2028</td><td>Shale, −75% over ~7 y</td><td>"M-2 plus" (EQT)</td></tr>
+      <tr><td>Stripper and legacy wells</td><td>Hub less gathering</td><td>High per well</td><td>78% of US wells ≤90 Mcf/d; ~5%/yr decline</td><td>Aggregator compressor station (Diversified)</td></tr>
+      <tr><td>Gathering or plant tailgate</td><td>Index + ~$0.55</td><td>Medium to high</td><td>1–25 MW per pad</td><td>5–20 y gas purchase agreement</td></tr>
+      <tr><td>Flare gas</td><td>Not priced</td><td>Low</td><td>Steep</td><td>Onsite-use tax relief (ND, TX)</td></tr>
+    </tbody>
+  </table>
+  <p class="lede">1.1 MMcf/d for years is too small for a major producer, too large for one stripper well and too steady for one flaring well. The workable form is a firm gathering or tailgate contract. Seasonal cheap gas is upside, not the base case.</p>
+</section>
+
+<section id="s11b" aria-label="Site ranking">
+  <div class="kicker">Where the AI Block works best · 8 sites</div>
+  <h2>Appalachia first at 5.5 years. Permian is the fast fallback.</h2>
+  <table>
+    <thead><tr><th>Site</th><th class="n">Gas $/MMBtu</th><th class="n">Gensets</th><th class="n">Rent $/kW-mo</th><th class="n">Energy margin $k/y</th><th class="n">Capex $M</th><th class="n">Payback</th><th class="n">Permit days</th><th>Moratorium</th><th>Selling power to tenants</th></tr></thead>
+    <tbody>
+      <tr class="base"><td>Appalachia N WV</td><td class="n">3.07</td><td class="n">5</td><td class="n">160</td><td class="n">1,014</td><td class="n">40.88</td><td class="n">5.5 y</td><td class="n">120</td><td>low</td><td>PSC exemption 90 MW+ only</td></tr>
+      <tr class="base"><td>Appalachia SW PA</td><td class="n">2.92</td><td class="n">5</td><td class="n">160</td><td class="n">1,046</td><td class="n">40.88</td><td class="n">5.5 y</td><td class="n">~180</td><td>medium</td><td>unclear</td></tr>
+      <tr><td>Appalachia E OH</td><td class="n">2.94</td><td class="n">5</td><td class="n">160</td><td class="n">1,042</td><td class="n">40.88</td><td class="n">5.5 y</td><td class="n">240</td><td>high (138 local)</td><td>allowed</td></tr>
+      <tr><td>Haynesville NW LA</td><td class="n">3.10</td><td class="n">5</td><td class="n">144</td><td class="n">405</td><td class="n">38.16</td><td class="n">6.4 y</td><td class="n">~30</td><td>low</td><td>unclear</td></tr>
+      <tr><td>San Juan NM</td><td class="n">3.11</td><td class="n">6</td><td class="n">156</td><td class="n">603</td><td class="n">43.37</td><td class="n">6.5 y</td><td class="n">120</td><td>medium</td><td>allowed</td></tr>
+      <tr><td>Permian TX</td><td class="n">2.41</td><td class="n">6</td><td class="n">138</td><td class="n">547</td><td class="n">41.12</td><td class="n">7.1 y</td><td class="n">9</td><td>high (pause)</td><td>allowed, bundled lease</td></tr>
+      <tr class="dim"><td>Anadarko OK</td><td class="n">3.26</td><td class="n">6</td><td class="n">138</td><td class="n">354</td><td class="n">41.14</td><td class="n">7.4 y</td><td class="n">180</td><td>medium</td><td>allowed</td></tr>
+      <tr class="dim"><td>Bakken ND</td><td class="n">2.90</td><td class="n">6</td><td class="n">125</td><td class="n">1,081</td><td class="n">43.38</td><td class="n">7.8 y</td><td class="n">120</td><td>low</td><td>unknown</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Gas: Henry Hub $3.05 plus local forward basis, $0.55 fees and state production tax. Rent: hub band less a 10/20/30% remote discount by latency <span class="pill go">assumption</span>. Energy margin: half the gap between our power cost and the hub state's industrial price (EIA, Sept 2026: VA 9.86, TX 6.99, AZ 7.95, CO 10.04 ¢/kWh). Lean dry gas derate 5% <span class="pill go">assumption</span>; rich associated gas 20%.</p>
+</section>
+
+<section id="s11c" aria-label="What drives the ranking">
+  <div class="kicker">What actually moves feasibility</div>
+  <h2>Location beats molecule price.</h2>
+  <div class="grid two">
+    <table>
+      <thead><tr><th>Appalachia SW PA case</th><th class="n">Gensets</th><th class="n">Payback</th></tr></thead>
+      <tbody>
+        <tr class="base"><td>Base</td><td class="n">5</td><td class="n">5.5 y</td></tr>
+        <tr><td>Seasonal shut-in gas at $1.50</td><td class="n">5</td><td class="n">5.3 y</td></tr>
+        <tr><td>Rich-gas derate 20%</td><td class="n">6</td><td class="n">6.0 y</td></tr>
+        <tr><td>Remote discount 20%</td><td class="n">5</td><td class="n">6.3 y</td></tr>
+        <tr><td>Both</td><td class="n">6</td><td class="n">6.8 y</td></tr>
+        <tr><td>Both, no energy margin</td><td class="n">6</td><td class="n">8.2 y</td></tr>
+        <tr><td><i>Permian with lean tailgate gas</i></td><td class="n">5</td><td class="n">6.5 y</td></tr>
+      </tbody>
+    </table>
+    <div style="display:grid;gap:14px">
+      <div class="card"><h3>Drivers, in order</h3><p>1. The grid price the tenant would otherwise pay. 2. The rent the nearest hub supports. 3. Gas quality, through genset count. 4. Permit and power-sale risk. Gas price comes last: cutting it in half saves 0.2 years.</p></div>
+      <div class="card"><h3>Recommendation</h3><p>Lead the search in northern WV and SW PA on dry Marcellus gas at "M-2 plus". Run the Permian in parallel on tailgate gas with its 9-day permit. Hold Haynesville until Louisiana's rules are clear. Drop Anadarko and Bakken unless a site brings a tenant.</p></div>
+      <div class="card" style="border-left:3px solid var(--bad)"><h3>Legal gate</h3><p>Texas: price one all-in lease (power "as an incident of tenancy"); metered kWh sales are not allowed. PA and WV need counsel before optioning a site. One structure to test: the tenant leases the whole Block, so the power is self-supply.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="s11" aria-label="Research backlog">
+  <div class="kicker">Research begins here</div>
+  <h2>Ten checks, ordered by how much they move the decision.</h2>
+  <div class="grid two">
+    <ol class="tight">
+      <li><b>Hall cost.</b> Budget quotes from Vertiv MegaMod, Armada, Crusoe Spark, Giga. Moves payback 5.7–9.3 years.</li>
+      <li><b>Tenant and rent.</b> Who leases 4.8 MW islanded, at what rent and SLA? Crusoe's islanded microgrid reached 99.2%.</li>
+      <li><b>Firm gas.</b> Terms for 1.1 MMcf/d at a plant tailgate or gathering header. Waha congestion may return in 2028.</li>
+      <li><b>Transient study.</b> Can recips follow 0.2–3 Hz swings in island mode? That sets the battery size (Williams 46% vs VoltaGrid none).</li>
+      <li><b>Gas analysis.</b> Chromatograph on the candidate supply; G3516 FR derate at the measured methane number.</li>
+    </ol>
+    <ol class="tight" start="6">
+      <li><b>Dry-only summer.</b> Dry-cooler approach at 40–47 °C ambient, and hours of throttling.</li>
+      <li><b>Fiber.</b> FiberLight and Segra quotes for laterals and a protected 100G wave on Permian routes.</li>
+      <li><b>Permit text.</b> Confirm the EGU Standard Permit PDF; watch for the pause returning.</li>
+      <li><b>Staffing.</b> Remote monitoring plus on-call instead of 24/7 onsite staff. That could make a 1.2 MW Block viable.</li>
+      <li><b>800 V DC.</b> Design halls to retrofit 800 V DC power for 2027+ racks.</li>
+    </ol>
+  </div>
+  <p class="small">Repo: <code>docs/modular-dc/basis-of-design.md</code> (cited design), <code>docs/modular-dc/stranded-gas-siting.md</code> (siting analysis), <code>docs/modular-dc/ai_block_model.py</code> (scenario and site sweeps; rerun with new inputs), <code>docs/modular-dc/evidence.json</code> (270 verified sources).</p>
+</section>
+
+<nav class="hud" aria-live="polite"><span id="pos">1</span> / 14 · ↑ ↓ to move</nav>
+<script>
+const slides = [...document.querySelectorAll('section')];
+const pos = document.getElementById('pos');
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) pos.textContent = slides.indexOf(e.target) + 1; }), { threshold: 0.55 });
+slides.forEach(s => io.observe(s));
+addEventListener('keydown', e => {
+  const i = +pos.textContent - 1;
+  const step = { ArrowDown: 1, ArrowRight: 1, PageDown: 1, ' ': 1, ArrowUp: -1, ArrowLeft: -1, PageUp: -1 }[e.key];
+  if (!step) return;
+  e.preventDefault();
+  slides[Math.max(0, Math.min(slides.length - 1, i + step))].scrollIntoView();
+});
+</script>
+</body>
+</html>

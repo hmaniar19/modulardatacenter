@@ -1,0 +1,1894 @@
+{
+  "sources": [
+    {
+      "id": "ai-cmp-dgxb300-kw",
+      "url": "https://docs.nvidia.com/dgx/dgxb300-user-guide/introduction-to-dgxb300.html",
+      "quote": "Power consumption 14.5 kW Power supplies 12 x 3.2 kW",
+      "fetched": "2026-11-25",
+      "claim": "NVIDIA DGX B300 (8-GPU HGX-class server) draws up to 14.5 kW, about 1.8 kW per GPU slot, from 12 x 3.2 kW PSUs."
+    },
+    {
+      "id": "ai-cmp-gb200-shelf",
+      "url": "https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-gb200/latest/dgx-superpod-components.html",
+      "quote": "The power shelf used for DGX DGX GB200 SuperPOD has six 5.5kW PSUs configured as N redundancy and can deliver up to 33kW of power. There are eight total power shelves in a single DGX GB200 NVL72",
+      "fetched": "2026-11-25",
+      "claim": "A GB200 NVL72 rack has 8 power shelves of 33 kW each (264 kW installed rectifier capacity) for a roughly 120-140 kW load."
+    },
+    {
+      "id": "ai-cmp-gb200-su-mw",
+      "url": "https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-gb200/latest/dgx-superpod-architecture.html",
+      "quote": "Each SU requires a Thermal Design Power (TDP) of 1.2 Megawatts (MW).",
+      "fetched": "2026-11-25",
+      "claim": "An 8-rack GB200 NVL72 scalable unit (576 GPUs) needs 1.2 MW TDP, about 150 kW per compute rack including networking share; one SU is a natural 1 MW-class AI Block."
+    },
+    {
+      "id": "ai-cmp-gb200-tier3",
+      "url": "https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-gb200/latest/dgx-superpod-architecture.html",
+      "quote": "Generally, the data center should meet or exceed Uptime Institute Tier 3 design standards, or alternatively the TIA942-B Rated 3 or EN50600 Availability Class 3 design standards, including concurrent maintainability and no single point of failure.",
+      "fetched": "2026-11-25",
+      "claim": "NVIDIA expects DGX SuperPOD GB200 sites to meet Uptime Tier III (concurrently maintainable, no single point of failure), which sets the bar for an N+1 power island serving training tenants."
+    },
+    {
+      "id": "ai-cmp-gb300-142kw",
+      "url": "https://docs.nvidia.com/enterprise-reference-architectures/nvl72-ai-factory/latest/components.html",
+      "quote": "Full rack requiring up to 142 kW",
+      "fetched": "2026-11-25",
+      "claim": "NVIDIA enterprise reference architecture: a full GB300 NVL72 rack requires up to 142 kW."
+    },
+    {
+      "id": "ai-cmp-gb300-135tdp",
+      "url": "https://lenovopress.lenovo.com/lp2357-lenovo-nvidia-gb300-nvl72-rack-scale-ai",
+      "quote": "Each rack consumes 135 kW TDP; up to 155 kW peak depending on workload and EDP behavior.",
+      "fetched": "2026-11-25",
+      "claim": "Lenovo GB300 NVL72: 135 kW TDP per rack, up to 155 kW peak (EDP), so size per-rack feeders and genset step capability for ~155 kW."
+    },
+    {
+      "id": "ai-cmp-gb300-split",
+      "url": "https://lenovopress.lenovo.com/lp2357-lenovo-nvidia-gb300-nvl72-rack-scale-ai",
+      "quote": "At the rack level, the split between air and liquid heat capture is about 10% to air and 90% to liquid.",
+      "fetched": "2026-11-25",
+      "claim": "GB300 NVL72 rejects about 90% of heat to liquid and 10% to air, so a 1 MW block still needs roughly 100 kW of air-side cooling."
+    },
+    {
+      "id": "ai-cmp-gb300-flow",
+      "url": "https://lenovopress.lenovo.com/lp2357-lenovo-nvidia-gb300-nvl72-rack-scale-ai",
+      "quote": "Fluid Supply Temperature Required Rack Flow Rack Pressure Drop 25°C 59 LPM 2.3 psi 30°C 71 LPM 3.2 psi 35°C 89 LPM 4.9 psi 40°C 119 LPM 8.5 psi 45°C 177 LPM 18.4 psi",
+      "fetched": "2026-11-25",
+      "claim": "GB300 NVL72 rack coolant flow rises from 59 LPM at 25°C supply to 177 LPM (18.4 psi drop) at 45°C supply, tripling pump flow if the loop runs warm."
+    },
+    {
+      "id": "ai-cmp-gb300-45c",
+      "url": "https://lenovopress.lenovo.com/lp2357-lenovo-nvidia-gb300-nvl72-rack-scale-ai",
+      "quote": "Allowable inlet temperatures for the water can be as high as 45°C (113°F) with the NVIDIA GB300 NVL72 for real-world applications.",
+      "fetched": "2026-11-25",
+      "claim": "GB300 NVL72 accepts liquid inlet up to 45°C (113°F), the basis for chiller-free dry-cooler operation."
+    },
+    {
+      "id": "ai-cmp-gb300-rack-dims",
+      "url": "https://lenovopress.lenovo.com/lp2357-lenovo-nvidia-gb300-nvl72-rack-scale-ai",
+      "quote": "The Lenovo 48U MGX Rack has the following dimensions: Width: 600 mm (23.6 inches) Height: 2,294 mm (90.3 inches) Depth: 1,068 mm (42.05 inches)",
+      "fetched": "2026-11-25",
+      "claim": "A 48U MGX NVL72 rack is 600 mm wide x 2,294 mm high x 1,068 mm deep (1,200 mm with extension frame) for skid layout."
+    },
+    {
+      "id": "ai-cmp-nvl72-weight-hpe",
+      "url": "https://aidatacenterguide.com/part-6-the-building-civil-structural-fire-life-safety-and-construction-execution/6-7-rack-civil-integration-mass-floor-loading-and-seismic-anchoring",
+      "quote": "the rack comes to 3,245 lb (1,472 kg) wet.",
+      "fetched": "2026-11-25",
+      "claim": "Secondary summary of HPE GB200 NVL72 QuickSpecs V6: a filled GB200 NVL72 rack weighs 3,245 lb (1,472 kg); HPE itself was unreachable by plain fetch."
+    },
+    {
+      "id": "ai-cmp-nvl72-weight-gb300",
+      "url": "https://aidatacenterguide.com/part-6-the-building-civil-structural-fire-life-safety-and-construction-execution/6-7-rack-civil-integration-mass-floor-loading-and-seismic-anchoring",
+      "quote": "Upper end is HPE GB300 NVL72 fully loaded with PGW (3,300 lb)",
+      "fetched": "2026-11-25",
+      "claim": "Secondary summary: HPE lists a fully loaded GB300 NVL72 rack at 3,300 lb (1.5 t), the upper bound for skid and floor design."
+    },
+    {
+      "id": "ai-cmp-800v-2027",
+      "url": "https://developer.nvidia.com/blog/nvidia-800-v-hvdc-architecture-will-power-the-next-generation-of-ai-factories/",
+      "quote": "to 800 VDC data center power infrastructure to support 1 MW IT racks starting in 2027",
+      "fetched": "2026-11-25",
+      "claim": "NVIDIA is moving to 800 VDC rack power from 2027 (Kyber), so an AI Block built now should plan to retrofit or design for 800 VDC distribution."
+    },
+    {
+      "id": "ai-cmp-swing-30pct",
+      "url": "https://developer.nvidia.com/blog/building-the-800-vdc-ecosystem-for-efficient-scalable-ai-factories/",
+      "quote": "The power draw of a rack can swing from an “idle” state of around 30% to 100% utilization and back again in milliseconds.",
+      "fetched": "2026-11-25",
+      "claim": "AI training racks swing from about 30% to 100% load within milliseconds, a step a reciprocating-engine island cannot follow without battery or capacitor buffering."
+    },
+    {
+      "id": "ai-cmp-gb300-smoothing",
+      "url": "https://developer.nvidia.com/blog/how-new-gb300-nvl72-features-provide-steady-power-for-ai/",
+      "quote": "It can smooth power spikes from AI workloads and reduce peak grid demand by up to 30%.",
+      "fetched": "2026-11-25",
+      "claim": "GB300 NVL72 power shelves with built-in energy storage cut peak demand by up to 30% and damp fast load swings, which eases genset sizing."
+    },
+    {
+      "id": "ai-cmp-coolit-chx2000",
+      "url": "https://www.coolitsystems.com/chx2000/",
+      "quote": "Cooling Capacity 2000 kW Power Consumption 12.24 kW Racks Managed 12 x GB300 NVL72 racks per CDU",
+      "fetched": "2026-11-25",
+      "claim": "CoolIT CHx2000 CDU: 2,000 kW capacity, 12.24 kW power draw, serves 12 GB300 NVL72 racks (about 167 kW per rack)."
+    },
+    {
+      "id": "ai-cmp-vertiv-cdu2300",
+      "url": "https://www.vertiv.com/4a8d0d/globalassets/shared/vertiv-coolchipcdu-2300kw-_datasheet_global-english_sl-80607.pdf",
+      "quote": "Delivering 2300 kW of nominal cooling capacity with a 4°C approach temperature",
+      "fetched": "2026-11-25",
+      "claim": "Vertiv CoolChip CDU 2300kW: 2,300 kW nominal at 4°C approach (preliminary datasheet, Aug 2026)."
+    },
+    {
+      "id": "ai-cmp-vertiv-cdu-power",
+      "url": "https://www.vertiv.com/4a8d0d/globalassets/shared/vertiv-coolchipcdu-2300kw-_datasheet_global-english_sl-80607.pdf",
+      "quote": "Nominal Power Consumption 47.8 kW",
+      "fetched": "2026-11-25",
+      "claim": "Vertiv CoolChip CDU 2300kW draws 47.8 kW nominal, about 2% of its rated heat load (preliminary datasheet also lists 1,793 kg wet, 480 V/60 Hz)."
+    },
+    {
+      "id": "ai-cmp-nv-45c-chillerless",
+      "url": "https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/",
+      "quote": "In favorable climates, NVIDIA’s 45-degree liquid-cooling architecture can enable chiller-less operation with dry coolers",
+      "fetched": "2026-11-25",
+      "claim": "NVIDIA says 45°C coolant enables chiller-free dry-cooler operation in favorable climates; hot sites still need trim cooling."
+    },
+    {
+      "id": "ai-cmp-nv-1pct-chiller",
+      "url": "https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/",
+      "quote": "it’s a closed-loop system with no evaporative water cooling — outside of maybe 1% of the year when we might need chillers in some climates.",
+      "fetched": "2026-11-25",
+      "claim": "NVIDIA DSX reference design: closed-loop dry-cooler-based with zero water use, needing chillers maybe 1% of the year in some climates."
+    },
+    {
+      "id": "ai-cmp-se-rd109-132kw",
+      "url": "https://download.se.com/files?p_Doc_Ref=RD109DSR0_EN&p_enDocType=Application%20Notes",
+      "quote": "IT space and power distribution designed to accommodate AI clusters with density up to 132 kW per rack",
+      "fetched": "2026-11-25",
+      "claim": "Schneider RD109 reference design for GB200 NVL72 uses 132 kW per AI rack plus 22 kW networking racks, 415 V to IT from 480 V/60 Hz."
+    },
+    {
+      "id": "ai-cmp-se-rd109-fluidcooler",
+      "url": "https://download.se.com/files?p_Doc_Ref=RD109DSR0_EN&p_enDocType=Application%20Notes",
+      "quote": "With supply water temperatures approaching 100°F, fluid coolers become useful heat rejection units in a wide range of climates.",
+      "fetched": "2026-11-25",
+      "claim": "Schneider RD109 rejects CDU heat with fluid coolers rather than chillers because the facility loop supply approaches 100°F (design 99°F supply / 117°F return)."
+    },
+    {
+      "id": "ai-cmp-se-rd109-adiabatic",
+      "url": "https://download.se.com/files?p_Doc_Ref=RD109DSR0_EN&p_enDocType=Application%20Notes",
+      "quote": "For ambient temperatures above 90°F, the fluid coolers use adiabatic assist to provide sufficient cooling for the data center.",
+      "fetched": "2026-11-25",
+      "claim": "Schneider RD109 fluid coolers need adiabatic (water) assist above 90°F ambient, which a dry-only West Texas design must replace with trim chillers or a warmer loop."
+    },
+    {
+      "id": "ai-cmp-se-rd109-pue",
+      "url": "https://download.se.com/files?p_Doc_Ref=RD109DSR0_EN&p_enDocType=Application%20Notes",
+      "quote": "Dallas, TX: 1.15",
+      "fetched": "2026-11-25",
+      "claim": "Schneider RD109 GB200 reference design: annualized PUE 1.15 at 100% load in Dallas, TX (with adiabatic fluid coolers and chillers)."
+    },
+    {
+      "id": "ai-cmp-vertiv-megamod-1p3",
+      "url": "https://www.vertiv.com/4adb2b/globalassets/products/facilities-enclosures-and-racks/integrated-solutions/vertiv-megamod-coolchip/vertiv-megamod-coolchip-brochure.pdf",
+      "quote": "13 racks – 8 of them are compute racks",
+      "fetched": "2026-11-25",
+      "claim": "Vertiv MegaMod CoolChip Compact reference design is a 1.3 MW AI data center with 13 racks, 8 of them compute, in an 801 sq ft hall with 87% liquid / 13% air cooling."
+    },
+    {
+      "id": "ai-cmp-vertiv-trimcooler",
+      "url": "https://www.vertiv.com/4adb2b/globalassets/products/facilities-enclosures-and-racks/integrated-solutions/vertiv-megamod-coolchip/vertiv-megamod-coolchip-brochure.pdf",
+      "quote": "this innovative system can handle supply water temperatures up to 40°C while delivering an impressive cooling capacity of up to 3MW. The system operates reliably across an extensive ambient temperature range from -20°C to +55°C",
+      "fetched": "2026-11-25",
+      "claim": "Vertiv CoolLoop Trim Cooler (used for the liquid loop in MegaMod): up to 3 MW, supply water up to 40°C, ambient -20 to +55°C."
+    },
+    {
+      "id": "ai-cmp-vertiv-onecore",
+      "url": "https://www.prnewswire.com/news-releases/vertiv-announces-vertiv-onecore-to-accelerate-deployment-of-scalable-prefabricated-infrastructure-for-ai-hpc-and-high-density-5-mw-data-centers-302522036.html",
+      "quote": "Supports 5 to 50 MW in a single block to meet growing energy demands for AI and high-density deployments.",
+      "fetched": "2026-11-25",
+      "claim": "Vertiv OneCore prefabricated blocks span 5-50 MW (96-944 racks), aimed at the 5 MW+ variant rather than a 1 MW block."
+    },
+    {
+      "id": "ai-cmp-armada-leviathan",
+      "url": "https://www.armada.ai/product/leviathan",
+      "quote": "Leviathan delivers 1.77 MW of SI infrastructure, operational in 12 weeks.",
+      "fetched": "2026-11-25",
+      "claim": "Armada Leviathan modular AI data center: 1.77 MW IT per unit, operational in 12 weeks."
+    },
+    {
+      "id": "ai-cmp-armada-cooling",
+      "url": "https://www.armada.ai/product/leviathan",
+      "quote": "Cooling capacity 2.2 MW Circuit Closed-circuit liquid loop, direct-to-chip Liquid-to-air cooling ratio 80 / 20 Chiller configuration N+1 chiller configuration",
+      "fetched": "2026-11-25",
+      "claim": "Leviathan has 2.2 MW of cooling for 1.77 MW IT (1.24x), 80/20 liquid/air, with N+1 air-cooled chillers (not chiller-free)."
+    },
+    {
+      "id": "ai-cmp-armada-footprint",
+      "url": "https://www.armada.ai/product/leviathan",
+      "quote": "36,300 × 13,600 mm (approx. 119 × 45 ft)",
+      "fetched": "2026-11-25",
+      "claim": "A 1.77 MW Leviathan occupies 36.3 x 13.6 m (119 x 45 ft, about 0.12 acre), a plot-plan benchmark of about 3,000 sq ft per MW."
+    },
+    {
+      "id": "ai-cmp-crusoe-offgrid",
+      "url": "https://www.crusoe.ai/resources/blog/crusoe-spark-achieve-nvidia-exemplar-performance",
+      "quote": "The HGX B300 systems used for this validation run in Nevada are primarily powered by large-scale solar and second-life EV batteries.",
+      "fetched": "2026-11-25",
+      "claim": "Frontier-class training (HGX B300) already runs in remote modular units on non-grid power (solar plus second-life batteries in Nevada)."
+    },
+    {
+      "id": "ai-cmp-ay-wholesale",
+      "url": "https://www.avisonyoung.us/documents/d/us/q3-2026-us-data-center-report",
+      "quote": "reaching $134 to $160 per kilowatt (kW) per month, compared with increases of about 11% to 16% for wholesale leases, which now range from $150 to $210 per kW.",
+      "fetched": "2026-11-25",
+      "claim": "Q3 2026 US wholesale colocation rents are $150-210/kW-month, and >100 MW hyperscale deals are $134-160/kW-month."
+    },
+    {
+      "id": "ai-cmp-ay-islanded",
+      "url": "https://www.avisonyoung.us/documents/d/us/q3-2026-us-data-center-report",
+      "quote": "islanded solutions, meaning access to transmission lines may not be required.",
+      "fetched": "2026-11-25",
+      "claim": "Avison Young (Q3 2026): some data center users now accept fully islanded on-site gas power with no transmission access."
+    },
+    {
+      "id": "ai-cmp-ay-tceq-pause",
+      "url": "https://www.avisonyoung.us/documents/d/us/q3-2026-us-data-center-report",
+      "quote": "Texas Commission on Environmental Quality (TCEQ) paused air and water permits for data center infrastructure at the governor’s request.",
+      "fetched": "2026-11-25",
+      "claim": "On Sept 24, 2026 TCEQ paused air and water permits for data center infrastructure, a direct permitting risk for gas-fired AI Blocks in Texas."
+    },
+    {
+      "id": "ai-cmp-jll-rent-1mw",
+      "url": "https://www.jll.com/content/dam/jllcom/en/amer/documents/reports/research-reports/26-insights-north-america-data-center-report-ye-2026.pdf",
+      "quote": "$210 + E",
+      "fetched": "2026-11-25",
+      "claim": "JLL midyear 2026: North America average rent for 250 kW-1 MW deployments is $210/kW-month plus energy (table also lists $178 + E for 1-5 MW)."
+    },
+    {
+      "id": "ai-cmp-jll-enterprise",
+      "url": "https://www.jll.com/content/dam/jllcom/en/amer/documents/reports/research-reports/26-insights-north-america-data-center-report-ye-2026.pdf",
+      "quote": "500 kW to 3 MW, yet even this group is struggling to secure capacity to support business growth.",
+      "fetched": "2026-11-25",
+      "claim": "JLL: enterprise users need 500 kW-3 MW sites and struggle to secure capacity, which matches the size of a 1 MW AI Block."
+    },
+    {
+      "id": "ai-pwr-gb300-peak30",
+      "url": "https://developer.nvidia.com/blog/how-new-gb300-nvl72-features-provide-steady-power-for-ai/",
+      "quote": "Notably, the peak power demand seen by the grid is reduced by 30% when training the Megatron LLM, and rapid fluctuations are substantially dampened",
+      "fetched": "2026-11-25",
+      "claim": "NVIDIA measured GB300 NVL72 energy-storage power shelves cut grid-side peak demand 30% on Megatron LLM training versus the GB200 PSU."
+    },
+    {
+      "id": "ai-pwr-gb300-65j",
+      "url": "https://developer.nvidia.com/blog/how-new-gb300-nvl72-features-provide-steady-power-for-ai/",
+      "quote": "filled the remaining space with 65 joules/GPU of energy storage",
+      "fetched": "2026-11-25",
+      "claim": "GB300 PSU carries only 65 J per GPU of capacitor storage, i.e. sub-second smoothing, not ride-through."
+    },
+    {
+      "id": "ai-pwr-gb300-burner",
+      "url": "https://developer.nvidia.com/blog/how-new-gb300-nvl72-features-provide-steady-power-for-ai/",
+      "quote": "When a workload ends, the burner tapers off the power draw at a rate consistent with grid capabilities and then disengages.",
+      "fetched": "2026-11-25",
+      "claim": "GB300 power burner holds load at job end and ramps down at a configurable grid-tolerable rate (ramp-down limit)."
+    },
+    {
+      "id": "ai-pwr-msft-fft",
+      "url": "https://arxiv.org/html/2508.14318",
+      "quote": "AI workload power traces like those in Figure 1 show FFT energy concentrated between 0.2–3 Hz (Figure 3 )—close to known resonant modes of turbine-generator shafts and long transmission lines.",
+      "fetched": "2026-11-25",
+      "claim": "Microsoft/OpenAI/NVIDIA production traces show AI training power oscillation energy at 0.2-3 Hz, in the band of genset/turbine shaft and grid resonances."
+    },
+    {
+      "id": "ai-pwr-msft-tdp-idle",
+      "url": "https://arxiv.org/html/2508.14318",
+      "quote": "While the power utilized in a computationally heavy phase in a GPU can be close to its TDP (Thermal Design Power), the power utilized during the communication phase can be close to the idle power.",
+      "fetched": "2026-11-25",
+      "claim": "Training swings run between near-TDP (compute) and near-idle (communication) per GPU, i.e. a large fraction of IT load."
+    },
+    {
+      "id": "ai-pwr-msft-mpf-overhead",
+      "url": "https://arxiv.org/html/2508.14318",
+      "quote": "The floor was set to 90 % 90\\% of the TDP for this simulation. At such a high setting, for the power waveform in Figure 1 , we note a total energy overhead of 10.5 % 10.5\\% due to the power smoothing feature.",
+      "fetched": "2026-11-25",
+      "claim": "GB200 GPU power-floor smoothing at 90% TDP costs about 10.5% extra energy on a real training waveform."
+    },
+    {
+      "id": "ai-pwr-nv-bess-gen",
+      "url": "https://developer.nvidia.com/blog/designing-production-ready-battery-energy-storage-systems-for-ai-factories/",
+      "quote": "BESS should catch residual load fluctuations that reach the upstream system, protecting generators from sharp swings and helping maintain grid stability",
+      "fetched": "2026-11-25",
+      "claim": "NVIDIA DSX reference treats facility BESS as required buffer for residual AI transients that reach onsite generators, incl. islanded mode."
+    },
+    {
+      "id": "ai-pwr-nerc-6to30mw",
+      "url": "https://spectrum.ieee.org/nercs-data-center-power-rules",
+      "quote": "A 2025 NERC white paper showed a 50-MW section of a 200-MW data center ramping from 6 to 30 MW in a quarter of a second.",
+      "fetched": "2026-11-25",
+      "claim": "NERC-documented AI step: a 50 MW data-center section ramped 6 to 30 MW (~48% of section) in 0.25 s, ~96 MW/s."
+    },
+    {
+      "id": "ai-pwr-dominion-15mw",
+      "url": "https://spectrum.ieee.org/nercs-data-center-power-rules",
+      "quote": "found a 100-MW data center swinging by 10 to 15 MW every 2.5 seconds",
+      "fetched": "2026-11-25",
+      "claim": "Dominion Energy measured a 100 MW data center swinging 10-15% (10-15 MW) every 2.5 s."
+    },
+    {
+      "id": "ai-pwr-checkpoint",
+      "url": "https://spectrum.ieee.org/nercs-data-center-power-rules",
+      "quote": "Training often pauses every 10 or 20 minutes to save progress, leaving servers idle for up to a few minutes before they ramp back up.",
+      "fetched": "2026-11-25",
+      "claim": "Checkpoint pauses every 10-20 min idle servers for up to a few minutes: a second, slower full-load swing the power island must follow."
+    },
+    {
+      "id": "ai-pwr-g3516fr-block",
+      "url": "https://secondwatt.com/equipment/gas-engines/caterpillar-g3516-fast-response",
+      "quote": "Caterpillar states a cold start to full load of 6.5 to 7.5 seconds and says the set accepts and recovers from a 100 percent block load in one step.",
+      "fetched": "2026-11-25",
+      "claim": "Cat G3516 Fast Response (1,500 ekW standby) reaches full load in 6.5-7.5 s and accepts 100% block load in one step."
+    },
+    {
+      "id": "ai-pwr-monarch-2gw",
+      "url": "https://secondwatt.com/equipment/gas-engines/caterpillar-g3516-fast-response",
+      "quote": "On 28 January 2026 Caterpillar, dealer Boyd CAT and American Intelligence & Power announced a 2 GW deployment of G3516 fast-response sets at the Monarch Compute Campus in West Virginia.",
+      "fetched": "2026-11-25",
+      "claim": "Precedent: 2 GW of G3516 fast-response gensets with BESS and SCR ordered for an AI campus (Jan 2026), deliveries Sep 2026-Aug 2027."
+    },
+    {
+      "id": "ai-pwr-g3516-nox05",
+      "url": "https://www.hawthornecat.com/new-power/gas-generator-sets/g3516-1500kw-gas-generator-set",
+      "quote": "NOx selectable genset is available to meets most worldwide emissions requirements down to 0.5 g/bhp-hr NOx level without aftertreatment",
+      "fetched": "2026-11-25",
+      "claim": "Cat G3516 Fast Response NOx-selectable build reaches 0.5 g/bhp-hr NOx without aftertreatment, half the NSPS JJJJ limit."
+    },
+    {
+      "id": "ai-pwr-apg-mn",
+      "url": "https://www.mwm.net/en/gas-expertise/gas-solutions/associated-petroleum-gas-apg",
+      "quote": "The knocking resistance, which is crucial for the combustion, varies between a methane number of 25 and 95.",
+      "fetched": "2026-11-25",
+      "claim": "MWM (Caterpillar): associated petroleum gas methane number ranges 25-95, so engine choice/derate depends on site gas analysis."
+    },
+    {
+      "id": "ai-pwr-hsk78g-step",
+      "url": "https://secondwatt.com/resources/reciprocating-gas-engine-generators",
+      "quote": "The HSK78G is listed with a 30% load step at G1 and four steps to load.",
+      "fetched": "2026-11-25",
+      "claim": "Typical lean-burn 2 MW gas genset (Cummins HSK78G) accepts only a 30% first load step (ISO 8528-5 G1), four steps to full load, vs 100% for Cat G3516 Fast Response."
+    },
+    {
+      "id": "ai-pwr-g3516fr-hr",
+      "url": "https://secondwatt.com/resources/industrial-natural-gas-generators",
+      "quote": "Cat G3516 Fast Response 1,500 ekW standby at 0.8 pf; sheet lists the same 1,500 ekW continuous 9,771 Btu/ekW-hr at 100% load",
+      "fetched": "2026-11-25",
+      "claim": "Cat G3516 Fast Response data sheet lists 1,500 ekW continuous as well as standby, at 9,771 Btu/ekW-hr full load (~35% if LHV; basis not stated)."
+    },
+    {
+      "id": "ai-pwr-qsk60-mn",
+      "url": "https://secondwatt.com/resources/industrial-natural-gas-generators",
+      "quote": "The minimum methane index is 70 for the HSK78G C2000N6CD, 78 for the QSK60G C1400N6C and 55 for the QSK60G C1000N6, on their Cummins data sheets.",
+      "fetched": "2026-11-25",
+      "claim": "Cummins lean-burn gensets need methane index >=55 (QSK60G C1000N6) to >=78 (QSK60G C1400N6C); rich Permian gas (MN ~38-45) needs conditioning or derate."
+    },
+    {
+      "id": "ai-pwr-taurus70-derate",
+      "url": "https://secondwatt.com/resources/gas-turbines-vs-reciprocating-gas-engines-data-center-power",
+      "quote": "In EPA's example for the Solar Taurus 70, an industrial turbine, output drops to 80% at 100 °F against the 59 °F ISO point.",
+      "fetched": "2026-11-25",
+      "claim": "Small industrial gas turbines lose ~20% output at 100 F vs ISO 59 F (EPA Taurus 70 example), a major Texas summer derate."
+    },
+    {
+      "id": "ai-pwr-taurus60",
+      "url": "https://secondwatt.com/equipment/gas-turbines/solar-taurus-60",
+      "quote": "ISO base-load electrical output 5,670 kWe Heat rate 11,430 (10,830) kJ/kWh (Btu/kWh) Thermal efficiency 31.5 %",
+      "fetched": "2026-11-25",
+      "claim": "Solar Taurus 60: 5,670 kWe ISO, heat rate 10,830 Btu/kWh, 31.5% efficiency; only fits 5-10 MW variant."
+    },
+    {
+      "id": "ai-pwr-sgta05",
+      "url": "https://www.siemens-energy.com/global/en/home/products-services/product/sgt-a05-ae.html",
+      "quote": "Power output 4.0 MW(e) 5.4 MW(e) 5.8 MW(e) Fuel* Natural gas, liquid fuel, dual fuel Natural gas, liquid fuel, dual fuel Natural gas, liquid fuel, dual fuel Frequency 50/60 Hz 50/60 Hz 50/60 Hz Gross efficiency 29.7% 32.3% 33.2%",
+      "fetched": "2026-11-25",
+      "claim": "Siemens SGT-A05 aeroderivative: 4.0/5.4/5.8 MW variants at 29.7-33.2% gross efficiency."
+    },
+    {
+      "id": "ai-pwr-megapack-tx",
+      "url": "https://poweraudit.net/research/tesla-megapack-cost-2026",
+      "quote": "1 unit, 4-hour, Texas 1 MW 3.9 MWh $991,910 $8,830",
+      "fetched": "2026-11-25",
+      "claim": "Tesla Megapack design-page price (Q1 2027 delivery): one 1 MW/3.9 MWh 4-hour unit in Texas $991,910 (~$254/kWh) plus $8,830/yr maintenance, excl. tax and installation."
+    },
+    {
+      "id": "ai-pwr-bnef-turnkey-us",
+      "url": "https://wingzman.com/news/bess-system-prices-market-spread-2026",
+      "quote": "BNEF put turnkey system prices at about US$73 per kWh in China, US$177 per kWh in Europe and US$219 per kWh in the United States.",
+      "fetched": "2026-11-25",
+      "claim": "BNEF 2025 survey (via secondary): turnkey BESS ~$219/kWh in the US vs $117/kWh global average."
+    },
+    {
+      "id": "ai-pwr-skeleton-runtime",
+      "url": "https://www.skeletontech.com/datacenters-peak-shaving-power-backup",
+      "quote": "Charges within a second. Runtime up to one minute.",
+      "fetched": "2026-11-25",
+      "claim": "Skeleton GrapheneGPU supercapacitors: recharge within 1 s, runtime up to 1 minute - transient smoothing, not genset-trip ride-through."
+    },
+    {
+      "id": "ai-pwr-woodmac-q2-2025",
+      "url": "https://www.woodmac.com/news/opinion/mind-the-gap-tackling-supply-chain-challenges-in-the-electric-td-sector",
+      "quote": "Power transformer lead times also eased in Q2, falling by 10 weeks to an average of 128 weeks, while switchgear edged down to an average of 44 weeks.",
+      "fetched": "2026-11-25",
+      "claim": "Wood Mackenzie Q2 2025: power transformer lead time averaged 128 weeks, switchgear 44 weeks."
+    },
+    {
+      "id": "ai-pwr-terrapin-mv",
+      "url": "https://terrapincg.com/news/switchgear-transformer-generator-lead-times-2026",
+      "quote": "In 2026, medium-voltage switchgear runs 52 to 80 weeks, pad-mount transformers 40 to 65 weeks, substation transformers 75 to 110 weeks",
+      "fetched": "2026-11-25",
+      "claim": "Terrapin 2026: MV switchgear 52-80 weeks, pad-mount transformers 40-65 weeks, substation transformers 75-110 weeks."
+    },
+    {
+      "id": "ai-pwr-terrapin-gasgen",
+      "url": "https://terrapincg.com/news/switchgear-transformer-generator-lead-times-2026",
+      "quote": "Natural gas 1,000–3,000 kW 54–78 weeks Behind-the-meter, BESS pairing",
+      "fetched": "2026-11-25",
+      "claim": "Terrapin 2026: new 1-3 MW natural gas gensets 54-78 weeks lead time."
+    },
+    {
+      "id": "ai-pwr-padmount-2500",
+      "url": "https://padmountsupply.com/transformers/2500-kva-pad-mounted-transformer",
+      "quote": "A new 2500 kVA pad mounted transformer from us runs about $49,500 to $58,500 , delivered in the United States.",
+      "fetched": "2026-11-25",
+      "claim": "New 2,500 kVA 15 kV-class pad-mount transformer (480Y/277 secondary) ~$49.5-58.5k delivered; other US sellers list $70.6-104k."
+    },
+    {
+      "id": "ai-pwr-lv-8mw-limit",
+      "url": "https://www.csemag.com/designing-medium-voltage-genset-systems/",
+      "quote": "For 480-V equipment, these limits are converging at 8,000 kW. This tends to be the strong transition point to move to medium voltage or split the low-voltage generator bus into two separate systems.",
+      "fetched": "2026-11-25",
+      "claim": "480 V paralleling bus reaches 12,000 A bus / 100 kA fault limits at ~8 MW of generation: 0.5-5 MW blocks can stay at 480 V; ~8-10 MW needs MV (4.16/13.8 kV) or a split bus."
+    },
+    {
+      "id": "ai-pwr-pbr512-noegu",
+      "url": "https://www.law.cornell.edu/regulations/texas/30-Tex-Admin-Code-SS-106-512",
+      "quote": "Upon issuance of a standard permit for electric generating units, registrations under this section for engines or turbines used to generate electricity will no longer be accepted",
+      "fetched": "2026-11-25",
+      "claim": "PBR 106.512 is closed to engines/turbines that generate electricity (except concrete batch, aggregate, irrigation): the AI Block's gensets need the EGU Standard Permit or a case-by-case NSR permit."
+    },
+    {
+      "id": "ai-pwr-pbr511-10pct",
+      "url": "https://www.law.cornell.edu/regulations/texas/30-Tex-Admin-Code-SS-106-511",
+      "quote": "used only for portable, emergency, and/or standby services are permitted by rule, provided that the maximum annual operating hours shall not exceed 10% of the normal annual operating schedule of the primary equipment",
+      "fetched": "2026-11-25",
+      "claim": "PBR 106.511 covers only portable/emergency/standby engines limited to 10% of primary equipment hours: not usable for prime-power gensets."
+    },
+    {
+      "id": "ai-pwr-egusp-nox",
+      "url": "https://encinoenviron.com/air-permitting-for-data-centers-in-texas",
+      "quote": "Region Operates ≤ 300 hrs/yr Operates > 300 hrs/yr East Texas 0.47 lb/MWh 0.14 lb/MWh (0.47 lb/MWh if unit ≤ specified kW threshold) West Texas 21 lb/MWh 3.11 lb/MWh",
+      "fetched": "2026-11-25",
+      "claim": "TCEQ EGU Standard Permit NOx for units run >300 h/yr: West Texas 3.11 lb/MWh (~1.0 g/bhp-hr, met by lean-burn engines) vs East Texas 0.14 lb/MWh (needs SCR)."
+    },
+    {
+      "id": "ai-pwr-egusp-region",
+      "url": "https://encinoenviron.com/air-permitting-for-data-centers-in-texas",
+      "quote": "TCEQ defines the “East Texas” region as all counties traversed by or east of Interstate Highway 35 or Interstate Highway 37",
+      "fetched": "2026-11-25",
+      "claim": "East/West Texas split is I-35/I-37: Permian sites are West Texas; Eagle Ford counties east of I-37 (e.g. Karnes, DeWitt, Gonzales) fall in the strict East Texas NOx region."
+    },
+    {
+      "id": "ai-pwr-tceq-days-2024",
+      "url": "https://encinoenviron.com/air-permitting-for-data-centers-in-texas",
+      "quote": "NSR New Permits 34 464 241 285 PSD New Permits 18 1,940 347 365 PBRs 1 140 12 45 Standard Permit 1 305 9 45",
+      "fetched": "2026-11-25",
+      "claim": "TCEQ 2024 processing: standard permits averaged 9 days (max 305, target 45) vs new NSR permits 241 days average (target 285)."
+    },
+    {
+      "id": "ai-pwr-sb6-75mw",
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00006F.HTM",
+      "quote": "The commission shall establish a demand threshold of 75 megawatts unless the commission determines that a lower threshold is necessary",
+      "fetched": "2026-11-25",
+      "claim": "Texas SB 6 large-load interconnection standards apply only to loads requesting ERCOT interconnection above a 75 MW threshold (unless PUCT lowers it); a 0.5-5 MW islanded block is outside them."
+    },
+    {
+      "id": "ai-pwr-jjjj-table1",
+      "url": "https://www.law.cornell.edu/cfr/text/40/appendix-Table_1_to_subpart_JJJJ_of_part_60",
+      "quote": "HP≥500 7/1/2010 1.0 2.0 0.7 82 270 60",
+      "fetched": "2026-11-25",
+      "claim": "NSPS JJJJ Table 1: new non-emergency SI natural-gas engines >=500 hp (post-7/1/2010) limited to NOx 1.0, CO 2.0, VOC 0.7 g/hp-hr (82/270/60 ppmvd @15% O2)."
+    },
+    {
+      "id": "ai-pwr-kkkk-10mmbtu",
+      "url": "https://www.law.cornell.edu/cfr/text/40/60.4305",
+      "quote": "with a heat input at peak load equal to or greater than 10.7 gigajoules (10 MMBtu) per hour, based on the higher heating value of the fuel",
+      "fetched": "2026-11-25",
+      "claim": "NSPS KKKK applies to new turbines >=10 MMBtu/h HHV heat input, i.e. roughly >=1 MW turbines incl. a Capstone C1000S (~11 MMBtu/h HHV)."
+    },
+    {
+      "id": "ai-pwr-kkkk-limits",
+      "url": "https://www.law.cornell.edu/cfr/text/40/appendix-Table_1_to_subpart_KKKK_of_part_60",
+      "quote": "New turbine firing natural gas , electric generating ≤50 MMBtu/h 42 ppm at 15 percent O 2 or 290 ng/J of useful output (2.3 lb/MWh).",
+      "fetched": "2026-11-25",
+      "claim": "NSPS KKKK NOx limit for new gas-fired electric-generating turbines <=50 MMBtu/h (about <=4 MW): 42 ppm @15% O2 or 2.3 lb/MWh."
+    },
+    {
+      "id": "ai-pwr-megapack-lead",
+      "url": "https://poweraudit.net/research/tesla-megapack-cost-2026",
+      "quote": "One Tesla Megapack with 4 hours of storage lists at $962,350 for a site in California and delivery in the first quarter of 2027.",
+      "fetched": "2026-11-25",
+      "claim": "Megapack ordered from the design page in late Sept 2026 quoted Q1 2027 delivery: ~1-2 quarter BESS lead time vs 54-78 weeks for gensets."
+    },
+    {
+      "id": "ai-pwr-btm-package-cost",
+      "url": "https://www.hypertechresearch.com/white-paper-btm-power-costs",
+      "quote": "Owner-reported 2026 package prices from mobile-turbine, recip-engine and mixed fleets sit at $930–1,200/kW.",
+      "fetched": "2026-11-25",
+      "claim": "2026 owner-reported on-site generation package prices (recip, mobile turbine): $930-1,200/kW, before balance of plant."
+    },
+    {
+      "id": "ai-pwr-btm-bop",
+      "url": "https://www.hypertechresearch.com/white-paper-btm-power-costs",
+      "quote": "Equipment to package adds about 20%; package to balance of plant adds $300–550/kW; balance of plant to installed plant adds about $900/kW.",
+      "fetched": "2026-11-25",
+      "claim": "Cost build-up: package to BOP +$300-550/kW, BOP to installed plant +~$900/kW (so installed ~$2,100-2,600/kW at 10-50 MW scale)."
+    },
+    {
+      "id": "ai-pwr-tceq-pause-directive",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-directs-tceq-to-halt-data-center-permits",
+      "quote": "Governor Greg Abbott today directed the Texas Commission on Environmental Quality (TCEQ) to halt all permits sought by data centers until the Electric Reliability Council of Texas (ERCOT) completes its audit.",
+      "fetched": "2026-11-25",
+      "claim": "Sept 21, 2026 governor directive: TCEQ to halt all permits sought by data centers until ERCOT finishes its audit; no size threshold or permit-type carve-out stated."
+    },
+    {
+      "id": "ai-pwr-tceq-pause-scope",
+      "url": "https://fractracker.org/2026/10/texas-data-center-permits-after-governor-halt/",
+      "quote": "has paused the issuance of all air and water permits and authorizations related to the construction or development of infrastructure directly supporting data centers while ERCOT completes its comprehensive grid and community impact audit.",
+      "fetched": "2026-11-25",
+      "claim": "TCEQ's stated scope (to FracTracker, Oct 2026): all air and water permits and authorizations, so standard permits, PBRs and NSR alike, for infrastructure 'directly supporting data centers', with no MW threshold."
+    },
+    {
+      "id": "ai-pwr-tceq-pause-gen",
+      "url": "https://fractracker.org/2026/10/texas-data-center-permits-after-governor-halt/",
+      "quote": "FracTracker found 14 applications for gas plants and generators serving data centers or supporting their construction that continued through review after September 21.",
+      "fetched": "2026-11-25",
+      "claim": "Onsite gas generation serving data centers was in scope in practice: FracTracker found 14 such generator/gas-plant applications still moving through review during the pause."
+    },
+    {
+      "id": "ai-pwr-tceq-pause-lifted",
+      "url": "https://www.reedsmith.com/our-insights/blogs/ehs-law-insights/102oahf/tceq-resumes-permitting-data-centers-after-governors-pause-lifted/",
+      "quote": "Governor Abbott’s office notified TCEQ last Friday (November 13, 2026) that the permitting pause had been lifted.",
+      "fetched": "2026-11-25",
+      "claim": "The pause was lifted Nov 13, 2026 (about 2 months long); TCEQ resumed permitting the week of Nov 16, with no formal announcement from the governor."
+    },
+    {
+      "id": "ai-pwr-tceq-resumed",
+      "url": "https://www.texastribune.org/2026/11/17/tceq-environmental-data-center-permits-resume/",
+      "quote": "“The agency has resumed its normal permit review process and will evaluate applications under all applicable state and federal laws and regulations,” TCEQ spokesperson Laura Lopez said in a written statement.",
+      "fetched": "2026-11-25",
+      "claim": "TCEQ statement (Nov 17, 2026): normal permit review has resumed for data center applications."
+    },
+    {
+      "id": "ai-pwr-ercot-audit-dec10",
+      "url": "https://abc13.com/story/texas-commission-environmental-quality-resumes-data-center-permits-before-ordered-review-is-completed/20057236/",
+      "quote": "the audit will not be complete until Dec. 10.",
+      "fetched": "2026-11-25",
+      "claim": "ERCOT's data center audit, which the pause was tied to, will not be complete until Dec 10, 2026; permits resumed before it finished."
+    },
+    {
+      "id": "ai-site-chevron-kilby",
+      "url": "https://www.chevron.com/newsroom/2026/q2/chevron-signs-20-year-power-agreement-with-microsoft-for-west-texas-data-center",
+      "quote": "Kilby is expected to deliver approximately 2.67 gigawatts of capacity, built through a phased, modular approach that enables incremental expansion over time.",
+      "fetched": "2026-11-25",
+      "claim": "Chevron/Engine No. 1 Project Kilby (West Texas, Permian gas) plans ~2.67 GW of co-located gas generation for a Microsoft data center under a 20-year PPA (June 22, 2026)."
+    },
+    {
+      "id": "ai-site-horizon-btm",
+      "url": "https://projecthorizon-tx.com/faqs",
+      "quote": "Day-to-day electricity is generated by an on-site, behind-the-meter power plant, supplied by Permian natural gas.",
+      "fetched": "2026-11-25",
+      "claim": "Poolside Project Horizon (Pecos County, TX) runs day-to-day on a behind-the-meter Permian-gas power plant, with grid interconnection kept for backup."
+    },
+    {
+      "id": "ai-site-williams-socrates-capex",
+      "url": "https://www.powermag.com/new-200-mw-gas-fired-plant-in-ohio-will-power-meta-data-center",
+      "quote": "Officials on Monday said the plant is expected to cost about $1.6 billion to build, and eventually will include two power stations, each with 200 MW of generation capacity.",
+      "fetched": "2026-11-25",
+      "claim": "Williams' Socrates behind-the-meter gas plant for Meta (Ohio, 2025): ~$1.6B for 400 MW, i.e. ~$4,000/kW all-in for dedicated BTM gas power at scale."
+    },
+    {
+      "id": "ai-site-sty-bess",
+      "url": "https://opsb.ohio.gov/wps/portal/gov/opsb/news/opsb-authorizes-construction-of-licking-county-power-plant-0626",
+      "quote": "The project will incorporate 116 MW of battery energy storage to accommodate fluctuations in demand and mitigate unplanned outages.",
+      "fetched": "2026-11-25",
+      "claim": "Williams' Socrates the Younger 250 MW behind-the-meter gas plant (OPSB approval June 26, 2026) pairs 116 MW of BESS (~46% of gas MW) for load swings and unplanned outages."
+    },
+    {
+      "id": "ai-site-armada-leviathan",
+      "url": "https://www.armada.ai/product/leviathan",
+      "quote": "Leviathan delivers 1.77 MW of SI infrastructure, operational in 12 weeks.",
+      "fetched": "2026-11-25",
+      "claim": "Armada Leviathan modular AI unit: 1.77 MW IT per unit, operational in 12 weeks (vendor claim); closest product analog to a ~1-2 MW AI Block."
+    },
+    {
+      "id": "ai-site-armada-leviathan-dims",
+      "url": "https://www.armada.ai/product/leviathan",
+      "quote": "Dimensions 36,300 × 13,600 mm (approx. 119 × 45 ft)",
+      "fetched": "2026-11-25",
+      "claim": "Armada Leviathan footprint ~119 x 45 ft (0.12 acre) per 1.77 MW IT unit, i.e. ~3,000 sq ft per MW of IT for the compute module alone."
+    },
+    {
+      "id": "ai-site-innio-voltagrid",
+      "url": "https://www.innio.com/en/news-media/press-releases/innio-secures-largest-order-in-company-history-with-voltagrid-delivering-power-generation-for-one-of-the-worlds-largest-data-centers",
+      "quote": "INNIO to supply 2.3 gigawatts (GW) of power infrastructure, comprising 92 power packs of 25 megawatts (MW) each.",
+      "fetched": "2026-11-25",
+      "claim": "VoltaGrid/Oracle (Oct 2025): 2.3 GW of Jenbacher recip-based modular power in 92 power packs of 25 MW each - recips at data-center scale in Texas, gas via Energy Transfer pipelines."
+    },
+    {
+      "id": "ai-site-voltagrid-nobess",
+      "url": "https://voltagrid.com/voltagrid-collaborates-with-oracle-to-power-next-gen-ai-data-centers",
+      "quote": "we’re delivering grid-grade performance with ultra-fast response, zero reliance on battery storage, and near-zero criteria air emissions.",
+      "fetched": "2026-11-25",
+      "claim": "VoltaGrid claims its recip platform (Jenbacher+ABB) follows AI load swings with zero reliance on battery storage - a counterpoint to sizing a large BESS for GPU transients."
+    },
+    {
+      "id": "ai-site-voltagrid-firmgas",
+      "url": "https://voltagrid.com/voltagrid-collaborates-with-oracle-to-power-next-gen-ai-data-centers",
+      "quote": "This power plant deployment is being supplied with firm natural gas from Energy Transfer’s expansive pipeline",
+      "fetched": "2026-11-25",
+      "claim": "VoltaGrid/Oracle AI power is supplied with firm (not interruptible) pipeline gas from Energy Transfer - the hyperscale precedent for firm fuel supply."
+    },
+    {
+      "id": "ai-site-crusoe-redwood-avail",
+      "url": "https://www.crusoe.ai/resources/newsroom/crusoe-and-redwood-materials-expand-strategic-partnership-scaling-to-7x-the-original-ai-infrastructure-density",
+      "quote": "The existing 12 MW / 63 MWh microgrid has maintained 99.2% operational availability since its June 2025 launch. Crusoe Cloud maintains 99.9% leveraging grid as a backup power source.",
+      "fetched": "2026-11-25",
+      "claim": "Crusoe Spark on Redwood's off-grid solar+battery microgrid (12 MW/63 MWh, Nevada): 99.2% availability islanded vs 99.9% with grid backup - a real availability benchmark for off-grid modular AI."
+    },
+    {
+      "id": "ai-site-giga-clay",
+      "url": "https://www.gigaenergy.com/news/giga-news-hunt-county-deal",
+      "quote": "Giga broke ground in July on Project Clay, a 60MW GigaBase AI data center in Hunt County, Texas and will develop, own, and operate the campus for the customer.",
+      "fetched": "2026-11-25",
+      "claim": "Giga Energy (former flare-gas miner) Project Clay: 60 MW modular GigaBase AI DC in Hunt County TX, 10-year $1B lease to a US AI cloud provider (Nov 17, 2026), built in under 8 months."
+    },
+    {
+      "id": "ai-site-fiberlight-pecos",
+      "url": "https://www.fiberlight.com/resources/news/fiberlight-expands-west-texas-network-corridor-from-midland-toward-el-paso/",
+      "quote": "The initial construction phase focuses on a 150-mile segment extending west from Pecos toward McNary, Texas, with completion targeted for late 2027.",
+      "fetched": "2026-11-25",
+      "claim": "FiberLight Phase 1: 150-mile Pecos-McNary segment complete late 2027, plus a 50-mile Monahans-Fort Stockton segment under construction - new long-haul fiber reaching Delaware Basin sites."
+    },
+    {
+      "id": "ai-site-motran-i20",
+      "url": "https://motran.org/fiber",
+      "quote": "The I-20 corridor serves as the primary route for east-west fiber through the area, with numerous options available, as well as dark fiber capabilities.",
+      "fetched": "2026-11-25",
+      "claim": "MOTRAN: I-20 is the primary east-west Permian fiber route with multiple carriers and dark fiber; Midland has 7 fiber rings, Odessa 8."
+    },
+    {
+      "id": "ai-site-fiber-latency-mile",
+      "url": "https://www.itbroker.com/tools/network-latency-calculator",
+      "quote": "Per mile it is about 7.9 microseconds one way.",
+      "fetched": "2026-11-25",
+      "claim": "Fiber propagation adds ~7.9 µs per route-mile one way, i.e. ~0.8 ms one-way / ~1.6 ms RTT per 100 route-miles (before route factor ~1.5 and equipment delay)."
+    },
+    {
+      "id": "ai-site-wave-longhaul",
+      "url": "https://www.spendadvisor.io/blog/wavelength-pricing-2026",
+      "quote": "Long haul on major routes (NYC to Ashburn, Chicago to Dallas, LA to San Jose): 100G: $2,500 to $6,000 a month",
+      "fetched": "2026-11-25",
+      "claim": "2026 negotiated 100G long-haul wavelength pricing on major routes is ~$2,500-6,000/month (36-mo, unprotected, on-net DC-to-DC); off-net Permian tails cost more."
+    },
+    {
+      "id": "ai-site-darkfiber-iru",
+      "url": "https://rcrtech.com/ai-infrastructure-news/from-sunk-cost-to-strategic-asset-fiber-value-is-rising/",
+      "quote": "Centennial, Colorado publishes a standard 20-year IRU price of $2,750 per fiber pair per mile upfront, which works out at about $5.73 per fiber strand per mile per month ($11.46 per pair), before maintenance.",
+      "fetched": "2026-11-25",
+      "claim": "Published dark-fiber IRU benchmark: $2,750 per fiber pair per route-mile upfront for 20 years (~$11.46/pair-mile-month), before maintenance - e.g. 30-mile lateral ~$82k."
+    },
+    {
+      "id": "ai-site-wave-offnet-protect",
+      "url": "https://www.spendadvisor.io/blog/wavelength-pricing-2026",
+      "quote": "If one end sits off the carrier's own fiber, they buy a tail from someone else. That tail can add $1,000 to $3,000 a month. Protection. A 1+1 protected wave roughly doubles your monthly rate.",
+      "fetched": "2026-11-25",
+      "claim": "Off-net tail adds $1,000-3,000/month and 1+1 protection ~doubles a wave's monthly rate - both apply to a remote Permian pad."
+    },
+    {
+      "id": "ai-site-af11-throughput",
+      "url": "https://store.ui.com/us/en/products/af11-complete-lb",
+      "quote": "System Max. throughput 1.2+ Gbps Max. range 300+ km",
+      "fetched": "2026-11-25",
+      "claim": "Ubiquiti airFiber 11 licensed radio: 1.2+ Gbps max throughput per link - a single licensed 11 GHz hop carries ~1 Gbps, ~1% of a 100G wave."
+    },
+    {
+      "id": "ai-site-mlperf-ttft",
+      "url": "http://mlcommons.org/2024/03/mlperf-llama2-70b",
+      "quote": "these latency constraints were set as: TTFT : <= 2 seconds TPOT : <= 200 milliseconds",
+      "fetched": "2026-11-25",
+      "claim": "MLPerf LLM server benchmark latency limits: time-to-first-token <= 2 s and time-per-output-token <= 200 ms - so a few ms of added fiber RTT from a remote Texas site is <1% of the TTFT budget."
+    },
+    {
+      "id": "ai-site-waha-basis-2027",
+      "url": "https://aegis-hedging.com/insights/basis-brief-waha-gas",
+      "quote": "the balance of Winter ’26/’27 (December through March) eased 1.8 cents to -$1.15, Summer ’27 improved 3.6 cents to -$1.57, and Winter ’27/’28 firmed 2.6 cents to -$2.08. Spring 2028, still the weakest part of the curve, held near -$2.41.",
+      "fetched": "2026-11-25",
+      "claim": "Waha forward basis (early Nov 2026): about -$1.15 winter 26/27, -$1.57 summer 27, -$2.08 winter 27/28, -$2.41/MMBtu spring 2028 vs Henry Hub."
+    },
+    {
+      "id": "ai-site-waha-2028-risk",
+      "url": "https://aegis-hedging.com/insights/basis-brief-waha-gas",
+      "quote": "The next period with the greatest risk of renewed constraints appears to be early 2028, before another wave of pipeline capacity is scheduled to come online.",
+      "fetched": "2026-11-25",
+      "claim": "AEGIS: Permian egress risk returns in early 2028 before the next pipeline wave (Eiger Express mid-2028) - negative Waha could recur."
+    },
+    {
+      "id": "ai-site-et-mustang-draw",
+      "url": "https://aegis-hedging.com/insights/basis-brief-waha-gas",
+      "quote": "Energy Transfer also placed its 275 MMcf/d Mustang Draw II processing plant in the Midland Basin into service in October",
+      "fetched": "2026-11-25",
+      "claim": "Typical new Permian processing plant = 275 MMcf/d (ET Mustang Draw II, Oct 2026); a 1 MW recip block needs only ~0.2-0.25 MMcf/d, <0.1% of plant residue output."
+    },
+    {
+      "id": "ai-site-eia-firm-def",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=35112",
+      "quote": "The supply or delivery of natural gas cannot be curtailed under a firm contract except under unforeseeable circumstances.",
+      "fetched": "2026-11-25",
+      "claim": "EIA: firm gas contracts cannot be curtailed except for unforeseeable circumstances, whereas interruptible contracts can be cut when firm holders use capacity or others outbid; a wellhead flare-gas deal is effectively interruptible."
+    },
+    {
+      "id": "ai-site-propwr-targa",
+      "url": "https://ir.propetroservices.com/news-events/press-releases/detail/152/propwr-signs-new-power-contracts-to-commit-approximately-230-megawatts-to-targa-resources-corp",
+      "quote": "These long-term contracts will provide behind-the-meter power to support Targa’s continued investment in natural gas processing infrastructure in the Permian Basin, with full deployment expected in early 2028.",
+      "fetched": "2026-11-25",
+      "claim": "ProPetro PROPWR contracted ~230 MW of Permian behind-the-meter gas power for Targa processing (Sept 2026; total ~510 MW contracted), full deployment early 2028 - Permian BTM power competes for the same engines."
+    },
+    {
+      "id": "ai-site-epa-gathering-interrupt",
+      "url": "https://encinoenviron.com/behind-the-meter-power-where-permian-gas-meets-data-center-demand/",
+      "quote": "EPA described circumstances involving gathering-system pressure, maintenance, production surges and insufficient pipeline capacity.",
+      "fetched": "2026-11-25",
+      "claim": "EPA's Apr 30, 2026 memo recognizes Permian gathering-system pressure, maintenance and takeaway limits interrupt associated-gas offtake - i.e. gathering-line supply also has outages a BTM site must ride through."
+    },
+    {
+      "id": "ai-site-cw-17p6m",
+      "url": "https://www.cushmanwakefield.com/en/united-states/insights/data-center-development-cost-guide",
+      "quote": "Developers can expect average greenfield costs of $17.6 million per MW for the most modern facilities",
+      "fetched": "2026-11-25",
+      "claim": "Cushman & Wakefield 2026 Development Cost Guide: average all-in greenfield DC cost $17.6M per MW (excludes IT/GPUs; includes land, shell, MEP, power), up 21% vs late-2024."
+    },
+    {
+      "id": "ai-site-htr-recip-installed",
+      "url": "https://www.hypertechresearch.com/white-paper-btm-power-costs",
+      "quote": "Installed recip-engine plants vary most, from $1,292/kW to $4,149/kW.",
+      "fetched": "2026-11-25",
+      "claim": "Hyper Tech Research (158 public data points, 2023-2026): installed recip-engine BTM plants range $1,292-4,149/kW."
+    },
+    {
+      "id": "ai-site-htr-package",
+      "url": "https://www.hypertechresearch.com/white-paper-btm-power-costs",
+      "quote": "$1,000–1,200 per kW for a delivered 10–50 MW generation package, 2026 $1,450–1,650 per kW with balance of plant",
+      "fetched": "2026-11-25",
+      "claim": "2026 BTM gas generation: delivered 10-50 MW package $1,000-1,200/kW; $1,450-1,650/kW with balance of plant (before full installation ~+$900/kW)."
+    },
+    {
+      "id": "ai-site-doe-recip-size",
+      "url": "https://pasrecs.com/blog/combined-heat-and-power-systems",
+      "quote": "500 kW $3,150/kW 1 MW $2,800/kW 2 MW $2,550/kW 3 MW $2,350/kW 4.5 MW $2,000/kW",
+      "fetched": "2026-11-25",
+      "claim": "DOE CHP fact sheet DOE/EE-2764 (2020$, CHP scope incl. heat recovery): installed recip cost $3,150/kW at 500 kW, $2,800/kW at 1 MW, $2,550/kW at 2 MW, $2,000/kW at 4.5 MW - strong diseconomies below ~5 MW."
+    },
+    {
+      "id": "ai-site-doe-gt-size",
+      "url": "https://pasrecs.com/blog/combined-heat-and-power-systems",
+      "quote": "2.0 MW $5,200/kW 3.5 MW $4,200/kW 5.0 MW $3,400/kW 8.0 MW $2,850/kW 10 MW $2,500/kW",
+      "fetched": "2026-11-25",
+      "claim": "DOE CHP fact sheet DOE/EE-2841 (2020$): small simple-cycle gas turbine installed cost $5,200/kW at 2 MW, $3,400/kW at 5 MW, $2,500/kW at 10 MW - turbines are uneconomic at 0.5-5 MW vs recips."
+    },
+    {
+      "id": "ai-site-doe-maint-1p9c",
+      "url": "https://pasrecs.com/blog/combined-heat-and-power-systems",
+      "quote": "5.45 for fuel, less 1.75 for the thermal credit, plus 1.90 for maintenance, giving 5.6 cents to generate",
+      "fetched": "2026-11-25",
+      "claim": "DOE CHP screening example: recip maintenance 1.90 c/kWh (~$19/MWh) alongside 5.45 c/kWh fuel."
+    },
+    {
+      "id": "ai-site-partload-14pct",
+      "url": "https://secondwatt.com/resources/reciprocating-gas-engine-generators",
+      "quote": "fuel rises from 7,474 Btu/ekW-hr at 100% load to 7,668 at 75% and 8,526 at 50%: 8,526 ÷ 7,474 = 1.14, or 14% more fuel per kWh at half load.",
+      "fetched": "2026-11-25",
+      "claim": "Recip part-load penalty: heat rate rises 7,474 -> 8,526 Btu/ekWh from 100% to 50% load (+14% fuel per kWh) - N+1 sizing that runs engines at ~50-75% costs fuel."
+    },
+    {
+      "id": "ai-site-eia-ice-2024",
+      "url": "https://www.eia.gov/electricity/generatorcosts",
+      "quote": "Combustion turbine 841 Internal combustion engine 1,490",
+      "fetched": "2026-11-25",
+      "claim": "EIA (released Jul 2026): capacity-weighted construction cost of generators installed in 2024 - internal combustion engines $1,490/kW, combustion turbines $841/kW (utility-scale; battery storage $1,469/kW)."
+    },
+    {
+      "id": "ai-site-nfpa37-5ft",
+      "url": "https://www.csemag.com/defining-nfpa-37",
+      "quote": "the minimum separation distance from the engine housing is 5 ft to any opening in an adjacent building and 5 ft to any structure with combustible walls, building openings, overhangs, and vegetation.",
+      "fetched": "2026-11-25",
+      "claim": "NFPA 37 outdoor engines: 5 ft minimum from engine housing to building openings and to combustible-wall structures/vegetation (reducible with 1-h rated walls or listed enclosures) - genset-to-container spacing floor."
+    },
+    {
+      "id": "ai-site-ifc-ess-10ft",
+      "url": "https://up.codes/viewer/general-services-administration/ifc-2024/chapter/12/energy-systems",
+      "quote": "ESS located outdoors shall be separated by a minimum of 10 feet (3048 mm) from the following exposures: Lot lines . Public ways . Buildings.",
+      "fetched": "2026-11-25",
+      "claim": "IFC 2024 1207.8.3 (based on NFPA 855-2023): outdoor BESS >= 10 ft from lot lines, public ways, buildings and other exposures; reducible to 3 ft with 1-h barrier or UL 9540A-backed enclosure."
+    },
+    {
+      "id": "ai-site-ifc-ess-remote-100ft",
+      "url": "https://up.codes/viewer/general-services-administration/ifc-2024/chapter/12/energy-systems",
+      "quote": "remote outdoor installations include ESS located more than 100 feet (30 480 mm) from buildings, lot lines , public ways , stored combustible materials, hazardous materials, high-piled stock and other exposure hazards.",
+      "fetched": "2026-11-25",
+      "claim": "IFC 2024 1207.8.1: BESS >100 ft from buildings, lot lines and hazards qualifies as 'remote' with relaxed requirements - on a large rural pad, a 100 ft setback simplifies BESS compliance."
+    },
+    {
+      "id": "ai-site-tx-noise-85db",
+      "url": "https://texas.public.law/statutes/tex._penal_code_section_42.01",
+      "quote": "a noise is presumed to be unreasonable if the noise exceeds a decibel level of 85 after the person making the noise receives notice from a magistrate or peace officer that the noise is a public nuisance.",
+      "fetched": "2026-11-25",
+      "claim": "Texas Penal Code 42.01: noise presumed unreasonable above 85 dB (after notice) - the only statewide noise yardstick in unincorporated Texas counties absent local rules."
+    },
+    {
+      "id": "ai-site-genset-72dba",
+      "url": "https://www.en-generator.com/deutz-1mw-silent-gas-generator-container-structure.html",
+      "quote": "The noise level of the silent unit is 72dB(A)/7m",
+      "fetched": "2026-11-25",
+      "claim": "Vendor (EN Energy) 1 MW silent containerized gas genset: 72 dB(A) at 7 m - by distance attenuation ~50 dB(A) at ~90 m, far below the Texas 85 dB nuisance presumption."
+    },
+    {
+      "id": "ai-site-j420-container",
+      "url": "https://www.jenbacher.com/en/gas-engines/type-4/j420",
+      "quote": "Electrical Efficiency up to 42.5 % Thermal Efficiency up to 47.7 % L: 12,200 x W: 3,000 x H: 2,700 - 5,300 mm",
+      "fetched": "2026-11-25",
+      "claim": "Jenbacher J420 (~1.5 MW, 60 Hz variant) package footprint 12.2 x 3.0 m (40-ft container class, ~37 m2 or ~400 sq ft per 1.5 MW before clearances) - one engine ~= one AI Block's IT load."
+    },
+    {
+      "id": "ai-site-snyder-crusoe-spark",
+      "url": "https://www.kcbd.com/2026/07/28/energy-vault-begins-building-ai-infrastructure-campus-snyder",
+      "quote": "with an initial buildout expected to deliver 8 megawatts of modular data center capacity and a target commercial operation date in the first quarter of 2027.",
+      "fetched": "2026-11-25",
+      "claim": "Energy Vault Snyder AI (Permian edge, Scurry County TX): 8 MW of Crusoe Spark modular DCs (10 units, ~0.8 MW each) started Jul 2026, COD Q1 2027 (~8 months), expandable to 25 MW."
+    },
+    {
+      "id": "ai-site-snyder-leaseback",
+      "url": "https://www.kcbd.com/2026/07/28/energy-vault-begins-building-ai-infrastructure-campus-snyder",
+      "quote": "Crusoe will lease the units back from Energy Vault as “powered shell” infrastructure",
+      "fetched": "2026-11-25",
+      "claim": "Commercial model precedent: Energy Vault owns Crusoe Spark units and power, leasing them back to Crusoe as 'powered shell' - matches the AI Block 'sell power, cooling, space' model."
+    },
+    {
+      "id": "sg-sup-m2-basis-strip",
+      "url": "https://aegis-hedging.com/insights/dominion-south-basis-forces-affecting-price-aegis-reference",
+      "quote": "with Winter '26/'27 at -$0.526 against -$0.825 for Summer '27",
+      "fetched": "2026-11-25",
+      "claim": "AEGIS (Nov 20, 2026): TETCO M2 (Appalachia benchmark) forward basis about -$0.53 winter 26/27 and -$0.83/MMBtu summer 27 vs Henry Hub."
+    },
+    {
+      "id": "sg-sup-app-surplus",
+      "url": "https://aegis-hedging.com/insights/dominion-south-basis-forces-affecting-price-aegis-reference",
+      "quote": "The basin currently produces about 35.5 Bcf/d while consuming 9 Bcf/d, leaving ~25 Bcf/d that has to leave every day, meaning pipeline capacity sets the price.",
+      "fetched": "2026-11-25",
+      "claim": "Appalachia produces ~35.5 Bcf/d vs 9 Bcf/d local use; ~25 Bcf/d must exit by pipe, so egress sets local price - a structural in-basin gas discount."
+    },
+    {
+      "id": "sg-sup-m2-cash-oct",
+      "url": "https://eastdaley.com/daley-note/appalachia-flips-the-switch-producers-curtail-wells-amid-gas-slump",
+      "quote": "TETCO M2 cash prices averaged $1.12/MMBtu over Oct. 1–20 vs Henry Hub near $3.05/MMBtu",
+      "fetched": "2026-11-25",
+      "claim": "East Daley: TETCO M2 cash averaged $1.12/MMBtu Oct 1-20, 2026 vs Henry Hub ~$3.05 - Appalachian shoulder-season gas ~$1.9 below HH."
+    },
+    {
+      "id": "sg-sup-antero-shutin-125",
+      "url": "https://eastdaley.com/daley-note/appalachia-flips-the-switch-producers-curtail-wells-amid-gas-slump",
+      "quote": "Antero (AR) curtailed about 10 Bcfe, and said it was shutting in local dry gas production at $1.25/MMBtu prices or lower.",
+      "fetched": "2026-11-25",
+      "claim": "Antero shuts in local dry gas at <= $1.25/MMBtu (curtailed ~10 Bcfe in 3Q26) - sets the producer's walk-away price for selling Appalachian wellhead gas to an on-site buyer."
+    },
+    {
+      "id": "sg-sup-eqt-curtail",
+      "url": "https://eastdaley.com/daley-note/appalachia-flips-the-switch-producers-curtail-wells-amid-gas-slump",
+      "quote": "EQT said it curtailed 21 Bcfe of production during 3Q26",
+      "fetched": "2026-11-25",
+      "claim": "EQT curtailed 21 Bcfe in 3Q26 (~230 MMcf/d average) on weak local prices; EQT+Antero guided 25-40 Bcfe more cuts in 4Q26."
+    },
+    {
+      "id": "sg-sup-app-recur-2028",
+      "url": "https://eastdaley.com/daley-note/appalachia-flips-the-switch-producers-curtail-wells-amid-gas-slump",
+      "quote": "Futures already price M2 more than $1/MMBtu under Henry Hub next fall, suggesting shoulder-season curtailments will recur until MVP Boost, Southgate and in-basin demand absorb more supply from mid-2028.",
+      "fetched": "2026-11-25",
+      "claim": "Appalachian shoulder-season curtailments expected to recur until mid-2028 egress/in-basin demand; fall 2027 M2 priced >$1/MMBtu under HH - price-stranding is seasonal and temporary."
+    },
+    {
+      "id": "sg-sup-waha-low-2026",
+      "url": "https://eastdaley.com/daley-note/permian-producers-shutter-wells-to-manage-negative-waha-prices",
+      "quote": "Waha spot prices consistently traded below zero from February to early June, reaching a low of -$9.55/MMBtu in mid-April",
+      "fetched": "2026-11-25",
+      "claim": "East Daley: Waha spot traded below zero Feb-early June 2026, low -$9.55/MMBtu mid-April."
+    },
+    {
+      "id": "sg-sup-kinetik-220",
+      "url": "https://eastdaley.com/daley-note/permian-producers-shutter-wells-to-manage-negative-waha-prices",
+      "quote": "Kinetik (KNTK) estimated well curtailments on its Delaware G&P systems will average 220 MMcf/d in 2026, up from its prior forecast of 100 MMcf/d.",
+      "fetched": "2026-11-25",
+      "claim": "Kinetik expected 220 MMcf/d of producer curtailments on its Delaware Basin gathering in 2026 - shut-in gas sitting behind existing gathering (~200 AI Blocks' worth)."
+    },
+    {
+      "id": "sg-sup-permian-flare-1p7",
+      "url": "https://eastdaley.com/daley-note/permian-producers-shutter-wells-to-manage-negative-waha-prices",
+      "quote": "East Daley Analytics estimates basin-wide flaring averaged 1.7 Bcf/d in 1H26 due to the pipeline bottleneck.",
+      "fetched": "2026-11-25",
+      "claim": "Permian flaring averaged ~1.7 Bcf/d in 1H26 (East Daley), expected to fall toward zero by Nov 2026 as new pipes start - flare supply is shrinking."
+    },
+    {
+      "id": "sg-sup-firm-transport-250",
+      "url": "https://eastdaley.com/daley-note/permian-producers-shutter-wells-to-manage-negative-waha-prices",
+      "quote": "Those with firm transport on egress pipelines, or prior sales agreements with marketers or midstream companies, can sell their gas at prices closer to $2.50/MMBtu outside the Permian.",
+      "fetched": "2026-11-25",
+      "claim": "Permian producers with firm egress realize ~$2.50/MMBtu - such gas is not stranded; only producers without firm transport would sell cheap on-site."
+    },
+    {
+      "id": "sg-sup-pr-endusers",
+      "url": "https://aegis-hedging.com/insights/permian-resources-restores-curtailed-gas-as-about-80-of-its-gas-now-prices-away-from-waha",
+      "quote": "He called the move away from Waha \"pretty close to mission accomplished\" and said Permian Resources is now looking at LNG deals, end users and infrastructure investments, with a high bar for returns.",
+      "fetched": "2026-11-25",
+      "claim": "Permian Resources (787 MMcf/d) brought back curtailed high-GOR wells once Waha recovered and is now looking at end-user deals with a high return bar - large producers will sell to end users but not at distressed prices."
+    },
+    {
+      "id": "sg-sup-eia-78pct-marginal",
+      "url": "https://www.eia.gov/petroleum/wells/index.php",
+      "quote": "the share of U.S. oil and natural gas wells producing 15 BOE/d or less remained steady at about 80% from 2000 through 2022 and declined to 78% in 2023 through 2024",
+      "fetched": "2026-11-25",
+      "claim": "EIA: ~78% of US producing oil and gas wells were marginal (<=15 BOE/d, i.e. <=~90 Mcf/d for gas) in 2023-2024 - a huge, mostly low-rate well population."
+    },
+    {
+      "id": "sg-sup-terminal-decline",
+      "url": "https://payneinstitute.mines.edu/a-study-of-terminal-decline-rates-of-oil-gas-wells/",
+      "quote": "in the Appalachian basin at 4.9%, respectively, and highest for a portion of the Permian basin (“Permian – Other”) at 7.7%",
+      "fetched": "2026-11-25",
+      "claim": "Payne Institute (Enverus data, wells with 30+ yr history): terminal (years 10-30) gas decline averages ~6.4%/yr; Appalachian 4.9%, Permian-Other 7.7% - legacy wells are a low-decline supply."
+    },
+    {
+      "id": "sg-sup-pa-conv-1boe",
+      "url": "https://fractracker.org/2026/07/pennsylvania-oil-gas-production-2025",
+      "quote": "nearly 90% produced one barrel of oil equivalent per day or less , including 10,769 wells that reported no production.",
+      "fetched": "2026-11-25",
+      "claim": "PA conventional wells: nearly 90% produce <=1 BOE/d (<=~6 Mcf/d) - pooling ~1.1 MMcf/d would take ~180+ such wells, impractical without existing gathering."
+    },
+    {
+      "id": "sg-sup-diversified-ky",
+      "url": "https://www.austinrramsey.com/post/eastern-ky-officials-sign-secretive-deal-with-data-center-venture-to-explore-off-grid-power",
+      "quote": "have secured an option to purchase 100 acres of land at the Gateway Industrial Park near Jenkins to leverage a large natural gas compressor station there for future use in fuel turbines",
+      "fetched": "2026-11-25",
+      "claim": "Diversified Energy (largest US stripper/legacy well owner) + Maverick: 100 MW off-grid power concept at its Letcher County KY compressor station (Jul 2026) - aggregated legacy gas sold at a gathering/compressor node."
+    },
+    {
+      "id": "sg-sup-diversified-lowdecline",
+      "url": "https://www.div.energy/operations/upstream-operations",
+      "quote": "Our unique portfolio consists of stable, low-decline production of primarily natural gas from mature assets within Appalachia (~70% of production) and Central Region (~30% of production).",
+      "fetched": "2026-11-25",
+      "claim": "Diversified markets its mature Appalachian/Central legacy gas as stable, low-decline production - candidate supplier of firm, low-decline aggregated stripper gas."
+    },
+    {
+      "id": "sg-sup-sterling-price",
+      "url": "https://www.investormeetcompany.com/companies/ategrity-specialty-insurance-company-holdings/rns/4730772/view",
+      "quote": "The Company will pay the average WAHA gas price based on the preceding two months, plus a transportation fee of US$0.33 per MMBtu and a service fee of US$0.22 per MMBtu.",
+      "fetched": "2026-11-25",
+      "claim": "Sterling Digital GPA (Martin County TX, Jun 2026): price = trailing 2-month Waha average + $0.33 transport + $0.22 service = Waha + $0.55/MMBtu - a disclosed small-buyer gathering-gas contract form."
+    },
+    {
+      "id": "sg-sup-sterling-term",
+      "url": "https://www.investormeetcompany.com/companies/ategrity-specialty-insurance-company-holdings/rns/4730772/view",
+      "quote": "The initial term of the Agreement is five years, with the option to extend for up to two further one-year periods",
+      "fetched": "2026-11-25",
+      "claim": "Sterling Digital GPA term: 5 years + two 1-year extensions."
+    },
+    {
+      "id": "sg-sup-sterling-volume",
+      "url": "https://www.investormeetcompany.com/companies/ategrity-specialty-insurance-company-holdings/rns/4730772/view",
+      "quote": "The Company has committed to purchasing a minimum of 96,360 MMBtu of gas per year across the first four years of the Agreement (385,440 MMBtu in aggregate), with the Supplier guaranteeing availability of up to 6,500 MMBtu per day during the initial term.",
+      "fetched": "2026-11-25",
+      "claim": "Sterling GPA: take-or-pay floor 96,360 MMBtu/yr (~264 MMBtu/d) with supplier guaranteeing availability up to 6,500 MMBtu/d (~6.3 MMcf/d, ~25 MW) - low minimum, high guaranteed ceiling."
+    },
+    {
+      "id": "sg-sup-sterling-deposit",
+      "url": "https://www.investormeetcompany.com/companies/ategrity-specialty-insurance-company-holdings/rns/4730772/view",
+      "quote": "Prior to the initial supply of gas, the Company will pay a deposit equivalent to 61 days of estimated consumption, to be held in escrow and fully refundable",
+      "fetched": "2026-11-25",
+      "claim": "Sterling GPA credit support: refundable escrow deposit = 61 days of estimated gas consumption."
+    },
+    {
+      "id": "sg-sup-sterling-surface",
+      "url": "https://www.investormeetcompany.com/companies/ategrity-specialty-insurance-company-holdings/rns/4730772/view",
+      "quote": "The Agreement provides the Company with surface-use rights over a 1.5 acre parcel of land in Martin County, Texas, to establish its mining site.",
+      "fetched": "2026-11-25",
+      "claim": "Sterling GPA bundles surface-use rights on a 1.5-acre pad in Martin County TX with the gas - land and gas from one counterparty."
+    },
+    {
+      "id": "sg-sup-antero-clarington",
+      "url": "https://www.anteroresources.com/investors/press-releases/detail/262/antero-resources-announces-third-quarter-2026-financial-and",
+      "quote": "Antero entered into 265 MMcf/d of supply contracts that support the growing in-basin demand at the Clarington, Ohio market.",
+      "fetched": "2026-11-25",
+      "claim": "Antero (3Q26) signed 265 MMcf/d of 'premium priced' in-basin supply contracts at Clarington, OH - Appalachian producers now sell in-basin to end users at a premium, not a discount, at scale."
+    },
+    {
+      "id": "sg-sup-eqt-homercity",
+      "url": "https://naturalgasintel.com/news/eqt-snags-two-natural-gas-supply-contracts-including-for-massive-44-gw-ai-campus-in-pennsylvania",
+      "quote": "EQT agreed to supply up to 665,000 MMBtu/d, which the partners said would be one of the “largest single-site natural gas purchases in North American history.”",
+      "fetched": "2026-11-25",
+      "claim": "EQT supplies up to 665,000 MMBtu/d to the Homer City 4.4 GW gas/data-center campus (agreement Jul 2025), with dual-pipeline sourcing for redundancy - the hyperscale firm-supply template."
+    },
+    {
+      "id": "sg-sup-homercity-redundancy",
+      "url": "https://naturalgasintel.com/news/eqt-snags-two-natural-gas-supply-contracts-including-for-massive-44-gw-ai-campus-in-pennsylvania",
+      "quote": "with the ability to source gas from both the Texas Eastern Transmission and Eastern Gas Transmission and Storage pipeline systems",
+      "fetched": "2026-11-25",
+      "claim": "Homer City firmness design: gas sourced from two interstate pipelines (Texas Eastern and EGTS) for supply redundancy."
+    },
+    {
+      "id": "sg-sup-eqt-m2plus",
+      "url": "https://aegis-hedging.com/insights/eqts-q2-call-highlights-strategic-shift-toward-demand-linked-growth",
+      "quote": "These contracts are priced on an “M-2 plus” basis, indexed to local Appalachian hubs with a premium for midstream delivery, and will be served through EQT’s own infrastructure.",
+      "fetched": "2026-11-25",
+      "claim": "EQT's data-center supply deals (~1.5 Bcf/d by 2028) are priced 'M-2 plus': local Appalachian hub index plus a midstream-delivery premium - contract form for firm in-basin supply."
+    },
+    {
+      "id": "sg-sup-haynesville-basis",
+      "url": "https://aegis-hedging.com/insights/haynesville-gas-price-and-fundamentals",
+      "quote": "NGPL TXOK dropping 14c to -$0.64/MMBtu, its weakest level since May, and CGM falling 12c to -$0.50/MMBtu",
+      "fetched": "2026-11-25",
+      "claim": "Haynesville (Nov 20, 2026): prompt basis NGPL TXOK -$0.64, CGM -$0.50/MMBtu vs HH; ample N-S Louisiana pipe capacity and LNG pull mean little true stranding."
+    },
+    {
+      "id": "sg-sup-midcon-basis",
+      "url": "https://aegis-hedging.com/insights/midcon-price-and-fundamentals",
+      "quote": "NGPL Midcon was down to -$0.55, Panhandle down to -$0.35 and ONEOK was down to -$0.32.",
+      "fetched": "2026-11-25",
+      "claim": "Mid-Continent winter 26/27 basis (Nov 20, 2026): NGPL Midcon -$0.55, Panhandle -$0.35, ONEOK -$0.32/MMBtu vs HH - modest discount."
+    },
+    {
+      "id": "sg-sup-midcon-interruptible",
+      "url": "https://aegis-hedging.com/insights/midcon-price-and-fundamentals",
+      "quote": "Southern Star's warm-weather limits on interruptible service",
+      "fetched": "2026-11-25",
+      "claim": "Mid-Continent pipelines routinely limit interruptible service (e.g. Southern Star warm-weather limits) - interruptible transport is not firm for a 24/7 load."
+    },
+    {
+      "id": "sg-sup-rockies-basis",
+      "url": "https://aegis-hedging.com/insights/rockies-price-and-fundamentals",
+      "quote": "Summer '27 traded at -$0.51 for NWP Rockies, 7c lower on the week, and at -$0.76 for CIG, 4.6c lower.",
+      "fetched": "2026-11-25",
+      "claim": "Rockies basis (Nov 20, 2026): Summer 27 NWP Rockies -$0.51, CIG Rockies -$0.76/MMBtu vs HH."
+    },
+    {
+      "id": "sg-sup-tx-sev-75",
+      "url": "https://comptroller.texas.gov/taxes/natural-gas",
+      "quote": "Rates Gas: 7.5 percent (.075) of market value of gas.",
+      "fetched": "2026-11-25",
+      "claim": "Texas gas production (severance) tax 7.5% of market value; payer can be shifted to purchaser by contract."
+    },
+    {
+      "id": "sg-sup-tx-sev-payer",
+      "url": "https://comptroller.texas.gov/taxes/natural-gas",
+      "quote": "Depending on the contract between producer and purchaser, both parties can agree that a purchaser will pay the natural gas taxes.",
+      "fetched": "2026-11-25",
+      "claim": "Texas: producer and purchaser can contract for the purchaser to pay gas production tax - a GPA term to negotiate."
+    },
+    {
+      "id": "sg-sup-wv-shutin-10yr",
+      "url": "https://tax.wv.gov/Business/SeveranceTax/HowDoI/Pages/SeveranceTaxHowDoI.aspx",
+      "quote": "For a maximum period of ten (10) years, all natural gas or oil produced from any well which has not produced marketable quantities of natural gas for five (5) consecutive years immediately preceding the year in which a well is placed back into production",
+      "fetched": "2026-11-25",
+      "claim": "WV severance-tax exemption: gas from 'qualified shut-in' wells (no marketable production for 5 yrs) is exempt for up to 10 years after restart - favors reviving shut-in wells for on-site use."
+    },
+    {
+      "id": "sg-sup-wv-lowvolume",
+      "url": "https://tax.wv.gov/Business/SeveranceTax/HowDoI/Pages/SeveranceTaxHowDoI.aspx",
+      "quote": "A low volume well is a well that produces an average of less than five thousand (5000) cubic feet of natural gas per day",
+      "fetched": "2026-11-25",
+      "claim": "WV 'low volume well' (<5 Mcf/d average) gets favorable severance treatment; ~220 such wells would be needed for 1.1 MMcf/d."
+    },
+    {
+      "id": "sg-sup-nd-flare-155",
+      "url": "https://raptorenergypartners.com/north-dakota-natural-gas-flaring-pipelines",
+      "quote": "The DMR reported statewide flaring of 155.4 MMcf/d in August 2026, down 17.9 MMcf/d from July, with statewide capture of 95.8% and Bakken capture of 96.1% .",
+      "fetched": "2026-11-25",
+      "claim": "North Dakota (Aug 2026, ND DMR): 155 MMcf/d still flared, 95.8% statewide capture - Bakken flare gas is ~140 AI Blocks' worth but scattered across many small pads."
+    },
+    {
+      "id": "sg-sup-oh-sev",
+      "url": "https://tax.ohio.gov/business/severance-tax/severance-tax",
+      "quote": "Natural Gas 2.5 cents per Mcf",
+      "fetched": "2026-11-25",
+      "claim": "Ohio severance tax on natural gas: 2.5 cents/Mcf (volume-based, ~1% of $2.50 gas) - far lighter than TX 7.5% or OK 7%."
+    },
+    {
+      "id": "sg-sup-ok-gpt",
+      "url": "https://okpolicy.org/gross-production-tax",
+      "quote": "Gross production taxes, or severance taxes, are value-based taxes levied at a basic rate of 7 percent upon the production of oil and gas in Oklahoma.",
+      "fetched": "2026-11-25",
+      "claim": "Oklahoma gross production tax: 7% base (5% for first 36 months of newly spudded wells)."
+    },
+    {
+      "id": "sg-sup-pa-impactfee",
+      "url": "https://www.puc.pa.gov/press-release/2026/puc-announces-2438-million-in-natural-gas-impact-fees-for-pennsylvania-communities-06152026",
+      "quote": "which established the unconventional gas well fee.",
+      "fetched": "2026-11-25",
+      "claim": "Pennsylvania has no gas severance tax; instead the Act 13 impact fee applies only to unconventional (shale) wells - $243.9M collected for 2025 - so conventional/stripper gas carries no state production levy."
+    },
+    {
+      "id": "sg-sup-waha-90days",
+      "url": "https://energyathaas.wordpress.com/2026/06/29/the-curiosity-of-negative-energy-prices",
+      "quote": "Waha Hub prices were negative for 90 consecutive days this year. Prices averaged -$2.19 per million British Thermal Unit (mmBTU) from the start of 2026 through mid-June.",
+      "fetched": "2026-11-25",
+      "claim": "Energy Institute at Haas (Jun 2026): Waha negative 90 consecutive days in 2026; averaged -$2.19/MMBtu Jan-mid-June 2026 vs Henry Hub ~+$3.00."
+    },
+    {
+      "id": "sg-sup-nd-gpt",
+      "url": "https://www.tax.nd.gov/gas-tax-rate-table",
+      "quote": "$.0655 Per MCF 7/2026 - 6/2027",
+      "fetched": "2026-11-25",
+      "claim": "North Dakota gas gross production tax: $0.0655/Mcf for Jul 2026-Jun 2027 (volume-based)."
+    },
+    {
+      "id": "sg-sup-la-sev",
+      "url": "https://revenue.la.gov/businesses/severance-tax/gas",
+      "quote": "b. Full Rate – 7/1/26 to 6/30/27 [R.S. 47:633(A)(3)(a)] $0.1514 per MCF",
+      "fetched": "2026-11-25",
+      "claim": "Louisiana gas severance tax full rate $0.1514/Mcf for Jul 2026-Jun 2027."
+    },
+    {
+      "id": "sg-sup-la-incapable",
+      "url": "https://revenue.la.gov/businesses/severance-tax/gas",
+      "quote": "d. Incapable gas-well gas rate [R.S. 47:633(A)(5)(c)] $0.013 per MCF",
+      "fetched": "2026-11-25",
+      "claim": "Louisiana low-rate ('incapable') gas wells taxed at only $0.013/Mcf (vs $0.1514 full); inactive-well restart gas at half rate - favors marginal/reactivated wells."
+    },
+    {
+      "id": "sg-sup-eia-avg-gaswell",
+      "url": "https://www.eia.gov/petroleum/wells/pdf/WDR2025_FAQ.pdf",
+      "quote": "the average natural gas well produced nearly 185,000 cubic feet per day (cf/d) (about 35 BOE/d of total oil and natural gas)",
+      "fetched": "2026-11-25",
+      "claim": "EIA (2024 data): average US gas well ~185 Mcf/d - an AI Block at ~1.1 MMcf/d needs ~6 average gas wells or ~12+ stripper-class (<=90 Mcf/d) wells."
+    },
+    {
+      "id": "sg-sup-eia-stripper-6pct",
+      "url": "https://www.eia.gov/petroleum/wells/pdf/WDR2025_FAQ.pdf",
+      "quote": "Many of these wells are still operating, and together they produced approximately 6% of total U.S. oil and natural gas in 2024.",
+      "fetched": "2026-11-25",
+      "claim": "EIA: stripper/marginal wells (<=15 BOE/d, <=90 Mcf/d gas) produced ~6% of US oil and gas in 2024 despite being ~78% of wells."
+    },
+    {
+      "id": "sg-sup-nm-combined",
+      "url": "https://www.nmlegis.gov/handouts/RSTP%20081425%20Item%201%20-%20Tax%20%26%20Rev%20and%20LFC%20-%20Tax%20Policy%20101.pdf",
+      "quote": "Five oil and gas related taxes are reported on the same return at a combined rate of 8.27% on oil and 8.97% on natural gas",
+      "fetched": "2026-11-25",
+      "claim": "New Mexico: combined state production taxes on natural gas ~8.97% of value (severance, school, conservation, ad valorem) - highest of the candidate states."
+    },
+    {
+      "id": "sg-sup-pa-gmra",
+      "url": "https://www.legis.state.pa.us/WU01/LI/LI/US/HTM/1979/0/0060..HTM",
+      "quote": "shall not be valid if the lease does not guarantee the lessor at least one-eighth royalty",
+      "fetched": "2026-11-25",
+      "claim": "Pennsylvania GMRA: every oil/gas lease must guarantee at least a one-eighth (12.5%) royalty - applies to gas sold to an on-site data center."
+    },
+    {
+      "id": "sg-sup-duc-app",
+      "url": "https://mercercapital.com/insights/blogs/energy-valuation-insights-blog/2026/getting-its-ducs-in-a-row-appalachia-keeps-the-gas-flowing",
+      "quote": "Appalachia's DUC inventory declined approximately 24% over the review period, falling from 796 wells in September 2025 to 608 wells in September 2026.",
+      "fetched": "2026-11-25",
+      "claim": "Appalachia DUCs fell 796 -> 608 (Sep 2025-Sep 2026) and Permian 989 -> 844 as operators completed backlog - DUCs are being drawn down, not stranded for small buyers."
+    },
+    {
+      "id": "sg-sup-wv-sev-5pct",
+      "url": "https://www.courtswv.gov/sites/default/pubfilesmnt/2026-05/23-760%20and%2024-26%20Signed%20Opinion.pdf",
+      "quote": "at a rate of “five percent of the gross value of the natural gas” it produces",
+      "fetched": "2026-11-25",
+      "claim": "WV Supreme Court (May 2026) confirms WV gas severance tax = 5% of gross value (W. Va. Code 11-13A-3a); low-volume (<5 Mcf/d) and long-shut-in restart wells get relief."
+    },
+    {
+      "id": "sg-sup-marcellus-decline",
+      "url": "https://fractracker.org/2026/07/pennsylvania-oil-gas-production-2025",
+      "quote": "Statewide, the average production drop is 75.5% from the peak, with the production dropping from an average of about 1.8 Bcf in 2018 to 444 MMcf in 2025.",
+      "fetched": "2026-11-25",
+      "claim": "PA shale (dry gas) wells drilled in 2016 fell 75.5% from 2018 peak to 2025 (~18%/yr) - a single shale well is not a multi-year firm supply without new completions or pooling."
+    },
+    {
+      "id": "sg-sup-sanjuan-price",
+      "url": "https://www.naturalgasintel.com/news/epng-outages-jolt-san-juan-gas-prices-keep-waha-basis-risk-elevated",
+      "quote": "El Paso San Juan, El Paso Bondad and Transwestern San Juan rose about 40 cents Wednesday to $2.305/MMBtu, $2.270 and $2.320, respectively",
+      "fetched": "2026-11-25",
+      "claim": "NGI (Nov 2026): San Juan hubs ~$2.27-2.32/MMBtu spot, at a premium to Waha (~$1.27) - San Juan gas is not price-stranded in late 2026."
+    },
+    {
+      "id": "sg-sup-eqt-cpv-shay",
+      "url": "https://eastdaley.com/daley-note/appalachia-producers-are-done-buying-pipe",
+      "quote": "EQT in July signed a 10-year, 325 MMcf/d agreement with CPV’s ~2 GW Shay power project in Doddridge County, WV — indexed to PJM power prices, not local gas.",
+      "fetched": "2026-11-25",
+      "claim": "EQT-CPV Shay (WV, Jul 2026): 10-year, 325 MMcf/d gas sale indexed to PJM power prices - an alternative contract form (power-indexed tolling-like) for in-basin generators."
+    },
+    {
+      "id": "sg-sup-app-dc-demand",
+      "url": "https://eastdaley.com/daley-note/appalachia-producers-are-done-buying-pipe",
+      "quote": "We estimate about 2.2 Bcf/d of new regional demand for data centers, plus another ~2 Bcf/d of growth resulting from industrial expansions and coal plant retirements.",
+      "fetched": "2026-11-25",
+      "claim": "East Daley: ~2.2 Bcf/d of new Appalachian data-center gas demand plus ~2 Bcf/d other in-basin growth - Appalachian price-stranding will shrink as in-basin demand rises."
+    },
+    {
+      "id": "sg-sup-nd-onsite-exempt",
+      "url": "https://ndlegis.gov/cencode/t57c51.pdf",
+      "quote": "Gas burned at the well site to power an electrical generator that consumes at least seventy-five percent of the gas from the well is exempt from the tax under section 57-51-02.2.",
+      "fetched": "2026-11-25",
+      "claim": "North Dakota (NDCC 57-51): wellsite gas burned in a generator taking >=75% of a well's gas is exempt from gas gross production tax - a structural tax edge for on-site power in ND."
+    },
+    {
+      "id": "sg-reg-la-311-gen",
+      "url": "https://www.law.cornell.edu/regulations/louisiana/La-Admin-Code-tit-33-SS-III-311",
+      "quote": "This regulatory permit authorizes the installation and use of stationary internal combustion engines, including, but not limited to, electrical power generators",
+      "fetched": "2026-11-25",
+      "claim": "Louisiana LAC 33:III.311 regulatory permit authorizes stationary engines including electrical power generators by notification (minor sources only)."
+    },
+    {
+      "id": "sg-reg-la-311-fuel",
+      "url": "https://www.law.cornell.edu/regulations/louisiana/La-Admin-Code-tit-33-SS-III-311",
+      "quote": "This regulatory permit shall not be used to authorize use of an engine that combusts noncommercial fuels, including used crankcase oil or any other used oil, facility byproducts, or any other type of waste material.",
+      "fetched": "2026-11-25",
+      "claim": "LA 311 excludes engines burning noncommercial fuels or 'facility byproducts'; whether raw associated gas qualifies is an open question for LDEQ."
+    },
+    {
+      "id": "sg-reg-la-311-minor",
+      "url": "https://www.law.cornell.edu/regulations/louisiana/La-Admin-Code-tit-33-SS-III-311",
+      "quote": "would result in the creation of a major source of criteria pollutants, hazardous air pollutants, or toxic air pollutants",
+      "fetched": "2026-11-25",
+      "claim": "LA 311 unavailable if the source would become major (e.g. >=100 tpy NOx)."
+    },
+    {
+      "id": "sg-reg-clim-midland-meanmax",
+      "url": "https://en.wikipedia.org/wiki/Midland,_Texas",
+      "quote": "Mean maximum °F (°C) 77.7 (25.4) 81.8 (27.7) 88.7 (31.5) 94.7 (34.8) 101.0 (38.3) 104.9 (40.5) 103.2 (39.6) 102.3 (39.1) 98.4 (36.9) 92.9 (33.8) 83.0 (28.3) 77.3 (25.2) 107 (42)",
+      "fetched": "2026-11-25",
+      "claim": "Midland TX annual mean maximum (typical hottest temperature of the year, ~ASHRAE extreme-design proxy) is 107 F."
+    },
+    {
+      "id": "sg-reg-clim-pittsburgh-meanmax",
+      "url": "https://en.wikipedia.org/wiki/Pittsburgh",
+      "quote": "Mean maximum °F (°C) 61.5 (16.4) 63.2 (17.3) 73.5 (23.1) 81.5 (27.5) 86.8 (30.4) 90.4 (32.4) 91.3 (32.9) 90.3 (32.4) 88.2 (31.2) 79.9 (26.6) 70.8 (21.6) 62.6 (17.0) 92.6 (33.7)",
+      "fetched": "2026-11-25",
+      "claim": "Pittsburgh PA annual mean maximum (typical hottest temperature of the year, ~ASHRAE extreme-design proxy) is 92.6 F."
+    },
+    {
+      "id": "sg-reg-clim-morgantown-meanmax",
+      "url": "https://en.wikipedia.org/wiki/Morgantown,_West_Virginia",
+      "quote": "Mean maximum °F (°C) 65.7 (18.7) 67.0 (19.4) 75.4 (24.1) 83.5 (28.6) 88.0 (31.1) 90.8 (32.7) 92.5 (33.6) 91.4 (33.0) 89.2 (31.8) 82.3 (27.9) 74.7 (23.7) 66.1 (18.9) 93.3 (34.1)",
+      "fetched": "2026-11-25",
+      "claim": "Morgantown WV annual mean maximum (typical hottest temperature of the year, ~ASHRAE extreme-design proxy) is 93.3 F."
+    },
+    {
+      "id": "sg-reg-clim-okc-meanmax",
+      "url": "https://en.wikipedia.org/wiki/Oklahoma_City",
+      "quote": "Mean maximum °F (°C) 71.7 (22.1) 77.1 (25.1) 84.2 (29.0) 86.9 (30.5) 92.3 (33.5) 96.4 (35.8) 102.4 (39.1) 101.5 (38.6) 96.2 (35.7) 88.9 (31.6) 79.1 (26.2) 71.2 (21.8) 103.8 (39.9)",
+      "fetched": "2026-11-25",
+      "claim": "Oklahoma City annual mean maximum (typical hottest temperature of the year, ~ASHRAE extreme-design proxy) is 103.8 F."
+    },
+    {
+      "id": "sg-reg-clim-williston-meanmax",
+      "url": "https://en.wikipedia.org/wiki/Williston,_North_Dakota",
+      "quote": "Mean maximum °F (°C) 44.0 (6.7) 46.7 (8.2) 65.1 (18.4) 79.0 (26.1) 86.6 (30.3) 93.5 (34.2) 98.0 (36.7) 98.9 (37.2) 93.3 (34.1) 80.3 (26.8) 60.4 (15.8) 46.1 (7.8) 100.6 (38.1)",
+      "fetched": "2026-11-25",
+      "claim": "Williston ND annual mean maximum (typical hottest temperature of the year, ~ASHRAE extreme-design proxy) is 100.6 F."
+    },
+    {
+      "id": "sg-reg-clim-farmington-meanmax",
+      "url": "https://en.wikipedia.org/wiki/Farmington,_New_Mexico",
+      "quote": "Mean maximum °F (°C) 54.7 (12.6) 61.6 (16.4) 72.8 (22.7) 80.3 (26.8) 88.2 (31.2) 95.9 (35.5) 97.8 (36.6) 94.9 (34.9) 90.4 (32.4) 82.1 (27.8) 68.7 (20.4) 56.6 (13.7) 98.4 (36.9)",
+      "fetched": "2026-11-25",
+      "claim": "Farmington NM annual mean maximum (typical hottest temperature of the year, ~ASHRAE extreme-design proxy) is 98.4 F."
+    },
+    {
+      "id": "sg-reg-clim-shreveport-meanmax",
+      "url": "https://en.wikipedia.org/wiki/Shreveport,_Louisiana",
+      "quote": "Mean maximum °F (°C) 76.4 (24.7) 79.1 (26.2) 84.6 (29.2) 87.5 (30.8) 92.4 (33.6) 96.3 (35.7) 100.2 (37.9) 101.4 (38.6) 98.0 (36.7) 91.3 (32.9) 82.2 (27.9) 77.4 (25.2) 102.6 (39.2)",
+      "fetched": "2026-11-25",
+      "claim": "Shreveport LA annual mean maximum (typical hottest temperature of the year, ~ASHRAE extreme-design proxy) is 102.6 F."
+    },
+    {
+      "id": "sg-reg-clim-midland-days",
+      "url": "https://en.wikipedia.org/wiki/Midland,_Texas",
+      "quote": "Highs exceed 90 °F or 32.2 °C on 115 afternoons per year and 100 °F or 37.8 °C on 24 afternoons",
+      "fetched": "2026-11-25",
+      "claim": "Midland TX: 115 days/yr above 90 F and 24 days above 100 F."
+    },
+    {
+      "id": "sg-reg-clim-pittsburgh-days",
+      "url": "https://en.wikipedia.org/wiki/Pittsburgh",
+      "quote": "highs reaching 90 °F (32 °C) on an average 9.5 days a year",
+      "fetched": "2026-11-25",
+      "claim": "Pittsburgh PA: 9.5 days/yr at or above 90 F; 100 F very rare."
+    },
+    {
+      "id": "sg-reg-clim-morgantown-days",
+      "url": "https://en.wikipedia.org/wiki/Morgantown,_West_Virginia",
+      "quote": "13.2 days of 90 °F (32 °C) + highs annually",
+      "fetched": "2026-11-25",
+      "claim": "Morgantown WV: 13.2 days/yr at or above 90 F."
+    },
+    {
+      "id": "sg-reg-clim-okc-days",
+      "url": "https://en.wikipedia.org/wiki/Oklahoma_City",
+      "quote": "Temperatures reach 100 °F (38 °C) on 10.4 days of the year, 90 °F (32 °C) on nearly 70 days",
+      "fetched": "2026-11-25",
+      "claim": "Oklahoma City: ~70 days/yr >=90 F and 10.4 days >=100 F."
+    },
+    {
+      "id": "sg-reg-clim-williston-days",
+      "url": "https://en.wikipedia.org/wiki/Williston,_North_Dakota",
+      "quote": "there are 2 days that reach 100 °F (38 °C) or higher, 22 days of 90 °F (32 °C) + highs",
+      "fetched": "2026-11-25",
+      "claim": "Williston ND: 22 days/yr >=90 F, 2 days >=100 F (and 39 days <=0 F, a freeze-protection driver)."
+    },
+    {
+      "id": "sg-reg-clim-shreveport-days",
+      "url": "https://en.wikipedia.org/wiki/Shreveport,_Louisiana",
+      "quote": "maximum temperatures exceeding 90 °F (32 °C) on an average of 91 days per year, with high to very high relative average humidity",
+      "fetched": "2026-11-25",
+      "claim": "Shreveport LA: 91 days/yr >90 F with high humidity (bad for evaporative, neutral for dry cooling)."
+    },
+    {
+      "id": "sg-reg-tx-incentive",
+      "url": "https://megawattindex.com/data-center-tax-incentives-by-state",
+      "quote": "Texas : State sales and use tax exemption for qualifying data centers ( active ) Minimum investment At least $200 million capital investment in the data center over a five-year period beginning on the certification date Jobs At least 20 qualifying jobs",
+      "fetched": "2026-11-25",
+      "claim": "Texas data center sales-tax exemption needs >=$200M investment and 20 jobs: out of reach for a 1-5 MW AI Block."
+    },
+    {
+      "id": "sg-reg-pa-incentive",
+      "url": "https://megawattindex.com/data-center-tax-incentives-by-state",
+      "quote": "Minimum investment At least $75,000,000 of new investment on or after January 1, 2022 (county population of 250,000 or fewer); at least $100,000,000 (county population more than 250,000)",
+      "fetched": "2026-11-25",
+      "claim": "Pennsylvania Computer Data Center Equipment Exemption needs $75M (small counties) or $100M new investment plus 25-45 jobs: unreachable at 1-5 MW."
+    },
+    {
+      "id": "sg-reg-wv-incentive",
+      "url": "https://megawattindex.com/data-center-tax-incentives-by-state",
+      "quote": "High impact data center: critical IT load in the aggregate of 90 megawatts total or higher, placed into service on or after July 1, 2025.",
+      "fetched": "2026-11-25",
+      "claim": "West Virginia HB 2014 high-impact data center property-tax treatment applies only at >=90 MW critical IT load."
+    },
+    {
+      "id": "sg-reg-oh-incentive",
+      "url": "https://megawattindex.com/data-center-tax-incentives-by-state",
+      "quote": "Ohio Data center sales and use tax exemption (computer data center equipment) Sales and use tax exemption Suspended Ohio Rev. Code 122.175",
+      "fetched": "2026-11-25",
+      "claim": "Ohio's data center sales/use tax exemption (ORC 122.175, >=$100M investment) is listed as suspended as of Oct 2026."
+    },
+    {
+      "id": "sg-reg-nd-incentive",
+      "url": "https://megawattindex.com/data-center-tax-incentives-by-state",
+      "quote": "Newly constructed or substantially refurbished facility of one or more buildings with an aggregate of fifteen thousand square feet or more, no fewer than fifty percent used for data processing",
+      "fetched": "2026-11-25",
+      "claim": "North Dakota qualified-data-center IT-equipment sales-tax exemption needs a >=15,000 sq ft facility: a containerized 1-5 MW block likely fails."
+    },
+    {
+      "id": "sg-reg-la-incentive",
+      "url": "https://megawattindex.com/data-center-tax-incentives-by-state",
+      "quote": "Sworn attestation of intent to expend at least two hundred million dollars in new capital investment in Louisiana on or after July 1, 2024, and before July 1, 2029 Jobs Sworn attestation that the project will create a minimum of fifty new direct, permanent jobs",
+      "fetched": "2026-11-25",
+      "claim": "Louisiana data center equipment sales-tax exemption (R.S. 47:305.73) needs $200M investment and 50 jobs."
+    },
+    {
+      "id": "sg-reg-pa-eo-2026-05",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/pennsylvania",
+      "quote": "Executive Order 2026-05 (18 August 2026) took data centers above 25 MW out of the permit fast-track program and holds state environmental permits until local zoning approvals are in hand.",
+      "fetched": "2026-11-25",
+      "claim": "Pennsylvania EO 2026-05 (Aug 2026): data centers >25 MW lose fast-track and DEP permits wait for local zoning; a 1-5 MW block is below the 25 MW trigger (secondary source)."
+    },
+    {
+      "id": "sg-reg-pa-reporting",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/pennsylvania",
+      "quote": "The July 2026 budget mandates energy and water reporting above 10 MW",
+      "fetched": "2026-11-25",
+      "claim": "Pennsylvania 2026 budget: energy/water reporting duty for data centers above 10 MW (not triggered at 1-5 MW)."
+    },
+    {
+      "id": "sg-reg-oh-moratoria",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/ohio",
+      "quote": "At least 138 local moratoria as of September 17, 2026, upheld by the Ohio Supreme Court on October 20, 2026, cover most main markets including central Ohio.",
+      "fetched": "2026-11-25",
+      "claim": "Ohio: at least 138 local data center moratoria (Sept 2026), upheld by the Ohio Supreme Court Oct 20, 2026: high local siting risk."
+    },
+    {
+      "id": "sg-reg-oh-hb15",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/ohio",
+      "quote": "HB 15 (August 2025) permits but does not require own power.",
+      "fetched": "2026-11-25",
+      "claim": "Ohio HB 15 (2025) permits data centers to self-supply power (behind-the-meter)."
+    },
+    {
+      "id": "sg-reg-ok-sb480",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/oklahoma",
+      "quote": "Oklahoma allows data centers to build their own power under a 2025 behind-the-meter law",
+      "fetched": "2026-11-25",
+      "claim": "Oklahoma's 2025 behind-the-meter law (SB 480) allows data centers to build their own power."
+    },
+    {
+      "id": "sg-reg-ok-local",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/oklahoma",
+      "quote": "Oklahoma City (to 31 Dec 2027), Edmond (to 30 Jun 2027), Tulsa, Norman and Shawnee pause new projects; Pryor, Stillwater and Muskogee stay open.",
+      "fetched": "2026-11-25",
+      "claim": "Oklahoma city-level data center moratoria (OKC to end-2027, Edmond, Tulsa, Norman, Shawnee); rural oilfield sites outside city limits are not covered."
+    },
+    {
+      "id": "sg-reg-ok-sb259",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/oklahoma",
+      "quote": "SB 259, signed in 2026 with a ceremony in August, bars data centers from open-air evaporative cooling",
+      "fetched": "2026-11-25",
+      "claim": "Oklahoma SB 259 (2026) bars data centers from open-air evaporative cooling: dry or closed-loop cooling required."
+    },
+    {
+      "id": "sg-reg-wv-hb2014-psc",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/west-virginia",
+      "quote": "HB 2014 (April 2025) lets 90 MW data centers run on on-site generation outside PSC review; no study fee or tariff applies.",
+      "fetched": "2026-11-25",
+      "claim": "West Virginia HB 2014: certified >=90 MW data centers may run on on-site generation outside PSC review; smaller sites don't get the certification."
+    },
+    {
+      "id": "sg-reg-nd-morton",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/north-dakota",
+      "quote": "Morton County's moratorium, in force as of August 2026, is one local pause outside the Cass County market; no statewide siting rule.",
+      "fetched": "2026-11-25",
+      "claim": "North Dakota: only one local moratorium (Morton County) and no statewide siting rule; low moratorium risk in the Bakken."
+    },
+    {
+      "id": "sg-reg-nm-hb93",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/new-mexico",
+      "quote": "HB 93 (Mar 2025) lets campuses self-power on private microgrids with little PRC scrutiny",
+      "fetched": "2026-11-25",
+      "claim": "New Mexico HB 93 (2025) lets data center campuses self-power on private microgrids with little PRC oversight."
+    },
+    {
+      "id": "sg-reg-nm-pauses",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/new-mexico",
+      "quote": "Santa Fe, Socorro, Sierra and Grant counties (22 Oct 2026) and Bernalillo town have pauses, none in the Doña Ana or Albuquerque markets.",
+      "fetched": "2026-11-25",
+      "claim": "New Mexico county pauses (Santa Fe, Socorro, Sierra, Grant) as of Oct 2026; none in San Juan (Farmington) or Permian counties listed."
+    },
+    {
+      "id": "sg-reg-la-nola",
+      "url": "https://www.genloop.energy/insights/data-center-rulebook/louisiana",
+      "quote": "New Orleans barred data centers for a year from 28 Jan 2026",
+      "fetched": "2026-11-25",
+      "claim": "Louisiana: only New Orleans has a 1-year data center ban (from Jan 2026); Haynesville/NW LA has no listed pause."
+    },
+    {
+      "id": "sg-reg-tx-tenant-exempt",
+      "url": "https://texas.public.law/statutes/tex._util._code_section_31.002",
+      "quote": "furnishes an electric service or commodity only to itself, its employees, or its tenants as an incident of employment or tenancy, if that service or commodity is not resold to or used by others",
+      "fetched": "2026-11-25",
+      "claim": "Texas PURA 31.002(6)(J)(i): a person furnishing electricity only to itself or its tenants as an incident of tenancy is not an electric utility, the likely path for colocation (space+power) leases to GPU tenants."
+    },
+    {
+      "id": "sg-reg-tx-lessor-exempt",
+      "url": "https://texas.public.law/statutes/tex._util._code_section_31.002",
+      "quote": "(A) is used on a site of the third party until the third party is able to obtain sufficient electricity service; (B) produces electricity on site to be consumed by the third party and not resold; and (C) does not interconnect with the electric transmission or distribution system.",
+      "fetched": "2026-11-25",
+      "claim": "Texas 'electric generation equipment lessor or operator' exemption covers non-interconnected on-site generation for a third party only until grid service is available: a bridge, not a permanent model."
+    },
+    {
+      "id": "sg-reg-tx-rep",
+      "url": "https://texas.public.law/statutes/tex._util._code_section_31.002",
+      "quote": "“Retail electric provider” means a person that sells electric energy to retail customers in this state. A retail electric provider may not own or operate generation assets",
+      "fetched": "2026-11-25",
+      "claim": "Texas: selling metered kWh to retail customers makes you a REP, and REPs may not own generation, so sell bundled colocation rather than metered electricity."
+    },
+    {
+      "id": "sg-reg-wv-microgrid-70pct",
+      "url": "https://westvirginia.gov/datacenters/certified-microgrid-development-program",
+      "quote": "Greater than 70% of the electricity generated within the district must be consumed by one or more high-impact data centers.",
+      "fetched": "2026-11-25",
+      "claim": "WV certified microgrid districts must send >70% of output to certified high-impact (>=90 MW) data centers; the PSC exemption is tied to that scale."
+    },
+    {
+      "id": "sg-reg-wv-microgrid-psc",
+      "url": "https://westvirginia.gov/datacenters/certified-microgrid-development-program",
+      "quote": "These entities are not subject to PSC jurisdiction regarding rates, certificates of convenience and necessity, conditions of service, or customer complaints.",
+      "fetched": "2026-11-25",
+      "claim": "Generators inside a certified WV microgrid district are outside PSC jurisdiction on rates, CPCN, service conditions and complaints."
+    },
+    {
+      "id": "sg-reg-nm-90d",
+      "url": "https://www.law.cornell.edu/regulations/new-mexico/N-M-Admin-Code-SS-20.2.72.207",
+      "quote": "within ninety (90) days after the Department deems the application administratively complete, if the application is not subject to the requirements of 20. 2.74 NMAC (Prevention of Significant Deterioration)",
+      "fetched": "2026-11-25",
+      "claim": "New Mexico minor-source construction permit (20.2.72 NMAC): decision within 90 days of completeness (30-day completeness review; +90-day extension possible); 180 days if PSD."
+    },
+    {
+      "id": "sg-reg-ok-180d",
+      "url": "https://www.law.cornell.edu/regulations/oklahoma/OAC-252-4-7-31",
+      "quote": "(1) Construction permits: (A) PSD and Part 70 Sources - 365 days. (B) Minor Facilities - 180 days.",
+      "fetched": "2026-11-25",
+      "claim": "Oklahoma DEQ deadline: minor-facility air construction permits issued or denied within 180 days (PSD/Part 70: 365 days)."
+    },
+    {
+      "id": "sg-reg-nd-90d",
+      "url": "https://www.law.cornell.edu/regulations/north-dakota/N-D-A-C-33.1-15-14-02",
+      "quote": "within ninety days of the receipt of the completed application, make the following preliminary determinations",
+      "fetched": "2026-11-25",
+      "claim": "North Dakota permit to construct: preliminary determination within 90 days of a complete application, then 30-day public comment where required."
+    },
+    {
+      "id": "sg-reg-oh-pbr-emerg",
+      "url": "https://www.law.cornell.edu/regulations/ohio/Ohio-Admin-Code-3745-31-30",
+      "quote": "Emergency electrical generators, emergency water pumps, or emergency air compressors powered by reciprocating emergency engines greater than fifty horsepower output where such engines operate at any one facility for no more than five hundred hours per rolling twelve-month period",
+      "fetched": "2026-11-25",
+      "claim": "Ohio's engine permit-by-rule covers only emergency generators (<=500 h/yr): prime-power gensets need a permit-to-install."
+    },
+    {
+      "id": "sg-reg-wv-r13-90d",
+      "url": "https://www.law.cornell.edu/regulations/west-virginia/W-Va-C-S-R-SS-45-13-5",
+      "quote": "The Secretary shall issue a permit for all construction or modifications and operation of a stationary source within a reasonable time not to exceed ninety (90) calendar days, after the date the Secretary determines the application is complete.",
+      "fetched": "2026-11-25",
+      "claim": "West Virginia Rule 13 (45CSR13) construction permit: issued within 90 days of completeness (+30 days for public comment); 30-day completeness review."
+    },
+    {
+      "id": "sg-reg-wv-gp-45d",
+      "url": "https://www.law.cornell.edu/regulations/west-virginia/W-Va-C-S-R-SS-45-13-5",
+      "quote": "within a reasonable time not to exceed forty-five (45) calendar days after the date the Secretary determines that an application is complete, issue a registration under a general permit",
+      "fetched": "2026-11-25",
+      "claim": "WV general permit registrations are due within 45 days of completeness, but no listed WV general permit (G35-E compressor, G70 well site) covers an electric-generation plant for a data center."
+    },
+    {
+      "id": "sg-reg-pa-speed",
+      "url": "https://www.pa.gov/services/dep/speed",
+      "quote": "Chapter 127 State Only Air Quality Plan Approvals",
+      "fetched": "2026-11-25",
+      "claim": "Pennsylvania SPEED program can expedite state-only air plan approvals (Ch. 127) via a fee-paid qualified-professional review (subject to EO 2026-05 limits for >25 MW data centers)."
+    },
+    {
+      "id": "sg-reg-wv-g35e",
+      "url": "https://dep.wv.gov/daq/permitting/Pages/airgeneralpermit.aspx",
+      "quote": "The requirements and conditions of this general permit address the prevention and control of regulated air pollutants from eligible natural gas compressor and/or dehydration facilities.",
+      "fetched": "2026-11-25",
+      "claim": "WV's newest gas general permit G35-E is limited to compressor/dehydration facilities, so a data center power plant needs an individual Rule 13 permit."
+    },
+    {
+      "id": "sg-reg-pa-gp20",
+      "url": "https://www.pacodeandbulletin.gov/Display/pabull?d=reduce&file=%2Fsecure%2Fpabulletin%2Fdata%2Fvol50%2F50-20%2F663.html",
+      "quote": "will be applicable to single or multiple natural gas-fired combined heat and power facilities at a site with a combined maximum rated electric generating capacity less than 25 megawatts",
+      "fetched": "2026-11-25",
+      "claim": "Pennsylvania GP-20 general permit covers natural-gas CHP engines/turbines at sites <25 MW (BAT NOx limits); a data center plant qualifies only if it is genuinely CHP (e.g. heat to absorption chilling)."
+    },
+    {
+      "id": "sg-reg-oh-bat",
+      "url": "https://epa.ohio.gov/divisions-and-offices/air-pollution-control/permitting/applying-for-an-air-pollution-control-permit",
+      "quote": "BAT is defined as: the use of a control technology at least as effective as those used by other similar emissions units. It is determined on a case-by-case basis.",
+      "fetched": "2026-11-25",
+      "claim": "Ohio requires case-by-case Best Available Technology for new units, so NOx can be set tighter than JJJJ (likely SCR/oxidation catalyst for prime gas engines)."
+    },
+    {
+      "id": "sg-reg-oh-pti-180d",
+      "url": "https://codes.ohio.gov/ohio-administrative-code/rule-3745-31-06",
+      "quote": "of such a permit within one hundred eighty days after the date the application for the permit or modification was determined to be complete",
+      "fetched": "2026-11-25",
+      "claim": "Ohio PTI/PTIO: decision within 180 days after completeness (plus 60-day completeness review), so up to ~8 months."
+    },
+    {
+      "id": "sg-reg-pa-public-utility",
+      "url": "https://www.legis.state.pa.us/WU01/LI/LI/US/HTM/2016/0/0050..HTM",
+      "quote": "Producing, generating, transmitting, distributing or furnishing natural or artificial gas, electricity, or steam for the production of light, heat, or power to or for the public for compensation.",
+      "fetched": "2026-11-25",
+      "claim": "Pennsylvania 'public utility' turns on furnishing electricity 'to or for the public'; supplying a few contracted tenants on a private site is argued as non-public, but the statutory self-supply exemption covers only service to oneself."
+    },
+    {
+      "id": "sg-reg-pa-self-exempt",
+      "url": "https://www.legis.state.pa.us/WU01/LI/LI/US/HTM/2016/0/0050..HTM",
+      "quote": "(i) Any person or corporation, not otherwise a public utility, who or which furnishes service only to himself or itself.",
+      "fetched": "2026-11-25",
+      "claim": "PA exempts self-service only; third-party GPU tenants depend on the 'not to the public' argument (needs PUC/counsel confirmation)."
+    },
+    {
+      "id": "sg-reg-nm-gcp-og",
+      "url": "https://www.env.nm.gov/air-quality/air-quality-oil-and-gas-gcp-application-forms",
+      "quote": "The General Construction Permit for oil and gas production, transmission, and processing facilities is available to minor source oil and gas facilities with or without controls.",
+      "fetched": "2026-11-25",
+      "claim": "New Mexico GCP-Oil & Gas covers only oil and gas production/transmission/processing facilities; a data center power plant would need an individual 20.2.72 NMAC permit (90-day clock)."
+    },
+    {
+      "id": "sg-reg-ok-gp-ogf",
+      "url": "https://oklahoma.gov/deq/permits/air-permits/general-permits-pbr.html",
+      "quote": "Revised General Permit for Oil and Gas Facilities (GP-OGF) for Review AQD is providing the revised General Permit for Oil and Gas Facilities for Public review. Public Review commenced on September 30, 2026, and will conclude on November 26, 2026.",
+      "fetched": "2026-11-25",
+      "claim": "Oklahoma's GP-OGF (oil and gas facilities only) is being revised (comment to Nov 26, 2026); a data center plant otherwise needs a minor-facility construction permit (180-day clock)."
+    },
+    {
+      "id": "sg-mkt-rtt-dal-okc",
+      "url": "https://wondernetwork.com/pings/Dallas",
+      "quote": "Oklahoma City United States, North America 307km 307 8.72ms",
+      "fetched": "2026-11-25",
+      "claim": "Dallas to Oklahoma City (Anadarko proxy) measured 8.7 ms RTT over 307 km on 2026-11-25 (WonderNetwork live ping; value updates hourly)."
+    },
+    {
+      "id": "sg-mkt-rtt-dal-sa",
+      "url": "https://wondernetwork.com/pings/Dallas",
+      "quote": "San Antonio United States, North America 406km 406 13.75ms",
+      "fetched": "2026-11-25",
+      "claim": "Dallas to San Antonio (Eagle Ford-side proxy) measured 13.8 ms RTT over 406 km, so a Permian site about 500 km from Dallas should see roughly 10-15 ms (live value)."
+    },
+    {
+      "id": "sg-mkt-rtt-dal-jackson",
+      "url": "https://wondernetwork.com/pings/Dallas",
+      "quote": "Jackson United States, North America 622km 622 20.00ms",
+      "fetched": "2026-11-25",
+      "claim": "Dallas to Jackson, MS measured 20.0 ms RTT over 622 km; a Haynesville site (about 300 km from Dallas) sits between this and the OKC figure (live value)."
+    },
+    {
+      "id": "sg-mkt-rtt-dal-ash",
+      "url": "https://wondernetwork.com/pings/Dallas",
+      "quote": "Washington United States, North America 1875km 1875 37.39ms",
+      "fetched": "2026-11-25",
+      "claim": "Dallas to Washington (Ashburn proxy) measured 37.4 ms RTT over 1,875 km, so Texas, Oklahoma and Louisiana basins are about 40 ms from N. Virginia (live value)."
+    },
+    {
+      "id": "sg-mkt-rtt-dal-phx",
+      "url": "https://wondernetwork.com/pings/Dallas",
+      "quote": "Phoenix United States, North America 1422km 1422 23.55ms",
+      "fetched": "2026-11-25",
+      "claim": "Dallas to Phoenix measured 23.6 ms RTT over 1,422 km (live value)."
+    },
+    {
+      "id": "sg-mkt-rtt-pit-was",
+      "url": "https://wondernetwork.com/pings/Pittsburgh",
+      "quote": "Washington United States, North America 275km 275 5.48ms",
+      "fetched": "2026-11-25",
+      "claim": "Pittsburgh to Washington (Ashburn proxy) measured 5.5 ms RTT over 275 km, so SW Pennsylvania is under 10 ms from N. Virginia (live value)."
+    },
+    {
+      "id": "sg-mkt-rtt-pit-col",
+      "url": "https://wondernetwork.com/pings/Pittsburgh",
+      "quote": "Columbus United States, North America 262km 262 25.20ms",
+      "fetched": "2026-11-25",
+      "claim": "Pittsburgh to Columbus measured 25.2 ms RTT despite only 262 km, which shows public-internet routing can add 20 ms over straight-line fiber (live value)."
+    },
+    {
+      "id": "sg-mkt-rtt-den-bil",
+      "url": "https://wondernetwork.com/pings/Denver",
+      "quote": "Billings United States, North America 730km 730 12.90ms",
+      "fetched": "2026-11-25",
+      "claim": "Denver to Billings (nearest node to the Bakken) measured 12.9 ms RTT over 730 km; Williston is a further ~400 km, so ~20 ms to Denver (live value)."
+    },
+    {
+      "id": "sg-mkt-rtt-abq-phx",
+      "url": "https://wondernetwork.com/pings/Albuquerque",
+      "quote": "Phoenix United States, North America 536km 536 13.92ms",
+      "fetched": "2026-11-25",
+      "claim": "Albuquerque (San Juan Basin proxy, ~300 km from Farmington) to Phoenix measured 13.9 ms RTT over 536 km (live value)."
+    },
+    {
+      "id": "sg-mkt-rtt-abq-den",
+      "url": "https://wondernetwork.com/pings/Albuquerque",
+      "quote": "Denver United States, North America 534km 534 9.86ms",
+      "fetched": "2026-11-25",
+      "claim": "Albuquerque to Denver measured 9.9 ms RTT over 534 km (live value)."
+    },
+    {
+      "id": "sg-mkt-vz-na",
+      "url": "https://www.verizon.com/business/terms/latency",
+      "quote": "North America (45.000) 33.354",
+      "fetched": "2026-11-25",
+      "claim": "Verizon backbone average North America RTT was 33.4 ms in Oct 2026 against a 45 ms SLA, a ceiling for any US basin reaching any US hub."
+    },
+    {
+      "id": "sg-mkt-fiber-horizon",
+      "url": "https://www.publicpower.org/periodical/article/plans-unveiled-2-gw-artificial-intelligence-campus-west-texas",
+      "quote": "The site is also connected by dual long-haul fiber routes, enabling ultra-high-bandwidth, low-latency connectivity to major network hubs.",
+      "fetched": "2026-11-25",
+      "claim": "Poolside Project Horizon (Pecos County, Permian) cites dual long-haul fiber routes at its West Texas site."
+    },
+    {
+      "id": "sg-mkt-fiber-fl-1400",
+      "url": "https://www.fiberlight.com/resources/news/fiberlight-doubles-down-on-west-texas-bringing-ai-infrastructure-investment-to-nearly-500-million",
+      "quote": "$350 million capital investment to build approximately 1,400 route miles of new, high-capacity network infrastructure across West Texas",
+      "fetched": "2026-11-25",
+      "claim": "FiberLight is building about 1,400 route miles of new West Texas fiber ($350M, Feb 2026), widening Permian long-haul options."
+    },
+    {
+      "id": "sg-mkt-fiber-fl-elpaso",
+      "url": "https://www.fiberlight.com/resources/news/fiberlight-expands-west-texas-network-corridor-from-midland-toward-el-paso/",
+      "quote": "plans to construct a high-capacity duct and fiber corridor from Midland toward El Paso, Texas",
+      "fetched": "2026-11-25",
+      "claim": "FiberLight is adding a roughly 300-route-mile Midland-to-El Paso corridor (Sept 2026), with onward routing toward Phoenix."
+    },
+    {
+      "id": "sg-mkt-fiber-heartland",
+      "url": "https://dakotacarrier.com/partners-launch-heartland-fiber-project/",
+      "quote": "establishing a route containing high fiber count and future path conduit to support future growth between Denver and Chicago",
+      "fetched": "2026-11-25",
+      "claim": "DCN/Range/WIN Heartland Fiber Project ($700M, 2,000 miles) builds a new long-haul Denver-Chicago route through North Dakota, improving Bakken connectivity."
+    },
+    {
+      "id": "sg-mkt-prec-horizon",
+      "url": "https://www.publicpower.org/periodical/article/plans-unveiled-2-gw-artificial-intelligence-campus-west-texas",
+      "quote": "We’ve secured a 2 GW behind-the-meter AI campus on 568 acres of development-ready land.",
+      "fetched": "2026-11-25",
+      "claim": "Permian precedent: Poolside Project Horizon, a 2 GW behind-the-meter gas-powered AI campus in West Texas (announced Oct 2025; anchor status since in question)."
+    },
+    {
+      "id": "sg-mkt-prec-horizon-gas",
+      "url": "https://www.publicpower.org/periodical/article/plans-unveiled-2-gw-artificial-intelligence-campus-west-texas",
+      "quote": "At the center of the Permian Basin—one of the world’s most energy-rich regions—Horizon has direct access to abundant, low-cost natural gas",
+      "fetched": "2026-11-25",
+      "claim": "Project Horizon explicitly sites in the Permian for direct access to low-cost gas."
+    },
+    {
+      "id": "sg-mkt-prec-homer",
+      "url": "https://www.homercityredevelopment.com/post/former-homer-city-pa-coal-plant-officially-reopens-as-state-of-the-art-natural-gas-facility",
+      "quote": "Delivery of up to 4.5 gigawatts (GW) of power to support AI-driven hyperscale data centers",
+      "fetched": "2026-11-25",
+      "claim": "Appalachia precedent: Homer City, PA is being converted to a 4.5 GW gas-fired AI data center campus."
+    },
+    {
+      "id": "sg-mkt-prec-shippingport",
+      "url": "https://aligneddc.com/press-release/project-phoenix-data-center-shippingport-pa/",
+      "quote": "today announced the groundbreaking of “Project Phoenix,” a new 2 GW data center campus located in Shippingport, Pennsylvania.",
+      "fetched": "2026-11-25",
+      "claim": "Appalachia precedent: Aligned broke ground on a 2 GW campus at Shippingport, PA (Sept 2026) beside a coal-to-gas plant."
+    },
+    {
+      "id": "sg-mkt-prec-socrates",
+      "url": "https://opsb.ohio.gov/news/opsb-approves-construction-of-licking-county-natural-gas-fired-power-plant",
+      "quote": "The Socrates South Power Generation Project will operate “behind-the-meter,” to serve the electric load of an adjacent",
+      "fetched": "2026-11-25",
+      "claim": "Ohio precedent: Williams Socrates South (200 MW gas) serves Meta New Albany behind the meter, not physically grid-connected (OPSB, June 2025)."
+    },
+    {
+      "id": "sg-mkt-prec-sty",
+      "url": "https://content.govdelivery.com/accounts/OHPUC/bulletins/41dd5f2",
+      "quote": "The project will incorporate 116 MW of battery energy storage to accommodate fluctuations in demand and mitigate unplanned outages.",
+      "fetched": "2026-11-25",
+      "claim": "A third Williams plant for Meta Ohio (250 MW, June 2026) pairs gas with 116 MW of battery, the same gas-plus-BESS pattern as the AI Block."
+    },
+    {
+      "id": "sg-mkt-prec-meta-la",
+      "url": "https://www.entergy.com/news/entergy-louisiana-receives-lpsc-approval-for-major-infrastructure-investments-to-support-metas-data-center-and-improve-reliability",
+      "quote": "The agreement allows Entergy Louisiana to construct three new modern and efficient combined cycle combustion turbine generation facilities.",
+      "fetched": "2026-11-25",
+      "claim": "Louisiana precedent: three new gas plants approved to serve Meta Richland Parish (grid-connected utility gas, not islanded)."
+    },
+    {
+      "id": "sg-mkt-prec-haynesville-williams",
+      "url": "https://www.shreveportbossieradvocate.com/business/williams-sees-opportunity-in-haynesville-shale-data-center-demand/article_63b24135-317a-4129-89ef-49ada8d999b9.html",
+      "quote": "A company that already has a northwest Louisiana footprint in the Haynesville Shale is looking to expand to capture more data center dollars.",
+      "fetched": "2026-11-25",
+      "claim": "Haynesville: Williams is buying Momentum Midstream to supply gas for data center load in NW Louisiana (Aug 2026); no islanded AI precedent found in the basin itself."
+    },
+    {
+      "id": "sg-mkt-prec-amazon-shv",
+      "url": "https://louisianaaihub.com/louisiana-data-centers",
+      "quote": "Amazon increased its planned Northwest Louisiana scope from $12B to $18B and added a third planned campus in Shreveport.",
+      "fetched": "2026-11-25",
+      "claim": "Haynesville-area demand: Amazon/STACK plans $18B, three campuses in Caddo/Bossier/Shreveport (grid-served)."
+    },
+    {
+      "id": "sg-mkt-prec-wdi",
+      "url": "https://www.westerndakota.co/",
+      "quote": "Western Dakota Infrastructure is proposing a data center campus north of Williston that generates its own electricity from locally produc",
+      "fetched": "2026-11-25",
+      "claim": "Bakken precedent: Western Dakota Infrastructure proposes an off-grid data center campus near Williston running on local Bakken gas."
+    },
+    {
+      "id": "sg-mkt-prec-wdi-recip",
+      "url": "https://www.westerndakota.co/faq",
+      "quote": "The engines are reciprocating engines, so their water usage is also minimal.",
+      "fetched": "2026-11-25",
+      "claim": "The Williston campus uses reciprocating gas engines and closed-loop dry cooling, the same architecture as the AI Block."
+    },
+    {
+      "id": "sg-mkt-prec-thunderbird",
+      "url": "https://okcfox.com/news/local/project-thunderbird-data-center-proposal-promises-600-jobs-and-self-generated-power",
+      "quote": "Project Thunderbird would create four large data center campuses along a single corridor",
+      "fetched": "2026-11-25",
+      "claim": "Oklahoma (Anadarko/STACK) precedent: Project Thunderbird in Enid proposes four self-powered gas data center campuses (Sept 2026, proposal stage)."
+    },
+    {
+      "id": "sg-mkt-prec-sanjuan",
+      "url": "https://searchlightnm.org/navajo-nation-council-to-weigh-data-center-in-san-juan-county/",
+      "quote": "The data center is expected to require about 700 megawatts of power",
+      "fetched": "2026-11-25",
+      "claim": "San Juan precedent: a Navajo tribal utility proposes a ~700 MW data center with gas turbines near Fruitland, NM; tribal council approval uncertain (Nov 2026)."
+    },
+    {
+      "id": "sg-mkt-rent-cbre-bands",
+      "url": "https://datacenterscouts.com/data-center-lease-rates/",
+      "quote": "Northern Virginia $190 to $235 $175 to $200 $170 to $190 $160 to $185 0.2% $0.07 to $0.10 Atlanta $185 to $200 $175 to $185 $150 to $175 $150 to $165 1.6%",
+      "fetched": "2026-11-25",
+      "claim": "CBRE H1 2026 (via Data Center Scouts): N. Virginia 250-500 kW asks $190-235/kW-mo (0.2% vacancy); Atlanta $185-200 (1.6%)."
+    },
+    {
+      "id": "sg-mkt-rent-dfw-phx",
+      "url": "https://datacenterscouts.com/data-center-lease-rates/",
+      "quote": "Dallas-Fort Worth $160 to $185 Not published Not published Not published 2.8% $0.07 to $0.085 Phoenix $175 to $215 $160 to $190 $135 to $175 $130 to $160 1.1%",
+      "fetched": "2026-11-25",
+      "claim": "CBRE H1 2026 (via Data Center Scouts): Dallas-Fort Worth 250-500 kW asks $160-185/kW-mo (2.8% vacancy); Phoenix $175-215 (1.1%)."
+    },
+    {
+      "id": "sg-mkt-rent-secondary",
+      "url": "https://datacenterscouts.com/data-center-lease-rates/",
+      "quote": "Austin and San Antonio $160 to $185 1.4% 550.2 MW Central Washington $155 to $175 2.9% 68.1 MW Houston $165 to $195 5.0%",
+      "fetched": "2026-11-25",
+      "claim": "CBRE H1 2026 secondary markets: Austin/San Antonio $160-185/kW-mo (1.4% vacancy), Houston $165-195 (5.0%)."
+    },
+    {
+      "id": "sg-mkt-vac-cw",
+      "url": "https://datacenterscouts.com/data-center-lease-rates/",
+      "quote": "It put colocation vacancy at 2.2% in Columbus, 1.9% in Reno, 0.6% in Salt Lake City and 0.0% in West Texas in the first half of 2026",
+      "fetched": "2026-11-25",
+      "claim": "Cushman & Wakefield H1 2026: colocation vacancy 2.2% in Columbus and 0.0% in West Texas."
+    },
+    {
+      "id": "sg-mkt-secondary-discount",
+      "url": "https://datacenterscouts.com/data-center-lease-rates/",
+      "quote": "Secondary markets with power can price below primary markets with none.",
+      "fetched": "2026-11-25",
+      "claim": "Rent tracks scarcity and hub status: secondary markets with power price below primary hubs, so a remote basin site should expect a discount to hub rents."
+    },
+    {
+      "id": "sg-mkt-ay-pittsburgh",
+      "url": "https://www.avisonyoung.us/documents/d/us/q3-2026-us-data-center-report",
+      "quote": "Dallas-Fort Worth led with 906 MW, followed by Pittsburgh with 800 MW, Austin with 627 MW, West Texas with 495 MW, and Richmond with 384 MW.",
+      "fetched": "2026-11-25",
+      "claim": "Q3 2026 absorption: Pittsburgh 800 MW and West Texas 495 MW, so both gas-basin-adjacent markets are top-5 demand markets."
+    },
+    {
+      "id": "sg-mkt-ay-vac-wtx",
+      "url": "https://www.avisonyoung.us/documents/d/us/q3-2026-us-data-center-report",
+      "quote": "San Antonio 0.02% West Texas 0.03%",
+      "fetched": "2026-11-25",
+      "claim": "Q3 2026 vacancy: West Texas 0.03%, San Antonio 0.02%."
+    },
+    {
+      "id": "sg-mkt-cost-cw-markets",
+      "url": "https://datacenterscouts.com/data-center-construction-cost/",
+      "quote": "Columbus $10.4 to $17.3 million Phoenix $10.2 to $17.0 million Atlanta $10.0 to $16.6 million Salt Lake City $10.0 to $16.0 million Dallas $9.0 to $15.8 million Austin and San Antonio $9.1 to $14.3 million",
+      "fetched": "2026-11-25",
+      "claim": "C&W 2026 all-in build cost (via Data Center Scouts): Columbus $10.4-17.3M/MW, Atlanta $10.0-16.6M, Dallas $9.0-15.8M, Austin/San Antonio $9.1-14.3M (Texas cheapest)."
+    },
+    {
+      "id": "sg-mkt-cost-tt-markets",
+      "url": "https://datacenterscouts.com/data-center-construction-cost/",
+      "quote": "Atlanta $9.9 $9.9 million Phoenix $9.8 $9.8 million Columbus $9.8 $9.8 million Dallas $9.5 $9.5 million",
+      "fetched": "2026-11-25",
+      "claim": "Turner & Townsend construction-only cost (via Data Center Scouts): Atlanta $9.9/W, Phoenix and Columbus $9.8/W, Dallas $9.5/W."
+    },
+    {
+      "id": "sg-mkt-labor-tt-81",
+      "url": "https://www.turnerandtownsend.com/en-us/insights/us-data-center-construction-trends-from-our-2026-27-index/",
+      "quote": "81% of respondents say skilled labor in their region is constrained.",
+      "fetched": "2026-11-25",
+      "claim": "Turner & Townsend 2026-27: 81% of respondents say regional skilled labor is constrained, with MEP trades most sought."
+    },
+    {
+      "id": "sg-mkt-labor-columbus",
+      "url": "https://reports.turnerandtownsend.com/data-centre-construction-cost-index-2026-us/cost-trends",
+      "quote": "A similar pattern applies to markets like Columbus and Indianapolis.",
+      "fetched": "2026-11-25",
+      "claim": "Turner & Townsend: AI build-outs in surrounding states are constraining labor supply in Chicago, Columbus and Indianapolis."
+    },
+    {
+      "id": "sg-mkt-edge-inference",
+      "url": "https://edgecore.com/resources/thought-leadership/ai-inference-vs-training",
+      "quote": "inference is latency-critical; training is not Location requirements: inference runs closer to users; training prioritizes power-rich markets",
+      "fetched": "2026-11-25",
+      "claim": "EdgeCore: inference is latency-critical and runs near users; training prioritizes power-rich markets, so remote basins suit training and batch inference."
+    },
+    {
+      "id": "sg-mkt-fide-inference-near",
+      "url": "https://fidepartners.com/wp-content/uploads/2026/05/Fide-Partners-Implications-of-AI-for-DC-demand-July-2025.pdf",
+      "quote": "Due to latency requirements and to control costs, AI inference for some use cases is expected to be delivered near customers, while AI training may have greater flexibility in site selection.",
+      "fetched": "2026-11-25",
+      "claim": "Fide Partners: latency-sensitive inference goes near customers; training has more siting flexibility."
+    }
+  ]
+}
