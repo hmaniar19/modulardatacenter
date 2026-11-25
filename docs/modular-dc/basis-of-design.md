@@ -25,6 +25,11 @@ Two consequences:
 - **The flare-gas mining Block (`deliverables/study.md`) stays a separate product.** The study's
   "phase 3 hybrid" is replaced by this product on firm gas.
 
+**Siting.** The figures above use a Permian base case. The stranded-gas siting analysis
+(`docs/modular-dc/stranded-gas-siting.md`) ranks **Appalachia first (5.5 years)**: lean dry gas
+needs one fewer genset, and the tenant's grid alternative in Northern Virginia is expensive. The
+Permian becomes the fast parallel track (6.5–7.1 years). The design itself is unchanged.
+
 ## Data shape
 
 - **Site:** one firm gas delivery point, one A/B fiber path, one fence.

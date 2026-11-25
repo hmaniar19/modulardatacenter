@@ -89,15 +89,17 @@ def interp(curve, x):
     return curve[-1][1]
 
 
-def scenario(size_name, it_kw, pm_name, cool_name, hall=HALL_USD_PER_KW_IT, util=UTILIZATION, rent_kw_month=None):
+def scenario(size_name, it_kw, pm_name, cool_name, hall=HALL_USD_PER_KW_IT, util=UTILIZATION,
+             rent_kw_month=None, gas_usd_per_mcf=GAS_USD_PER_MCF, build_index=1.0, derate=None,
+             grid_usd_per_mwh=None, spread_share=0.0):
     pm, cool = PRIME_MOVERS[pm_name], COOLING[cool_name]
     peak_kw = it_kw * (1 + cool["peak"])
     avg_kw = it_kw * util * (1 + cool["annual"])
-    unit_kw, derate = min(
+    unit_kw, unit_derate = min(
         PRIME_MOVERS[pm_name]["units"],
-        key=lambda u: (math.ceil(peak_kw / (u[0] * u[1])) + 1) * u[0],
+        key=lambda u: (math.ceil(peak_kw / (u[0] * (derate or u[1]))) + 1) * u[0],
     )
-    usable = unit_kw * derate
+    usable = unit_kw * (derate or unit_derate)
     running = math.ceil(peak_kw / usable)
     units = running + 1  # N+1
     nameplate = units * unit_kw
@@ -111,11 +113,14 @@ def scenario(size_name, it_kw, pm_name, cool_name, hall=HALL_USD_PER_KW_IT, util
     capex = {
         "power": nameplate * interp(pm["capex_curve"], nameplate) + units * SWITCHGEAR_USD_PER_UNIT,
         "bess": bess_kwh * BESS_USD_PER_KWH * (1 + BESS_INSTALL),
-        "hall_cooling_electrical": it_kw * (hall + cool["capex_per_kw_it"]),
-        "site": SITE_WORK_USD[it_kw],
+        "hall_cooling_electrical": it_kw * (hall + cool["capex_per_kw_it"]) * build_index,
+        "site": SITE_WORK_USD[it_kw] * build_index,
     }
     total_capex = sum(capex.values())
-    energy_cost = mwh * pm["om_per_mwh"] + mcfd * 365 * GAS_USD_PER_MCF
+    energy_cost = mwh * pm["om_per_mwh"] + mcfd * 365 * gas_usd_per_mcf
+    # Energy is bundled into the lease. Tenants pay our cost plus a share of the gap to the grid
+    # price they would pay at the hub; with no grid price given, energy is billed at cost.
+    energy_margin = spread_share * max(0.0, mwh * (grid_usd_per_mwh or 0) - energy_cost)
     fixed_opex = (
         NETWORK_USD_PER_MONTH * 12
         + STAFF_USD_PER_YEAR[it_kw]
@@ -123,13 +128,14 @@ def scenario(size_name, it_kw, pm_name, cool_name, hall=HALL_USD_PER_KW_IT, util
         + bess_kwh * BESS_OM_PER_KWH_YR
     )
     rent = (rent_kw_month or rent_per_kw_month(it_kw)) * it_kw * util * 12
-    cash = rent - fixed_opex  # energy is billed to tenants at cost
+    cash = rent + energy_margin - fixed_opex
     return {
         "size": size_name, "prime_mover": pm_name, "cooling": cool_name,
         "it_kw": it_kw, "peak_kw": round(peak_kw), "units": f"{units} x {unit_kw} kW",
         "nameplate_kw": nameplate, "load_factor": round(load_factor, 2),
         "bess": f"{round(bess_kw)} kW / {round(bess_kwh)} kWh",
         "gas_mcfd": round(mcfd), "energy_usd_per_mwh": round(energy_cost / mwh, 1),
+        "energy_margin_usd_yr": round(energy_margin),
         "capex": {k: round(v) for k, v in capex.items()}, "capex_total": round(total_capex),
         "capex_per_kw_it": round(total_capex / it_kw),
         "rent_usd_yr": round(rent), "fixed_opex_usd_yr": round(fixed_opex),
@@ -138,10 +144,47 @@ def scenario(size_name, it_kw, pm_name, cool_name, hall=HALL_USD_PER_KW_IT, util
     }
 
 
+# Stranded-gas site sweep: the chosen design (4.8 MW, recip FR, dry-only) at eight basin/source
+# combinations. Ids are in docs/modular-dc/evidence.json (sg-* = stranded-gas research).
+# Gas $/MMBtu delivered = Henry Hub $3.05 (sg-sup-m2-cash-oct) + local forward basis (avg of the
+# two cited strips) + $0.55 transport and service fee (sg-sup-sterling-price), plus state
+# production tax where the contract passes it to the buyer (sg-sup-tx-sev-payer). Derate: rich
+# associated gas 20% (gas-pioneer-derate); lean dry gas 5% (ASSUMPTION: pipeline-quality methane).
+# Rent: nearest hub band midpoint less a remote discount of 10% (<10 ms to hub), 20% (10-20 ms) or
+# 30% (>20 ms or no hub rent) (ASSUMPTION; sg-mkt-secondary-discount says remote prices below hub).
+# Grid: EIA industrial price in the hub's state, Sept 2026 (EIA Electric Power Monthly table 5.6.A).
+# Build index: Dallas = 1.00; Columbus 1.12; Phoenix 1.10 (sg-mkt-cost-cw-markets midpoints);
+# Bakken 1.10 (ASSUMPTION). Permit days, throttle days and risks are reported, not priced.
+SITES = [
+    # name, gas $/MMBtu, derate, rent $/kW-mo, grid $/MWh, build index, throttle days >=100 F,
+    # air permit days, moratorium risk, power-sale rule
+    ("Appalachia SW PA, M2 gathering", 2.92, 0.95, 178 * 0.90, 98.6, 1.12, 0, 180, "medium", "unclear: PA utility serves 'the public'"),
+    ("Appalachia N WV, M2 gathering", 3.07, 0.95, 178 * 0.90, 98.6, 1.12, 0, 120, "low", "PSC exemption only 90 MW+ or microgrid district"),
+    ("Appalachia E OH, M2 gathering", 2.94, 0.95, 178 * 0.90, 98.6, 1.12, 0, 240, "high", "allowed (HB 15)"),
+    ("Permian TX, Waha gathering", 2.41, 0.80, 172.5 * 0.80, 69.9, 1.00, 24, 9, "high", "allowed as incident of tenancy"),
+    ("Haynesville NW LA, dry gas", 3.10, 0.95, 180 * 0.80, 69.9, 1.00, 8, 30, "low", "unclear: LPSC docket R-37905"),
+    ("Anadarko OK, gathering", 3.26, 0.85, 172.5 * 0.80, 69.9, 1.00, 10, 180, "medium", "allowed (SB 480)"),
+    ("Bakken ND, associated gas", 2.90, 0.80, 178 * 0.70, 100.4, 1.10, 2, 120, "low", "unknown"),
+    ("San Juan NM, ~5,400 ft", 3.11, 0.85 * 0.90, 195 * 0.80, 79.5, 1.10, 0, 120, "medium", "allowed (HB 93)"),
+]
+
+
+def site_sweep():
+    rows = []
+    for name, gas, derate, rent, grid, build, hot, permit, mora, sale in SITES:
+        r = scenario("Four SU 4.8 MW", 4800, "Recip fast-response", "Dry-only, 45 C loop",
+                     rent_kw_month=rent, gas_usd_per_mcf=gas * GAS_BTU_PER_SCF / 1000,
+                     build_index=build, derate=derate, grid_usd_per_mwh=grid, spread_share=0.5)
+        r.update(site=name, gas_usd_per_mmbtu=gas, rent_kw_month=round(rent), grid_usd_per_mwh=grid,
+                 throttle_days=hot, permit_days=permit, moratorium=mora, power_sale=sale)
+        rows.append(r)
+    return sorted(rows, key=lambda r: r["payback_years"] or 999)
+
+
 def main():
     rows = [scenario(s, kw, pm, c) for s, kw in SIZES.items() for pm in PRIME_MOVERS for c in COOLING]
     if "--json" in sys.argv:
-        print(json.dumps(rows, indent=1))
+        print(json.dumps({"sweep": rows, "sites": site_sweep()}, indent=1))
         return
     print(f"{'#':>2} {'size':<15}{'prime mover':<20}{'cooling':<20}{'gensets':<14}{'gas mcf/d':>9}"
           f"{'$/MWh':>7}{'capex $M':>9}{'$/kW IT':>8}{'cash $k/yr':>11}{'payback':>8}")
@@ -162,6 +205,13 @@ def main():
     ]:
         r = scenario(*chosen, **overrides)
         print(f"  {label:<40} capex ${r['capex_total'] / 1e6:5.1f}M  payback {r['payback_years']} y")
+    print("\nStranded-gas sites, chosen design (ranked by payback):")
+    print(f"{'site':<34}{'gas $/MMBtu':>11}{'gensets':>13}{'rent':>6}{'energy $/MWh':>13}"
+          f"{'margin $k':>10}{'capex $M':>9}{'payback':>8}{'permit d':>9}  moratorium")
+    for r in site_sweep():
+        print(f"{r['site']:<34}{r['gas_usd_per_mmbtu']:>11.2f}{r['units']:>13}{r['rent_kw_month']:>6}"
+              f"{r['energy_usd_per_mwh']:>13}{r['energy_margin_usd_yr'] / 1e3:>10.0f}"
+              f"{r['capex_total'] / 1e6:>9.2f}{r['payback_years']:>7} y{r['permit_days']:>9}  {r['moratorium']}")
 
 
 if __name__ == "__main__":
